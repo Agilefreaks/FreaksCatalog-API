@@ -1,0 +1,529 @@
+Inspecting 41 files
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
+Offenses:
+
+Gemfile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+source 'https://rubygems.org'
+^
+Gemfile:33:28: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:42:3: C: [Correctable] Bundler/OrderedGems: Gems should be sorted in an alphabetical order within their section of the Gemfile. Gem listen should appear before rack-mini-profiler.
+  gem 'listen', '~> 3.3'
+  ^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:56:31: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+^
+Rakefile:4:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "config/application"
+                 ^^^^^^^^^^^^^^^^^^^^
+app/channels/application_cable/channel.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/channels/application_cable/connection.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationCable
+^
+app/controllers/application_controller.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationController < ActionController::Base
+^
+app/helpers/application_helper.rb:1:1: C: Style/Documentation: Missing top-level module documentation comment.
+module ApplicationHelper
+^^^^^^
+app/helpers/application_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+module ApplicationHelper
+^
+app/jobs/application_job.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationJob < ActiveJob::Base
+^
+app/mailers/application_mailer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationMailer < ActionMailer::Base
+^
+app/models/application_record.rb:1:1: C: Style/Documentation: Missing top-level class documentation comment.
+class ApplicationRecord < ActiveRecord::Base
+^^^^^
+app/models/application_record.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+class ApplicationRecord < ActiveRecord::Base
+^
+bin/bundle:11:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rubygems"
+        ^^^^^^^^^^
+bin/bundle:17:22: C: [Correctable] Style/SpecialGlobalVars: Prefer $PROGRAM_NAME over $0.
+    File.expand_path($0) == File.expand_path(__FILE__)
+                     ^^
+bin/bundle:21:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    ENV["BUNDLER_VERSION"]
+        ^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/CyclomaticComplexity: Cyclomatic complexity for cli_arg_version is too high. [9/7]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/MethodLength: Method has too many lines. [13/10]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:24:3: C: Metrics/PerceivedComplexity: Perceived complexity for cli_arg_version is too high. [9/8]
+  def cli_arg_version ...
+  ^^^^^^^^^^^^^^^^^^^
+bin/bundle:26:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless "update".start_with?(ARGV.first || " ") # must be running `bundle update`
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:26:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    return unless "update".start_with?(ARGV.first || " ") # must be running `bundle update`
+                  ^^^^^^^^
+bin/bundle:26:54: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    return unless "update".start_with?(ARGV.first || " ") # must be running `bundle update`
+                                                     ^^^
+bin/bundle:30:7: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+      if update_index && update_index.succ == i && a =~ Gem::Version::ANCHORED_VERSION_PATTERN
+      ^^
+bin/bundle:33:7: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+      next unless a =~ /\A--bundler(?:[= ](#{Gem::Version::VERSION_PATTERN}))?\z/
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:34:25: C: [Correctable] Style/PerlBackrefs: Prefer Regexp.last_match(1) over $1.
+      bundler_version = $1
+                        ^^
+bin/bundle:41:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    gemfile = ENV["BUNDLE_GEMFILE"]
+                  ^^^^^^^^^^^^^^^^
+bin/bundle:44:10: C: [Correctable] Style/ExpandPathArguments: Use expand_path('../Gemfile', __dir__) instead of expand_path('../../Gemfile', __FILE__).
+    File.expand_path("../../Gemfile", __FILE__)
+         ^^^^^^^^^^^
+bin/bundle:44:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    File.expand_path("../../Gemfile", __FILE__)
+                     ^^^^^^^^^^^^^^^
+bin/bundle:50:12: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      when "gems.rb" then gemfile.sub(/\.rb$/, gemfile)
+           ^^^^^^^^^
+bin/bundle:57:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless File.file?(lockfile)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:59:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return unless lockfile_contents =~ /\n\nBUNDLED WITH\n\s{2,}(#{Gem::Version::VERSION_PATTERN})\n/
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:66:9: C: [Correctable] Layout/MultilineOperationIndentation: Align the operands of an expression in an assignment spanning multiple lines.
+        lockfile_version
+        ^^^^^^^^^^^^^^^^
+bin/bundle:76:81: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    return requirement unless Gem::Version.new(Gem::VERSION) < Gem::Version.new("2.7.0")
+                                                                                ^^^^^^^
+bin/bundle:78:20: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    requirement += ".a" if bundler_gem_version.prerelease?
+                   ^^^^
+bin/bundle:84:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    ENV["BUNDLE_GEMFILE"] ||= gemfile
+        ^^^^^^^^^^^^^^^^
+bin/bundle:91:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      gem "bundler", bundler_requirement
+          ^^^^^^^^^
+bin/bundle:93:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return if gem_error.nil?
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:95:15: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      require "bundler/version"
+              ^^^^^^^^^^^^^^^^^
+bin/bundle:97:5: C: [Correctable] Layout/EmptyLineAfterGuardClause: Add empty line after guard clause.
+    return if require_error.nil? && Gem::Requirement.new(bundler_requirement).satisfied_by?(Gem::Version.new(Bundler::VERSION))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:97:12: C: [Correctable] Style/IfUnlessModifier: Modifier form of if makes the line too long.
+    return if require_error.nil? && Gem::Requirement.new(bundler_requirement).satisfied_by?(Gem::Version.new(Bundler::VERSION))
+           ^^
+bin/bundle:97:121: C: Layout/LineLength: Line is too long. [127/120]
+    return if require_error.nil? && Gem::Requirement.new(bundler_requirement).satisfied_by?(Gem::Version.new(Bundler::VERSION))
+                                                                                                                        ^^^^^^^
+bin/bundle:98:121: C: Layout/LineLength: Line is too long. [198/120]
+    warn "Activating bundler (#{bundler_requirement}) failed:\n#{gem_error.message}\n\nTo install the version of bundler this project requires, run `gem install bundler -v '#{bundler_requirement}'`"
+                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/bundle:112:1: C: [Correctable] Style/IfUnlessModifier: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+if m.invoked_as_script?
+^^
+bin/bundle:113:21: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  load Gem.bin_path("bundler", "bundle")
+                    ^^^^^^^^^
+bin/bundle:113:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  load Gem.bin_path("bundler", "bundle")
+                               ^^^^^^^^
+bin/rails:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/rails:2:23: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+load File.expand_path("spring", __dir__)
+                      ^^^^^^^^
+bin/rails:4:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "../config/boot"
+                 ^^^^^^^^^^^^^^^^
+bin/rails:5:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rails/commands"
+        ^^^^^^^^^^^^^^^^
+bin/rake:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/rake:2:23: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+load File.expand_path("spring", __dir__)
+                      ^^^^^^^^
+bin/rake:3:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "../config/boot"
+                 ^^^^^^^^^^^^^^^^
+bin/rake:4:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rake"
+        ^^^^^^
+bin/setup:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/setup:2:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "fileutils"
+        ^^^^^^^^^^^
+bin/spring:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/spring:2:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+if !defined?(Spring) && [nil, "development", "test"].include?(ENV["RAILS_ENV"])
+                              ^^^^^^^^^^^^^
+bin/spring:2:46: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+if !defined?(Spring) && [nil, "development", "test"].include?(ENV["RAILS_ENV"])
+                                             ^^^^^^
+bin/spring:2:67: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+if !defined?(Spring) && [nil, "development", "test"].include?(ENV["RAILS_ENV"])
+                                                                  ^^^^^^^^^^^
+bin/spring:3:7: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  gem "bundler"
+      ^^^^^^^^^
+bin/spring:4:11: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  require "bundler"
+          ^^^^^^^^^
+bin/spring:7:58: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  Bundler.locked_gems&.specs&.find { |spec| spec.name == "spring" }&.tap do |spring|
+                                                         ^^^^^^^^
+bin/spring:9:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    gem "spring", spring.version
+        ^^^^^^^^
+bin/spring:10:13: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    require "spring/binstub"
+            ^^^^^^^^^^^^^^^^
+bin/webpack:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/webpack:3:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+    ^^^^^^^^^^^
+bin/webpack:3:26: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                         ^^^^^^^^^^
+bin/webpack:3:41: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                                        ^^^^^^^^^^^^^
+bin/webpack:4:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+    ^^^^^^^^^^
+bin/webpack:4:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+                     ^^^^^^^^^^^^^
+bin/webpack:6:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "pathname"
+        ^^^^^^^^^^
+bin/webpack:7:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+    ^^^^^^^^^^^^^^^^
+bin/webpack:7:44: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+                                           ^^^^^^^^^^^^^^^
+bin/webpack:8:3: C: [Correctable] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
+  Pathname.new(__FILE__).realpath)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack:10:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bundler/setup"
+        ^^^^^^^^^^^^^^^
+bin/webpack:12:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker"
+        ^^^^^^^^^^^
+bin/webpack:13:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker/webpack_runner"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack:15:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+APP_ROOT = File.expand_path("..", __dir__)
+                            ^^^^
+bin/webpack-dev-server:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/webpack-dev-server:3:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+    ^^^^^^^^^^^
+bin/webpack-dev-server:3:26: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                         ^^^^^^^^^^
+bin/webpack-dev-server:3:41: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["RAILS_ENV"] ||= ENV["RACK_ENV"] || "development"
+                                        ^^^^^^^^^^^^^
+bin/webpack-dev-server:4:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+    ^^^^^^^^^^
+bin/webpack-dev-server:4:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["NODE_ENV"]  ||= "development"
+                     ^^^^^^^^^^^^^
+bin/webpack-dev-server:6:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "pathname"
+        ^^^^^^^^^^
+bin/webpack-dev-server:7:5: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+    ^^^^^^^^^^^^^^^^
+bin/webpack-dev-server:7:44: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ENV["BUNDLE_GEMFILE"] ||= File.expand_path("../../Gemfile",
+                                           ^^^^^^^^^^^^^^^
+bin/webpack-dev-server:8:3: C: [Correctable] Layout/ArgumentAlignment: Align the arguments of a method call if they span more than one line.
+  Pathname.new(__FILE__).realpath)
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack-dev-server:10:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bundler/setup"
+        ^^^^^^^^^^^^^^^
+bin/webpack-dev-server:12:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker"
+        ^^^^^^^^^^^
+bin/webpack-dev-server:13:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "webpacker/dev_server_runner"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/webpack-dev-server:15:29: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+APP_ROOT = File.expand_path("..", __dir__)
+                            ^^^^
+bin/yarn:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+#!/usr/bin/env ruby
+^
+bin/yarn:4:10: C: [Correctable] Style/InverseMethods: Use reject instead of inverting select.
+  yarn = ENV["PATH"].split(File::PATH_SEPARATOR). ...
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/yarn:4:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  yarn = ENV["PATH"].split(File::PATH_SEPARATOR).
+             ^^^^^^
+bin/yarn:4:49: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+  yarn = ENV["PATH"].split(File::PATH_SEPARATOR).
+                                                ^
+bin/yarn:5:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align select with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    select { |dir| File.expand_path(dir) != __dir__ }.
+    ^^^^^^
+bin/yarn:5:54: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+    select { |dir| File.expand_path(dir) != __dir__ }.
+                                                     ^
+bin/yarn:6:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align product with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+    ^^^^^^^
+bin/yarn:6:14: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+             ^^^^^^
+bin/yarn:6:22: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+                     ^^^^^^^^^^
+bin/yarn:6:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+                                 ^^^^^^^^^^
+bin/yarn:6:46: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+    product(["yarn", "yarn.cmd", "yarn.ps1"]).
+                                             ^
+bin/yarn:7:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align map with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    map { |dir, file| File.expand_path(file, dir) }.
+    ^^^
+bin/yarn:7:52: C: [Correctable] Layout/DotPosition: Place the . on the next line, together with the method name.
+    map { |dir, file| File.expand_path(file, dir) }.
+                                                   ^
+bin/yarn:8:5: C: [Correctable] Layout/MultilineMethodCallIndentation: Align find with ENV["PATH"].split(File::PATH_SEPARATOR). on line 4.
+    find { |file| File.executable?(file) }
+    ^^^^
+bin/yarn:13:5: C: [Correctable] Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Yarn executable was not detected in the system."
+    ^^^^^^^^^^^^
+bin/yarn:13:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Yarn executable was not detected in the system."
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bin/yarn:14:5: C: [Correctable] Style/StderrPuts: Use warn instead of $stderr.puts to allow such output to be disabled.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+    ^^^^^^^^^^^^
+bin/yarn:14:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config.ru:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file is used by Rack-based servers to start the application.
+^
+config.ru:3:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "config/environment"
+                 ^^^^^^^^^^^^^^^^^^^^
+config/application.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require_relative "boot"
+^
+config/application.rb:1:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "boot"
+                 ^^^^^^
+config/application.rb:3:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rails/all"
+        ^^^^^^^^^^^
+config/application.rb:10:3: C: Style/Documentation: Missing top-level class documentation comment.
+  class Application < Rails::Application
+  ^^^^^
+config/boot.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __dir__)
+^
+config/boot.rb:3:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bundler/setup" # Set up gems listed in the Gemfile.
+        ^^^^^^^^^^^^^^^
+config/boot.rb:4:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "bootsnap/setup" # Speed up boot time by caching expensive operations.
+        ^^^^^^^^^^^^^^^^
+config/environment.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Load the Rails application.
+^
+config/environment.rb:2:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "application"
+                 ^^^^^^^^^^^^^
+config/environments/development.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "active_support/core_ext/integer/time"
+^
+config/environments/development.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "active_support/core_ext/integer/time"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "active_support/core_ext/integer/time"
+^
+config/environments/production.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "active_support/core_ext/integer/time"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:56:22: C: [Correctable] Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                     ^
+config/environments/production.rb:56:34: C: Layout/SpaceInsideArrayLiteralBrackets: Do not use space inside array brackets.
+  config.log_tags = [ :request_id ]
+                                 ^
+config/environments/production.rb:91:10: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+         ^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:92:50: C: [Correctable] Style/GlobalStdStream: Use $stdout instead of STDOUT.
+    logger           = ActiveSupport::Logger.new(STDOUT)
+                                                 ^^^^^^
+config/environments/test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "active_support/core_ext/integer/time"
+^
+config/environments/test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "active_support/core_ext/integer/time"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/application_controller_renderer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/assets.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/backtrace_silencers.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/backtrace_silencers.rb:8:50: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+Rails.backtrace_cleaner.remove_silencers! if ENV["BACKTRACE"]
+                                                 ^^^^^^^^^^^
+config/initializers/content_security_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/cookies_serializer.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/filter_parameter_logging.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/filter_parameter_logging.rb:4:47: C: [Correctable] Style/SymbolArray: Use %i or %I for an array of symbols.
+Rails.application.config.filter_parameters += [ ...
+                                              ^
+config/initializers/inflections.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/mime_types.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/initializers/permissions_policy.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Define an application-wide HTTP permissions policy. For further
+^
+config/initializers/wrap_parameters.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Be sure to restart your server when you modify this file.
+^
+config/puma.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# Puma can serve each request in a thread from an internal thread pool.
+^
+config/puma.rb:7:25: C: [Correctable] Style/RedundantFetchBlock: Use fetch("RAILS_MAX_THREADS", 5) instead of fetch("RAILS_MAX_THREADS") { 5 }.
+max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/puma.rb:7:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+max_threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
+                              ^^^^^^^^^^^^^^^^^^^
+config/puma.rb:8:31: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+min_threads_count = ENV.fetch("RAILS_MIN_THREADS") { max_threads_count }
+                              ^^^^^^^^^^^^^^^^^^^
+config/puma.rb:14:34: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
+                                 ^^^^^^^^^^^
+config/puma.rb:14:47: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
+                                              ^^^^^^^^^^^^^
+config/puma.rb:14:65: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
+                                                                ^^^^^^^^^^^^^
+config/puma.rb:18:10: C: [Correctable] Style/RedundantFetchBlock: Use fetch("PORT", 3000) instead of fetch("PORT") { 3000 }.
+port ENV.fetch("PORT") { 3000 }
+         ^^^^^^^^^^^^^^^^^^^^^^
+config/puma.rb:18:16: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+port ENV.fetch("PORT") { 3000 }
+               ^^^^^^
+config/puma.rb:22:23: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                      ^^^^^^^^^^^
+config/puma.rb:22:38: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+environment ENV.fetch("RAILS_ENV") { "development" }
+                                     ^^^^^^^^^^^^^
+config/puma.rb:25:19: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+                  ^^^^^^^^^
+config/puma.rb:25:32: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
+                               ^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Rails.application.routes.draw do
+^
+config/spring.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+Spring.watch(
+^
+config/spring.rb:2:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  ".ruby-version",
+  ^^^^^^^^^^^^^^^
+config/spring.rb:3:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  ".rbenv-vars",
+  ^^^^^^^^^^^^^
+config/spring.rb:4:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  "tmp/restart.txt",
+  ^^^^^^^^^^^^^^^^^
+config/spring.rb:5:3: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  "tmp/caching-dev.txt"
+  ^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+# This file should contain all the record creation needed to seed the database with its default values.
+^
+test/application_system_test_case.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/application_system_test_case.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/channels/application_cable/connection_test.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+require "test_helper"
+^
+test/channels/application_cable/connection_test.rb:1:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/channels/application_cable/connection_test.rb:3:7: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class ApplicationCable::ConnectionTest < ActionCable::Connection::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:1:1: C: [Correctable] Style/FrozenStringLiteralComment: Missing frozen string literal comment.
+ENV['RAILS_ENV'] ||= 'test'
+^
+test/test_helper.rb:2:18: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require_relative "../config/environment"
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:3:9: C: [Correctable] Style/StringLiterals: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "rails/test_help"
+        ^^^^^^^^^^^^^^^^^
+test/test_helper.rb:5:7: C: [Correctable] Style/ClassAndModuleChildren: Use nested module/class definitions instead of compact style.
+class ActiveSupport::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^
+
+41 files inspected, 174 offenses detected, 165 offenses auto-correctable

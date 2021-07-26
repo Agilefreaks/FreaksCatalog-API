@@ -14,7 +14,7 @@ RSpec.describe do
   describe User do
     it "says hello" do
       user = User.new("Rails")
-      user.hello.should == "Hello, Rails!"
+      expect(user.hello).to eq("Hello, Rails!")
     end
   end
 end

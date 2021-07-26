@@ -47,7 +47,8 @@ group :development do
   gem 'guard-reek'
   gem 'spring'
   gem 'guard-reek'
-  gem 'guard'
+  gem 'guard', '~> 2.18.0'
+  gem 'rexml'
 end
 
 group :test do

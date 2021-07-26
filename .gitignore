@@ -30,6 +30,7 @@
 
 /public/assets
 .byebug_history
+/rubocop_log.txt
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

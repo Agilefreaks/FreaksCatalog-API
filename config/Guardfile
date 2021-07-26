@@ -1,0 +1,8 @@
+guard 'reek' do
+  watch(%r{.+\.rb$})
+  watch('.reek')
+end
+
+guard :reek, all_on_start: false, run_all: false, cli: '--single-line --no-wiki-links' do
+  # ...
+end

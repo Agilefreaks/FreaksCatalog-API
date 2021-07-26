@@ -19,6 +19,3 @@ guard 'reek' do
   watch(%r{.+\.rb$})
   watch('.reek')
 end
-
-
-

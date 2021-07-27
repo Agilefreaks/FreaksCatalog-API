@@ -1,4 +1,6 @@
-require "spec_helper"
+# frozen_string_literal: true
+
+require 'spec_helper'
 
 RSpec.describe do
   class User
@@ -12,9 +14,9 @@ RSpec.describe do
   end
 
   describe User do
-    it "says hello" do
-      user = User.new("Rails")
-      expect(user.hello).to eq("Hello, Rails!")
+    it 'says hello' do
+      user = User.new('Rails')
+      expect(user.hello).to eq('Hello, Rails!')
     end
   end
 end

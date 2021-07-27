@@ -1,0 +1,7 @@
+Style/Documentation:
+  Enabled: false
+
+AllCops:
+  Exclude:
+    - bin/bundle
+  NewCops: enable

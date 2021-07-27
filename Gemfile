@@ -49,6 +49,7 @@ group :development do
   gem 'guard-reek'
   gem 'guard', '~> 2.18.0'
   gem 'guard-rspec', require: false
+  gem 'rexml', '~> 3.2.5'
 end
 
 group :test do

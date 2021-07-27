@@ -2,17 +2,17 @@
 
 require 'spec_helper'
 
-RSpec.describe do
-  class User
-    def initialize(name)
-      @name = name
-    end
-
-    def hello
-      "Hello, #{@name}!"
-    end
+class User
+  def initialize(name)
+    @name = name
   end
 
+  def hello
+    "Hello, #{@name}!"
+  end
+end
+
+RSpec.describe do
   describe User do
     it 'says hello' do
       user = User.new('Rails')

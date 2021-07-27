@@ -50,6 +50,7 @@ group :development do
   gem 'guard', '~> 2.18.0'
   gem 'guard-reek', '~> 1.2'
   gem 'guard-rspec', '~> 4.7.3', require: false
+  gem 'guard-rubocop', '~> 1.4'
   gem 'rexml', '~> 3.2.5'
   gem 'graphql', '~> 1.12'
 end

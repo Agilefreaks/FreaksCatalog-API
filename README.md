@@ -21,4 +21,10 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+## Testing
+
+Continuously run tests & linting using:
+
+```bash
+bundle exec guard
+```

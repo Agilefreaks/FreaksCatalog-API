@@ -96,6 +96,10 @@ GEM
       shellany (~> 0.0)
       thor (>= 0.18.1)
     guard-compat (1.2.1)
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
     guard-reek (1.2.0)
       guard-compat (~> 1.1)
       reek
@@ -180,6 +184,10 @@ GEM
       rainbow (>= 2.0, < 4.0)
     regexp_parser (2.1.1)
     rexml (3.2.5)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
     rspec-expectations (3.10.1)
@@ -259,6 +267,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   guard (~> 2.18.0)
   guard-reek
+  guard-rspec
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)

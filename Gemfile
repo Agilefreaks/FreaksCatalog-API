@@ -48,6 +48,7 @@ group :development do
   gem 'spring'
   gem 'guard-reek'
   gem 'guard', '~> 2.18.0'
+  gem 'guard-rspec', require: false
   gem 'rexml'
 end
 

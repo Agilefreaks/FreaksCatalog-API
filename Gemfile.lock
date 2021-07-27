@@ -266,8 +266,8 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   guard (~> 2.18.0)
-  guard-reek
-  guard-rspec
+  guard-reek (~> 1.2)
+  guard-rspec (~> 4.7.3)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   puma (~> 5.0)

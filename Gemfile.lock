@@ -300,8 +300,10 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1.4)
+  reek
   rexml (~> 3.2.5)
   rspec-rails (~> 5.0.0)
+  rubocop
   sass-rails (>= 6)
   selenium-webdriver
   spring

@@ -4,4 +4,5 @@ Style/Documentation:
 AllCops:
   Exclude:
     - bin/bundle
+    - app/controllers/graphql_controller.rb
   NewCops: enable

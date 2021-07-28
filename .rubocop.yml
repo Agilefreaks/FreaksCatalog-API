@@ -8,5 +8,6 @@ Style/Documentation:
 AllCops:
   Exclude:
     - bin/bundle
+    - vendor/**/*
     - app/controllers/graphql_controller.rb
   NewCops: enable

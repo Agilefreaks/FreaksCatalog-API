@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
@@ -16,10 +18,15 @@
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
 guard 'reek' do
-  watch(%r{.+\.rb$})
+  watch(/.+\.rb$/)
   watch('.reek')
 end
 
-guard :rspec, cmd: "bundle exec rspec" do
+guard :rspec, cmd: 'bundle exec rspec' do
   watch(%r{^spec/.+_spec\.rb$})
+end
+
+guard :rubocop do
+  watch(/.+\.rb$/)
+  watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
 end

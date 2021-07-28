@@ -40,8 +40,10 @@ group :development do
   gem 'faker'
   gem 'graphiql-rails'
 
-  gem 'rubocop'
   gem 'reek'
+  gem 'rubocop'
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'

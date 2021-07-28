@@ -53,7 +53,10 @@ jobs:
           bundle install --jobs 4 --retry 3
 
       - name: Run Rubocop
-        run: bundle exec rubocop app config db lib spec
+        run: bundle exec rubocop
+
+      - name: Run Reek
+        run: bundle exec reek
 
       - name: Run Tests
         run: bundle exec rspec

@@ -1,14 +1,24 @@
 # frozen_string_literal: true
 
-require 'json'
-
 module Resolvers
   class FreaksResolver < Resolvers::Base
     type [Types::FreakType], null: false
 
-    # :reek:UtilityFunction
     def resolve
-      JSON.parse(File.read('app/graphql/resolvers/mock_data.json'))
+      [
+        {
+          id: '1',
+          name: 'Doru Pirvu',
+          photo: 'https://bit.ly/3y7afHO',
+          description: 'The boss.'
+        },
+        {
+          id: '2',
+          name: 'Alex Negru',
+          photo: 'https://bit.ly/3y7afHO',
+          description: 'Intern driver.'
+        }
+      ]
     end
   end
 end

@@ -1,3 +1,7 @@
 detectors:
   IrresponsibleModule:
     enabled: false
+
+exclude_paths:
+  - bin/bundle
+  - vendor/**/*

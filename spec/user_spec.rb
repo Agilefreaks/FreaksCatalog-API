@@ -12,11 +12,9 @@ class User
   end
 end
 
-RSpec.describe do
-  describe User do
-    it 'says hello' do
-      user = User.new('Rails')
-      expect(user.hello).to eq('Hello, Rails!')
-    end
+RSpec.describe User do
+  it 'says hello' do
+    user = described_class.new('Rails')
+    expect(user.hello).to eq('Hello, Rails!')
   end
 end

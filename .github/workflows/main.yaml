@@ -1,0 +1,62 @@
+name: CI/CD
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    container:
+      image: ruby:3.0.1
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Restore Bundle
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      - name: Restore Node modules
+        uses: actions/cache@v1
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node_modules-
+
+      - name: Install yarn
+        run: |
+          curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
+            echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
+            apt-get update && \
+            apt-get install -qq -y build-essential nodejs yarn --fix-missing --no-install-recommends && \
+            rm -rf /var/lib/apt/lists/*
+
+      - name: Install JS dependencies
+        run: yarn install
+
+      - name: Install Ruby Dependencies
+        run: |
+          gem install bundler --version 2.1.4
+          bundle config path vendor/bundle
+          bundle config --local build.sassc --disable-march-tune-native
+          bundle install --jobs 4 --retry 3
+
+      - name: Run Rubocop
+        run: bundle exec rubocop
+
+      - name: Run Reek
+        run: bundle exec reek
+
+      - name: Run Tests
+        run: bundle exec rspec

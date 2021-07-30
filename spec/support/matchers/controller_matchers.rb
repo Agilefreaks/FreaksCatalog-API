@@ -72,7 +72,7 @@ RSpec::Matchers.define :match_response_for do
   def evaluate_erb(path, context)
     html = File.read(path)
     namespace = OpenStruct.new(context)
-    ERB.new(html).result(namespace.instance_eval { binding }).html_safe
+    ERB.new(html).result(namespace.instance_eval { binding }).to_s
   end
 
   match do

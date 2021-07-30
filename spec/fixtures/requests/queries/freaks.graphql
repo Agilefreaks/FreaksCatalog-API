@@ -1,0 +1,9 @@
+query {
+    freaks {
+        id
+        description
+        level {
+            name
+        }
+    }
+}

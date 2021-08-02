@@ -11,3 +11,11 @@ AllCops:
     - vendor/**/*
     - app/controllers/graphql_controller.rb
   NewCops: enable
+
+Metrics/BlockLength:
+  Enabled: true
+  CountComments: false
+  Max: 50
+  Exclude:
+    - 'config/routes.rb'
+    - 'spec/**/*.rb'

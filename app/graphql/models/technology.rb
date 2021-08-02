@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Models
+module Types
   class Technology < Types::BaseObject
     field :id, GraphQL::Types::ID, null: false
     field :name, String, null: false

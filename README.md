@@ -38,7 +38,7 @@ docker run -p 5432:5432 --name freaks-pgsql -e POSTGRES_USER=freak -e POSTGRES_P
 * This order only needs to be placed once
 
 
-Otherwise it is enought to place the next order
+Otherwise it is enough to place the next order
 
 
 ```bash

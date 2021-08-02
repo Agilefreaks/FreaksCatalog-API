@@ -1,0 +1,2 @@
+class Freak < ApplicationRecord
+end

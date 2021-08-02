@@ -28,3 +28,19 @@ Continuously run tests & linting using:
 ```bash
 bundle exec guard
 ```
+#Database
+
+```bash
+docker run -p 5432:5432 --name freaks-pgsql -e POSTGRES_USER=freak -e POSTGRES_PASSWORD=password -e POSTGRES_DB=freakscatalog -d postgres:13.1-alpine
+```
+
+* The correct password must be entered in the password field
+* This order only needs to be placed once
+
+
+Otherwise it is enought to place the next order
+
+
+```bash
+docker start freaks-pgsql
+```

@@ -7,9 +7,9 @@ RSpec.describe GraphqlController, type: :controller do
 
   let(:params) do
     {
-      query: File.read('spec/fixtures/requests/queries/freaks.graphql')
+      mutation: File.read('spec/fixtures/requests/mutations/create_freak.graphql')
     }
   end
 
-  it { is_expected.to match_response_for(query: :freaks, sample: :default) }
+  it { is_expected.to match_response_for(mutation: :createFreak, sample: :default) }
 end

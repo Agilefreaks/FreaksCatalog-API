@@ -1,0 +1,25 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "freaks": {
+        "edges": [
+          {
+            "cursor": "MQ",
+            "node": {
+              "id": "1",
+              "name": "Doru Pirvu",
+              "description": "The boss."
+            }
+          }
+        ],
+        "pageInfo": {
+          "endCursor": "MQ",
+          "startCursor": "MQ",
+          "hasPreviousPage": false,
+          "hasNextPage": true
+        }
+      }
+    }
+  }
+}

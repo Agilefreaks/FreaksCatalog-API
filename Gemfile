@@ -31,6 +31,7 @@ gem 'pg', '~> 1.2.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'graphql', '~> 1.12'
 gem 'graphiql-rails'
 
 group :development, :test do
@@ -54,7 +55,6 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'graphql', '~> 1.12'
   gem 'guard', '~> 2.18.0'
   gem 'guard-reek', '~> 1.2'
   gem 'guard-rspec', '~> 4.7.3', require: false

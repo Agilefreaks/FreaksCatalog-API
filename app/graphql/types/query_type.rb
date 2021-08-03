@@ -6,6 +6,6 @@ module Types
     include GraphQL::Types::Relay::HasNodeField
     include GraphQL::Types::Relay::HasNodesField
 
-    field :freaks, [FreakType], null: false, resolver: Resolvers::FreaksResolver
+    field :freaks, resolver: Resolvers::FreaksResolver
   end
 end

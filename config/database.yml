@@ -1,22 +1,17 @@
 default: &default
-  adapter: postgresql
   encoding: UTF-8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   url: <%= ENV['DATABASE_URL'] %>
-  database: FreaksCatalog_API
 
 development:
   <<: *default
-  database: FreaksCatalog_API_development
 
 test:
   <<: *default
-  database: FreaksCatalog_API_test
+  url: <%= ENV['TEST_DATABASE_URL'] %>
 
 staging:
   <<: *default
-  database: FreaksCatalog_API_staging
 
 production:
   <<: *default
-  database: FreaksCatalog_API_production

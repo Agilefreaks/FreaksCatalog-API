@@ -15,6 +15,13 @@ jobs:
     container:
       image: ruby:3.0.1
 
+    services:
+      postgres:
+        image: postgres:11.5
+        ports:
+          - 5432:5432
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
     steps:
       - uses: actions/checkout@v2
 
@@ -33,6 +40,12 @@ jobs:
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-node_modules-
+
+      - name: Setup DB Connection
+        run: cp .env.ci .env
+
+      - name: Install System Dependencies
+        run: apt-get -yqq install libpq-dev
 
       - name: Install yarn
         run: |
@@ -57,6 +70,9 @@ jobs:
 
       - name: Run Reek
         run: bundle exec reek
+
+      - name: Setup DB
+        run: bin/rails db:setup
 
       - name: Run Tests
         run: bundle exec rspec

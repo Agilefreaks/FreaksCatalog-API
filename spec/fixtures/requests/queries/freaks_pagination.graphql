@@ -1,0 +1,18 @@
+query GetFreaks {
+    freaks(last: 1, before:"Mg") {
+        edges {
+            cursor
+            node {
+                id
+                name
+                description
+            }
+        }
+        pageInfo {
+            endCursor
+            startCursor
+            hasPreviousPage
+            hasNextPage
+        }
+    }
+}

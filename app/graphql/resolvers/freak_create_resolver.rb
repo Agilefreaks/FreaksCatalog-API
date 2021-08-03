@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Resolvers
-  class CreateFreakResolver < Resolvers::Base
+  class FreakCreateResolver < Resolvers::Base
     argument :name, String, required: true
     argument :description, String, required: true
     type [Types::FreakType], null: false

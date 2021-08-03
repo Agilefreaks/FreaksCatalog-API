@@ -15,7 +15,7 @@ test:
 
 staging:
   <<: *default
-    database: FreaksCatalog_API_staging
+  database: FreaksCatalog_API_staging
 
 production:
   <<: *default

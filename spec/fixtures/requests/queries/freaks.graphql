@@ -1,4 +1,4 @@
-query {
+query Freaks{
 	freaks {
 		id
 		name

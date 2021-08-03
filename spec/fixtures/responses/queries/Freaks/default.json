@@ -1,0 +1,197 @@
+{
+  "status": 200,
+  "body": {
+    "errors": [
+      {
+        "message": "Field 'id' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 3,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "id"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "id"
+        }
+      },
+      {
+        "message": "Field 'name' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 4,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "name"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "name"
+        }
+      },
+      {
+        "message": "Field 'photo' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 5,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "photo"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "photo"
+        }
+      },
+      {
+        "message": "Field 'description' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 9,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "description"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "description"
+        }
+      },
+      {
+        "message": "Field 'skills' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 10,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "skills"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "skills"
+        }
+      },
+      {
+        "message": "Field 'projects' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 14,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "projects"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "projects"
+        }
+      },
+      {
+        "message": "Field 'role' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 28,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "role"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "role"
+        }
+      },
+      {
+        "message": "Field 'level' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 32,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "level"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "level"
+        }
+      },
+      {
+        "message": "Field 'norm' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 36,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "norm"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "norm"
+        }
+      },
+      {
+        "message": "Field 'speciality' doesn't exist on type 'FreakConnection'",
+        "locations": [
+          {
+            "line": 40,
+            "column": 3
+          }
+        ],
+        "path": [
+          "query Freaks",
+          "freaks",
+          "speciality"
+        ],
+        "extensions": {
+          "code": "undefinedField",
+          "typeName": "FreakConnection",
+          "fieldName": "speciality"
+        }
+      }
+    ]
+  }
+}

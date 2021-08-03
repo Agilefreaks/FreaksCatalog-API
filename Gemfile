@@ -7,8 +7,6 @@ ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -24,11 +22,17 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+gem 'dotenv-rails', '~> 2.7.6'
+gem 'pg', '~> 1.2.3'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+
+gem 'graphiql-rails'
+gem 'graphql', '~> 1.12'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,7 +42,6 @@ end
 
 group :development do
   gem 'faker'
-  gem 'graphiql-rails'
 
   gem 'reek'
   gem 'rubocop'
@@ -52,7 +55,6 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'graphql', '~> 1.12'
   gem 'guard', '~> 2.18.0'
   gem 'guard-reek', '~> 1.2'
   gem 'guard-rspec', '~> 4.7.3', require: false
@@ -66,6 +68,7 @@ group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
+  gem 'database_cleaner-active_record'
   gem 'webdrivers'
 end
 

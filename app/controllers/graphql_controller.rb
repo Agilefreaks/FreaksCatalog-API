@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class GraphqlController < ApplicationController
   skip_before_action :verify_authenticity_token
   # If accessing from outside this domain, nullify the session

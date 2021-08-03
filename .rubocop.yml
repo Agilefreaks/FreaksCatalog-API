@@ -10,6 +10,7 @@ AllCops:
     - bin/bundle
     - vendor/**/*
     - app/controllers/graphql_controller.rb
+    - config/database.yml
   NewCops: enable
 
 Metrics/BlockLength:

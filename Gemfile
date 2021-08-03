@@ -31,6 +31,8 @@ gem 'pg', '~> 1.2.3'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'graphiql-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -39,7 +41,6 @@ end
 
 group :development do
   gem 'faker'
-  gem 'graphiql-rails'
 
   gem 'reek'
   gem 'rubocop'

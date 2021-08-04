@@ -1,5 +1,5 @@
 mutation {
-	freakCreate(name: "john", description: "ceva") {
+	createFreak(name: "john", description: "ceva") {
 		name
 		description
 	}

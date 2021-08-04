@@ -8,7 +8,7 @@ module Resolvers
 
     # :reek:UtilityFunction
     def resolve
-      JSON.parse(File.read('app/graphql/resolvers/mock_data.json'))
+      Freak.all
     end
   end
 end

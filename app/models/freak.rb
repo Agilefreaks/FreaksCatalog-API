@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Freak < ApplicationRecord
-
   def photo
     { photo: 'https://bit.ly/3y7afHO' }
   end
@@ -10,11 +9,11 @@ class Freak < ApplicationRecord
     [
       {
         id: '1',
-        'name': 'Project management'
+        name: 'Project management'
       },
       {
-        "id": "2",
-        "name": "AWS Architect"
+        id: '2',
+        name: 'AWS Architect'
       }
     ]
   end
@@ -22,15 +21,15 @@ class Freak < ApplicationRecord
   def projects
     [
       {
-        "id": "1",
-        "name": "EPIX",
-        "description": "An American premium cable and satellite TV network.",
-        "logoUrl": "https://bit.ly/3y7afHO",
-        "technologies": [
+        id: '1',
+        name: 'EPIX',
+        description: 'An American premium cable and satellite TV network.',
+        logoUrl: 'https://bit.ly/3y7afHO',
+        technologies: [
           {
-            "id": "2",
-            "name": "Ruby",
-            "description": "A popular backend language."
+            id: '2',
+            name: 'Ruby',
+            description: 'A popular backend language.'
           }
         ]
       }
@@ -39,30 +38,30 @@ class Freak < ApplicationRecord
 
   def role
     {
-      "id": "1",
-      "name": "Founder"
+      id: '1',
+      name: 'Founder'
     }
   end
 
   def level
     {
-      "id": "3",
-      "name": "Advanced"
+      id: '3',
+      name: 'Advanced'
     }
   end
 
   def norm
     {
-      "id": "1",
-      "name": "full-time"
+      id: '1',
+      name: 'full-time'
     }
   end
 
   def speciality
     [
       {
-        "id": "2",
-        "name": "Backend"
+        id: '2',
+        name: 'Backend'
       }
     ]
   end

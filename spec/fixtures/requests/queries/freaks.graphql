@@ -1,45 +1,49 @@
-query Freaks{
+query Freaks {
 	freaks {
-		id
-		name
-		photo {
-			id
-			uri
-		}
-		description
-		skills {
-			id
-			name
-		}
-		projects {
-			id
-			name
-			description
-			photo {
-				id
-				uri
-			}
-			technologies {
+		edges {
+			node {
 				id
 				name
+				photo {
+					id
+					uri
+				}
 				description
+				skills {
+					id
+					name
+				}
+				projects {
+					id
+					name
+					description
+					photo {
+						id
+						uri
+					}
+					technologies {
+						id
+						name
+						description
+					}
+				}
+				role {
+					id
+					name
+				}
+				level {
+					id
+					name
+				}
+				norm {
+					id
+					name
+				}
+				speciality {
+					id
+					name
+				}
 			}
-		}
-		role {
-			id
-			name
-		}
-		level {
-			id
-			name
-		}
-		norm {
-			id
-			name
-		}
-		speciality {
-			id
-			name
 		}
 	}
 }

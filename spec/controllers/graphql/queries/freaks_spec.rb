@@ -12,6 +12,6 @@ module Graphql
       }
     end
 
-    it { is_expected.to match_response_for(query: :Freaks, sample: :default) }
+    it { is_expected.to match_response_for(query: :Freaks, sample: :freaks) }
   end
 end

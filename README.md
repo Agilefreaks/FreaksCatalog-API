@@ -16,10 +16,17 @@ Things you may want to cover:
 * Database initialization
 
 * How to run the test suite
+```
+bundle exec rubocop
+bundle exec rspec
+```
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+Push/merge to main will run the deploy if the CI passes.
+GraphiQL can be found at [https://freaks-catalog.herokuapp.com/graphiql](https://freaks-catalog.herokuapp.com/graphiql)
+GraphQL can be found at [https://freaks-catalog.herokuapp.com/graphql](https://freaks-catalog.herokuapp.com/graphql)
 
 ## Testing
 

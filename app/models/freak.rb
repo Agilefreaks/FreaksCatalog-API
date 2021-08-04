@@ -2,11 +2,6 @@
 
 class Freak < ApplicationRecord
 
-
-  def description
-    {description: 'ceva'}
-  end
-
   def photo
     { photo: 'https://bit.ly/3y7afHO' }
   end

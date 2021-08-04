@@ -61,6 +61,8 @@ group :development do
   gem 'guard-rubocop', '~> 1.4'
   gem 'rexml', '~> 3.2.5'
   gem 'spring'
+  gem 'factory_bot_rails', '~>6.2.0'
+
 end
 
 group :test do

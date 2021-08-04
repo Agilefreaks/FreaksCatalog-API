@@ -7,7 +7,7 @@ module Graphql
     subject { post :execute, params: params, as: :json }
 
     let(:params) do
-      {git
+      {
         query: File.read('spec/fixtures/requests/mutations/freak_create.graphql')
       }
     end

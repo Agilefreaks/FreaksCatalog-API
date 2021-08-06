@@ -1,6 +1,7 @@
 mutation {
-	freakCreate(name: "john", description: "ceva") {
+	freakCreate(name: "John Doe", description: "A simple freak.", email: "freak@gmail.com") {
 		name
 		description
+		email
 	}
 }

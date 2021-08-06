@@ -3,8 +3,9 @@
   "body": {
     "data": {
       "freakCreate": {
-        "name": "john",
-        "description": "ceva"
+        "name": "John Doe",
+        "description": "A simple freak.",
+        "email": "freak@gmail.com"
       }
     }
   }

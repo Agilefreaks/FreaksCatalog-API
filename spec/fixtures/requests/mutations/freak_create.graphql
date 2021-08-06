@@ -1,6 +1,0 @@
-mutation {
-	freakCreate(name: "john", description: "ceva") {
-		name
-		description
-	}
-}

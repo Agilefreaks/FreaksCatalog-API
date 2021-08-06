@@ -8,10 +8,12 @@ module Graphql
 
     let(:params) do
       {
-        query: File.read('spec/fixtures/requests/mutations/freak_create.graphql')
+        #  query: File.read('spec/fixtures/requests/mutations/freak_create.graphql')
+        mutation: File.read('spec/fixtures/requests/mutations/freak_create.graphql')
       }
     end
 
-    it { is_expected.to match_response_for(mutation: :createFreak, sample: :create_freak) }
+    # it { is_expected.to match_response_for(mutation: :createFreak, sample: :create_freak) }
+    it { is_expected.to match_response_for(mutation: :createFreak, sample: :default) }
   end
 end

@@ -19,21 +19,7 @@ class Freak < ApplicationRecord
   end
 
   def projects
-    [
-      {
-        id: '1',
-        name: 'EPIX',
-        description: 'An American premium cable and satellite TV network.',
-        logoUrl: 'https://bit.ly/3y7afHO',
-        technologies: [
-          {
-            id: '2',
-            name: 'Ruby',
-            description: 'A popular backend language.'
-          }
-        ]
-      }
-    ]
+    JSON.parse(File.read('app/models/project_freak.json'))
   end
 
   def role

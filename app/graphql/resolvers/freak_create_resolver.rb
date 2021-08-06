@@ -4,6 +4,8 @@ module Resolvers
   class FreakCreateResolver < Resolvers::Base
     argument :name, String, required: true
     argument :description, String, required: true
+    argument :email, String, required: true
+
     type [Types::FreakType], null: false
 
     # :reek:UtilityFunction

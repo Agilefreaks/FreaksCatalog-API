@@ -6,6 +6,7 @@ module Types
     field :name, String, null: false
     field :photo, Models::Photo, null: false
     field :description, String, null: false
+    field :email, String, null: false
     field :skills, [Models::Skill], null: false
     field :projects, [Models::Project], null: false
     field :role, Models::Role, null: false

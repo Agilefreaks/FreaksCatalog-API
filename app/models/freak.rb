@@ -1,12 +1,9 @@
 # frozen_string_literal: true
 
 class Freak < ApplicationRecord
-  def photo
-    {
-      id: '1',
-      uri: 'https://bit.ly/3y7afHO'
-    }
-  end
+  has_one :photo, as: :imageable, dependent: nil
+
+  validates :name, presence: true
 
   def skills
     [

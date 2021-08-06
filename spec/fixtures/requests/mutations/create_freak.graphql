@@ -1,0 +1,6 @@
+mutation {
+	createFreak(name: "john", description: "ceva") {
+		name
+		description
+	}
+}

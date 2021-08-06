@@ -1,0 +1,30 @@
+{
+    freaks {
+        nodes{
+            id
+            name
+            description
+            projects {
+                id
+            }
+            skills {
+                id
+                name
+            }
+            role {
+                id
+            }
+            level {
+                id
+            }
+            norm {
+                id
+            }
+            speciality {
+                id
+            }
+        }
+
+
+    }
+}

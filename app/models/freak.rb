@@ -2,7 +2,10 @@
 
 class Freak < ApplicationRecord
   def photo
-    { photo: 'https://bit.ly/3y7afHO' }
+    {
+      id: "1",
+      uri: 'https://bit.ly/3y7afHO'
+    }
   end
 
   def skills

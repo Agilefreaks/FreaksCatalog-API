@@ -1,4 +1,4 @@
-query Freaks($last: Int!, $before: String!) {
+query Freaks($last: Int, $before: String) {
 	freaks(last: $last, before: $before) {
 		pageInfo {
 			endCursor
@@ -8,7 +8,6 @@ query Freaks($last: Int!, $before: String!) {
 		}
 		edges {
 			node {
-				id
 				name
 				photo {
 					id

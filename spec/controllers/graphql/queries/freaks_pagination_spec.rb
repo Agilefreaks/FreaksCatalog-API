@@ -5,7 +5,7 @@ module Graphql
   RSpec.describe GraphqlController, type: :controller do
     subject(:execute_query) { post :execute, params: params, as: :json }
 
-    before { create(:freak) }
+    before { FactoryBot.create(:freak) }
 
     let(:params) do
       {

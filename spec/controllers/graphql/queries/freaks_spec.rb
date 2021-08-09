@@ -3,7 +3,8 @@
 require 'rails_helper'
 
 module Graphql
-  RSpec.describe GraphqlController, type: :controller do    subject { post :execute, params: params, as: :json }
+  RSpec.describe GraphqlController, type: :controller do
+    subject { post :execute, params: params, as: :json }
 
     let(:params) do
       {
@@ -11,15 +12,15 @@ module Graphql
       }
     end
 
-    before :each do
+    before do
       create(:freak, name: 'Ion')
       create(:freak, name: 'Gheorghe')
     end
 
     it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
 
-    context 'pagination params are provided' do
-      before :each do
+    context 'with pagination params' do
+      before do
         params[:variables] = {
           before: 'Mg',
           last: 1

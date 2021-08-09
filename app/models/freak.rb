@@ -3,7 +3,7 @@
 class Freak < ApplicationRecord
   def photo
     {
-      id: "1",
+      id: '1',
       uri: 'https://bit.ly/3y7afHO'
     }
   end

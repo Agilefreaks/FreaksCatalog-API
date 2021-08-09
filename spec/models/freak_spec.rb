@@ -7,8 +7,7 @@ RSpec.describe Freak, type: :model do
     let(:user) { build(:freak) } # user.new({})
 
     it 'is ensures name present' do
-       build(:freak)
-
+      build(:freak)
     end
   end
 end

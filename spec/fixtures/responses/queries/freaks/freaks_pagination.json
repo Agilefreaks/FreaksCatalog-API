@@ -3,15 +3,15 @@
   "body": {
     "data": {
       "freaks": {
-        "edges": [
-
-        ],
         "pageInfo": {
           "endCursor": null,
           "startCursor": null,
           "hasPreviousPage": false,
           "hasNextPage": true
-        }
+        },
+        "edges": [
+
+        ]
       }
     }
   }

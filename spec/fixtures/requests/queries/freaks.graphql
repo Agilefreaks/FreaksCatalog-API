@@ -1,5 +1,11 @@
-query Freaks {
-	freaks {
+query Freaks($last: Int!, $before: String!) {
+	freaks(last: $last, before: $before) {
+		pageInfo {
+			endCursor
+			startCursor
+			hasPreviousPage
+			hasNextPage
+		}
 		edges {
 			node {
 				id

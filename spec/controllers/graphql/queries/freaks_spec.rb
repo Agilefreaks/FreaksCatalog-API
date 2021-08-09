@@ -12,6 +12,17 @@ module Graphql
       }
     end
 
-    it { is_expected.to match_response_for(query: :Freaks, sample: :freak_spec) }
+    it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
+
+    context 'pagination params are provided' do
+      before :each do
+        params[:variables] = {
+          before: 'Mg',
+          last: 1
+        }
+      end
+
+      it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
+    end
   end
 end

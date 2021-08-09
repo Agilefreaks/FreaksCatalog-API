@@ -12,25 +12,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_04_115545) do
-
+ActiveRecord::Schema.define(version: 20_210_804_115_545) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "freaks", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'freaks', force: :cascade do |t|
+    t.string 'name'
+    t.string 'description'
+    t.string 'email'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.string "uri"
-    t.string "imageable_type"
-    t.bigint "imageable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable"
+  create_table 'photos', force: :cascade do |t|
+    t.string 'uri'
+    t.string 'imageable_type'
+    t.bigint 'imageable_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index %w[imageable_type imageable_id], name: 'index_photos_on_imageable'
   end
 end

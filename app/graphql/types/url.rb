@@ -1,15 +1,18 @@
 # frozen_string_literal: true
-
 module Types
-  class Url < Types::BaseScalar
-    description 'A valid URL, transported as a string'
+  class Types::Url < Types::BaseScalar
+    description "A valid URL, transported as a string"
 
-    def self.coerce_input(input_value, _context)
+    def self.coerce_input(input_value, context)
       url = URI.parse(input_value)
-      return if url.is_a?(URI::HTTP) || url.is_a?(URI::HTTPS)
+      if url.is_a?(URI::HTTP) || url.is_a?(URI::HTTPS)
+        url
+      else
+        raise GraphQL::CoercionError, "#{input_value.inspect} is not a valid URL"
+      end
     end
 
-    def self.coerce_result(ruby_value, _context)
+    def self.coerce_result(ruby_value, context)
       ruby_value.to_s
     end
   end

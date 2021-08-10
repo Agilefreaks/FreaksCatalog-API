@@ -3,20 +3,25 @@
   "body": {
     "data": {
       "freaks": {
+        "pageInfo": {
+          "endCursor": "Mg",
+          "startCursor": "MQ",
+          "hasPreviousPage": false,
+          "hasNextPage": false
+        },
         "edges": [
           {
             "node": {
-              "id": "1",
-              "name": "Doru Pirvu",
+              "name": "Ion",
               "photo": {
                 "id": "1",
                 "uri": "https://bit.ly/3y7afHO"
               },
-              "description": "The boss.",
+              "description": "description ",
               "skills": [
                 {
                   "id": "1",
-                  "name": "Project manangement"
+                  "name": "Project management"
                 },
                 {
                   "id": "2",
@@ -30,7 +35,7 @@
                   "description": "An American premium cable and satellite TV network.",
                   "photo": {
                     "id": "1",
-                    "uri": "https: //bit.ly/3y7afHO"
+                    "uri": "https://bit.ly/3rB9Yu9"
                   },
                   "technologies": [
                     {
@@ -63,21 +68,20 @@
           },
           {
             "node": {
-              "id": "2",
-              "name": "Alex Negru",
+              "name": "Gheorghe",
               "photo": {
                 "id": "1",
                 "uri": "https://bit.ly/3y7afHO"
               },
-              "description": "Intern driver.",
+              "description": "description ",
               "skills": [
                 {
                   "id": "1",
-                  "name": "Backend developer"
+                  "name": "Project management"
                 },
                 {
                   "id": "2",
-                  "name": "driver"
+                  "name": "AWS Architect"
                 }
               ],
               "projects": [
@@ -100,7 +104,7 @@
               ],
               "role": {
                 "id": "1",
-                "name": "Software developer"
+                "name": "Founder"
               },
               "level": {
                 "id": "3",

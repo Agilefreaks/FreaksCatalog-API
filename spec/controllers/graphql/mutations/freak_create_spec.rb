@@ -12,6 +12,6 @@ module Graphql
       }
     end
 
-    it { is_expected.to match_response_for(mutation: :createFreak, sample: :create_freak) }
+    it { is_expected.to match_response_for(mutation: :freak_create, sample: :default) }
   end
 end

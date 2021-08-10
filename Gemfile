@@ -43,8 +43,6 @@ group :development, :test do
 end
 
 group :development do
-  # gem 'faker'
-
   gem 'reek'
   gem 'rubocop'
   gem 'rubocop-rails', require: false

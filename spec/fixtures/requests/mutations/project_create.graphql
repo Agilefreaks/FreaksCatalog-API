@@ -1,0 +1,6 @@
+mutation {
+    projectCreate(name: "EPIX", description: "An American premium cable and satellite TV network.") {
+        name
+        description
+    }
+}

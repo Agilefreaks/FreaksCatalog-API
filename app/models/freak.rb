@@ -4,6 +4,8 @@ class Freak < ApplicationRecord
   has_one :photo, as: :imageable, dependent: nil
 
   validates :name, presence: true
+  validates :description, presence: true
+  validates :email, presence: true
 
   def skills
     [

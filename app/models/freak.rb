@@ -2,6 +2,7 @@
 
 class Freak < ApplicationRecord
   has_one :photo, as: :imageable, dependent: nil
+  has_many :projects, as: :proj, dependent: nil
 
   validates :name, presence: true
   validates :description, presence: true

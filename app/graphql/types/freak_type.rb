@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Types
-  class FreakType < Types::BaseObject
+  class FreakType < BaseObject
     field :id, GraphQL::Types::ID, null: false
     field :name, String, null: false
     field :photo, Models::Photo, null: false

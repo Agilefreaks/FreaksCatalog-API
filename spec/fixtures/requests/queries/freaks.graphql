@@ -1,0 +1,54 @@
+query Freaks($last: Int, $before: String) {
+	freaks(last: $last, before: $before) {
+		pageInfo {
+			endCursor
+			startCursor
+			hasPreviousPage
+			hasNextPage
+		}
+		edges {
+			node {
+				name
+				photo {
+					id
+					uri
+				}
+				description
+				skills {
+					id
+					name
+				}
+				projects {
+					id
+					name
+					description
+					photo {
+						id
+						uri
+					}
+					technologies {
+						id
+						name
+						description
+					}
+				}
+				role {
+					id
+					name
+				}
+				level {
+					id
+					name
+				}
+				norm {
+					id
+					name
+				}
+				speciality {
+					id
+					name
+				}
+			}
+		}
+	}
+}

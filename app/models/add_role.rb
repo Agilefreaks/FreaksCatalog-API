@@ -1,0 +1,2 @@
+class AddRole < ApplicationRecord
+end

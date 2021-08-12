@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 20_210_802_074_146) do
   enable_extension 'plpgsql'
 
   create_table 'freaks', force: :cascade do |t|
-    t.string 'name'
+    t.string 'first_name'
+    t.string 'last_name'
     t.string 'description'
-    t.date 'photo'
+    t.string 'email'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
   end

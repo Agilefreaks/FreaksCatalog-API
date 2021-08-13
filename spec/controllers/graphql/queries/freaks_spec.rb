@@ -11,6 +11,13 @@ module Graphql
         query: File.read('spec/fixtures/requests/queries/freaks.graphql')
       }
     end
+    before do
+      role = create(:role, name: 'Software developer')
+      create(:freak, role_id: role.id)
+    end
+
+    it 'returns a Software developer freak' do
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
 
     before do
       create(:freak, :with_project)

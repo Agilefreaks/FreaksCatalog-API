@@ -14,7 +14,7 @@ mutation {
         norm {
             name
         }
-		role{
+		role {
 			name
 		}
 	}

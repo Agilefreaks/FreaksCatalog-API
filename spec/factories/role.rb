@@ -1,13 +1,13 @@
 FactoryBot.define do
   factory :role, class: 'Role' do
-    name { 'Founder' }
+    name { 'Software developer' }
 
     trait :Founder do
-      name { 'Founder' }
+      name { 'Software developer' }
     end
 
     trait :software_developer do
-      name { 'Software developer' }
+      name { 'Founder' }
     end
   end
 end

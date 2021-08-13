@@ -4,7 +4,8 @@ mutation {
         lastName: "doe",
         description: "ceva",
         email: "freak@gmail.com",
-        normId: 1
+        normId: 1,
+		roleId: 1
     ) {
 		firstName
 		lastName
@@ -13,6 +14,8 @@ mutation {
         norm {
             name
         }
+		role{
+			name
+		}
 	}
 }
-

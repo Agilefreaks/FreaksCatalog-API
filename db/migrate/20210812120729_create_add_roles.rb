@@ -1,11 +1,14 @@
 class CreateAddRoles < ActiveRecord::Migration[6.1]
-  def change
-    create_table :add_roles do |t|
+  def up
+    create_table :roles do |t|
       t.string :name
-      t.string :id
 
       t.timestamps
     end
-    add_index :add_roles, :id
+    add_column :freaks, :role_id, :bigint
+    add_foreign_key :freaks, :roles
+
+    #add_index :roles, :id
+
   end
 end

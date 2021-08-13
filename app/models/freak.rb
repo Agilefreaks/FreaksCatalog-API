@@ -17,6 +17,7 @@ class Freak < ApplicationRecord
   validates :email, presence: true
   validates :norm_id, presence: true
 
+  has_one :role
   def name
     "#{first_name} #{last_name}"
   end
@@ -34,11 +35,8 @@ class Freak < ApplicationRecord
     ]
   end
 
-  def role
-    {
-      id: '1',
-      name: 'Founder'
-    }
+  def projects
+    JSON.parse(File.read('app/models/project_freak.json'))
   end
 
   def level

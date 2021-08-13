@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Role, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe '#name' do
+    subject(:name) { described_class.create(name: 'Software developer').name }
+
+    it { is_expected.to eq 'Software developer' }
+  end
 end

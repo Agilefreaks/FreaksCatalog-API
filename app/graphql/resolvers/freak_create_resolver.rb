@@ -7,14 +7,17 @@ module Resolvers
     argument :description, String, required: true
     argument :email, String, required: true
     argument :norm_id, GraphQL::Types::ID, required: true
+    argument :role, String,required: true
 
     type [Types::FreakType], null: false
 
     # TODO: Test if norm_id exist
     def resolve(params)
       norm = Norm.find(params[:norm_id])
-
       Freak.create(params.merge(norm: norm))
+
+      role= Role.find_by(name:params[:role])
+      Freak.create(params.merge(role:role))
     end
   end
 end

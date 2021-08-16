@@ -6,6 +6,10 @@ class Freak < ApplicationRecord
   validates :description, presence: true
   validates :email, presence: true
 
+  def name
+    "#{first_name} #{last_name}"
+  end
+
   def photo
     {
       id: '1',

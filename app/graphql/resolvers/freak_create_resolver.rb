@@ -6,12 +6,15 @@ module Resolvers
     argument :last_name, String, required: true
     argument :description, String, required: true
     argument :email, String, required: true
+    argument :norm_id, Integer, required: true
 
     type [Types::FreakType], null: false
 
     # :reek:UtilityFunction
     def resolve(params)
-      Freak.create(params)
+      norm = Norm.find(params[:norm_id])
+
+      Freak.create(params.merge(norm: norm))
     end
   end
 end

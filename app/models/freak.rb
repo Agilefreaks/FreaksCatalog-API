@@ -13,6 +13,7 @@ class Freak < ApplicationRecord
   validates :last_name, presence: true
   validates :description, presence: true
   validates :email, presence: true
+  belongs_to :norm
 
   def name
     "#{first_name} #{last_name}"
@@ -42,13 +43,6 @@ class Freak < ApplicationRecord
     {
       id: '3',
       name: 'Advanced'
-    }
-  end
-
-  def norm
-    {
-      id: '1',
-      name: 'full-time'
     }
   end
 

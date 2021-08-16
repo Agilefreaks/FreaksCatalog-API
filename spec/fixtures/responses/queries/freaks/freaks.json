@@ -19,7 +19,7 @@
               "email": "freak@gmail.com",
               "photo": {
                 "id": "1",
-                "uri": "https://bit.ly/3y7afHO"
+                "uri": "http://www.something.ro"
               },
               "skills": [
                 {
@@ -97,8 +97,8 @@
               "description": "a simple freak",
               "email": "freak@gmail.com",
               "photo": {
-                "id": "1",
-                "uri": "https://bit.ly/3y7afHO"
+                "id": "2",
+                "uri": "http://www.something.ro"
               },
               "skills": [
                 {

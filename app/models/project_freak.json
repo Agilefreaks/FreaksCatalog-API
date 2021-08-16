@@ -3,10 +3,20 @@
     "id": "1",
     "name": "EPIX",
     "description": "An American premium cable and satellite TV network.",
-    "photo": {
+    "logoUrl": {
       "id": "1",
       "uri": "https://bit.ly/3rB9Yu9"
     },
+    "freaks": [
+      {
+        "id": "1",
+        "first_name": "Ion"
+      },
+      {
+        "id": "1",
+        "first_name": "Gheorghe"
+      }
+    ],
     "technologies": [
       {
         "id": "2",

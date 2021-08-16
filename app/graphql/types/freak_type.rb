@@ -3,14 +3,18 @@
 module Types
   class FreakType < Types::BaseObject
     field :id, GraphQL::Types::ID, null: false
-    field :name, String, null: false
-    field :photo, Models::Photo, null: false
+    field :name, String, null: false, deprecation_reason: 'Replaced by first_name and last_name'
+    field :first_name, String, null: false
+    field :last_name, String, null: false
     field :description, String, null: false
-    field :skills, [Models::Skill], null: false
-    field :projects, [Models::Project], null: false
-    field :role, Models::Role, null: false
-    field :level, Models::Level, null: false
-    field :norm, Models::Norm, null: false
-    field :speciality, [Models::Speciality], null: false
+    field :email, String, null: false
+    field :photo, PhotoType, null: false
+    field :skills, [SkillType], null: false
+    field :projects, [ProjectType], null: false
+    field :role, RoleType, null: false
+    field :level, LevelType, null: false
+    field :norm, NormType, null: false
+    field :specialities, [SpecialityType], null: false
+    field :technologies, [TechnologyType], null: false
   end
 end

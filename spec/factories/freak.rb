@@ -2,7 +2,9 @@
 
 FactoryBot.define do
   factory :freak, class: 'Freak' do
-    name { 'name' }
-    description { 'description ' }
+    first_name { 'john' }
+    last_name { 'doe' }
+    description { 'a simple freak' }
+    email { 'freak@gmail.com' }
   end
 end

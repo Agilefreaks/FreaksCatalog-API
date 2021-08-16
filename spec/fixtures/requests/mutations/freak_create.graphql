@@ -1,6 +1,8 @@
 mutation {
-	createFreak(name: "john", description: "ceva") {
-		name
+	freakCreate(firstName: "john", lastName: "doe", description: "ceva", email: "freak@gmail.com") {
+		firstName
+		lastName
 		description
+		email
 	}
 }

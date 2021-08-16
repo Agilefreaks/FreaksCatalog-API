@@ -12,12 +12,14 @@
         "edges": [
           {
             "node": {
-              "name": "Ion",
+              "firstName": "Ion",
+              "lastName": "doe",
+              "description": "a simple freak",
+              "email": "freak@gmail.com",
               "photo": {
                 "id": "1",
                 "uri": "https://bit.ly/3y7afHO"
               },
-              "description": "description ",
               "skills": [
                 {
                   "id": "1",
@@ -33,10 +35,20 @@
                   "id": "1",
                   "name": "EPIX",
                   "description": "An American premium cable and satellite TV network.",
-                  "photo": {
+                  "logoUrl": {
                     "id": "1",
                     "uri": "https://bit.ly/3rB9Yu9"
                   },
+                  "freaks": [
+                    {
+                      "id": "1",
+                      "firstName": "Ion"
+                    },
+                    {
+                      "id": "1",
+                      "firstName": "Gheorghe"
+                    }
+                  ],
                   "technologies": [
                     {
                       "id": "2",
@@ -58,10 +70,20 @@
                 "id": "1",
                 "name": "full-time"
               },
-              "speciality": [
+              "specialities": [
                 {
                   "id": "2",
                   "name": "Backend"
+                }
+              ],
+              "technologies": [
+                {
+                  "id": "1",
+                  "name": "GraphQl"
+                },
+                {
+                  "id": "2",
+                  "name": "Ruby"
                 }
               ]
             }

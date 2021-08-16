@@ -1,0 +1,13 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "freakCreate": {
+        "firstName": "john",
+        "lastName": "doe",
+        "description": "ceva",
+        "email": "freak@gmail.com"
+      }
+    }
+  }
+}

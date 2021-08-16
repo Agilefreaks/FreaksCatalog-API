@@ -1,6 +1,11 @@
 # frozen_string_literal: true
 
 class Freak < ApplicationRecord
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :description, presence: true
+  validates :email, presence: true
+
   def photo
     {
       id: '1',
@@ -46,12 +51,16 @@ class Freak < ApplicationRecord
     }
   end
 
-  def speciality
+  def specialities
     [
       {
         id: '2',
         name: 'Backend'
       }
     ]
+  end
+
+  def technologies
+    JSON.parse(File.read('app/models/technologies.json'))
   end
 end

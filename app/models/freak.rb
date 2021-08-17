@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# frozen_string_literal: true
+
 class Freak < ApplicationRecord
   has_one :photo, as: :imageable, dependent: nil
 

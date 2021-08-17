@@ -3,7 +3,7 @@
 module Types
   class FreakType < Types::BaseObject
     field :id, GraphQL::Types::ID, null: false
-    field :name, String, null: false, deprecation_reason: 'Replaced by first_name and last_name'
+    field :name, String, null: false, deprecation_reason: 'Replaced by firstName and lastName'
     field :first_name, String, null: false
     field :last_name, String, null: false
     field :description, String, null: false

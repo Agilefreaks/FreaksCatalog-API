@@ -11,7 +11,7 @@ class Freak < ApplicationRecord
   has_many :freaks_technologies, dependent: nil, class_name: 'FreakTechnology'
   has_many :technologies, through: :freaks_technologies
 
-  belongs_to :norm
+
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -19,7 +19,8 @@ class Freak < ApplicationRecord
   validates :email, presence: true
   validates :norm_id, presence: true
 
-  has_one :role
+  belongs_to :role
+  belongs_to :norm
   def name
     "#{first_name} #{last_name}"
   end

@@ -13,11 +13,8 @@ module Graphql
     end
 
     before do
-      ion = create(:freak, first_name: 'Ion')
-      create(:photo, imageable: ion)
-
-      gheorghe = create(:freak, first_name: 'Gheorghe')
-      create(:photo, imageable: gheorghe)
+      create(:freak, :with_photo, first_name: 'Ion')
+      create(:freak, :with_photo, first_name: 'Gheorghe')
     end
 
     it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }

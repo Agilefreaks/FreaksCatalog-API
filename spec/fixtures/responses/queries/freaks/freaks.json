@@ -12,6 +12,7 @@
         "edges": [
           {
             "node": {
+              "name": "Ion doe",
               "firstName": "Ion",
               "lastName": "doe",
               "description": "a simple freak",
@@ -90,6 +91,7 @@
           },
           {
             "node": {
+              "name": "Gheorghe doe",
               "firstName": "Gheorghe",
               "lastName": "doe",
               "description": "a simple freak",

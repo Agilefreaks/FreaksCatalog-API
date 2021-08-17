@@ -30,4 +30,12 @@ module Graphql
       it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
     end
   end
+
+  RSpec.describe Freak, type: :model do
+    describe '#name' do
+      subject(:name) { described_class.create(first_name: 'John', last_name: 'Doe').name }
+
+      it { is_expected.to eq 'John Doe' }
+    end
+  end
 end

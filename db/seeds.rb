@@ -36,3 +36,7 @@ class Seeds
 end
 
 Seeds.run unless Rails.env.test?
+
+    Norm.create(name: "full_time")
+    Norm.create(name: "part_time")
+

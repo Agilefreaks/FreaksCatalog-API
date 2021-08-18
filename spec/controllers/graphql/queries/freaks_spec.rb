@@ -4,7 +4,7 @@ require 'rails_helper'
 
 module Graphql
   RSpec.describe GraphqlController, type: :controller do
-    subject { post :execute, params: params, as: :json }
+    subject(:query_freak) { post :execute, params: params, as: :json }
 
     let(:params) do
       {
@@ -15,8 +15,8 @@ module Graphql
       role = create(:role, name: 'Software developer')
       create(:freak, role_id: role.id)
     end
-
-    it 'returns a Software developer freak' do
+    it 'return a freak role' do
+      query_freak
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
     before do
@@ -35,5 +35,11 @@ module Graphql
 
       it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
     end
-  end
+    end
+    it 'return a freak role' do
+      query_freak
+      parsed_response = JSON.parse(response.body, symbolize_names: true)
+      expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Software developer'
+    end
+    end
 end

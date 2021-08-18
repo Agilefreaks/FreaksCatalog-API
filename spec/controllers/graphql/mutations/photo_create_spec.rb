@@ -15,4 +15,3 @@ module Graphql
     it { is_expected.to match_response_for(mutation: :photo_create, sample: :photoCreate) }
   end
 end
-

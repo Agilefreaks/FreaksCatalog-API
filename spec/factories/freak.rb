@@ -6,5 +6,9 @@ FactoryBot.define do
     last_name { 'doe' }
     description { 'a simple freak' }
     email { 'freak@gmail.com' }
+
+    after(:build) do |freak|
+      freak.photo = build(:photo, imageable: freak)
+    end
   end
 end

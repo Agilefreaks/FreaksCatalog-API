@@ -12,7 +12,7 @@ module Graphql
       }
     end
 
-    context 'when norm exists' do
+    context 'when norm and role exists' do
       before do
         create(:freak, :with_project)
       end

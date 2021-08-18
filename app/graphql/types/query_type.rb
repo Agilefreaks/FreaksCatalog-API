@@ -10,5 +10,7 @@ module Types
     field :norms, resolver: Resolvers::NormsResolver
     field :technologies, resolver: Resolvers::TechnologiesResolver
     field :projects, resolver: Resolvers::ProjectsResolver
+    field :roles, resolver: Resolvers::RolesResolver
+
   end
 end

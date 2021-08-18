@@ -7,7 +7,7 @@ module Resolvers
     argument :description, String, required: true
     argument :email, String, required: true
     argument :norm_id, GraphQL::Types::ID, required: true
-    argument :role, String,required: true
+    argument :role_id, Integer, required: true
 
     type [Types::FreakType], null: false
 

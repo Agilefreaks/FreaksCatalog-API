@@ -60,7 +60,7 @@
                 "id": "1",
                 "name": "full-time"
               },
-              "specialities": [
+              "specialties": [
                 {
                   "id": "2",
                   "name": "Backend"
@@ -128,7 +128,7 @@
                 "id": "1",
                 "name": "full-time"
               },
-              "specialities": [
+              "specialties": [
                 {
                   "id": "2",
                   "name": "Backend"

@@ -55,7 +55,7 @@ class Freak < ApplicationRecord
     }
   end
 
-  def specialities
+  def specialties
     [
       {
         id: '2',

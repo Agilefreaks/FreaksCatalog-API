@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateAddRoles < ActiveRecord::Migration[6.1]
   def up
     create_table :roles do |t|
@@ -8,7 +10,6 @@ class CreateAddRoles < ActiveRecord::Migration[6.1]
     add_column :freaks, :role_id, :bigint
     add_foreign_key :freaks, :roles
 
-    #add_index :roles, :id
-
+    # add_index :roles, :id
   end
 end

@@ -1,12 +1,12 @@
 mutation {
 	freakCreate(
-        firstName: "john",
-        lastName: "doe",
-        description: "ceva",
-        email: "freak@gmail.com",
-        normId: 1,
-		roleId: 1
-    ) {
+		firstName: "john",
+		lastName: "doe",
+		description: "ceva",
+		email: "freak@gmail.com",
+		roleId: 1,
+		normId: 1
+	) {
 		firstName
 		lastName
 		description

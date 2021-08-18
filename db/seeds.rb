@@ -21,6 +21,7 @@ class Seeds
 
       full_time = Norm.find_or_create_by!(name: "Full time")
       part_time = Norm.find_or_create_by!(name: "Part time")
+      founder= Role.create(name: 'Founder')
 
       rails.logoUrl = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
 
@@ -33,10 +34,10 @@ class Seeds
         freak.technologies << ruby
         freak.projects << rails
         freak.norm = full_time
+        freak.role =founder
       end
     end
   end
 end
 
 Seeds.run unless Rails.env.test?
-

@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# frozen_string_literal: truex``
-
 FactoryBot.define do
   factory :freak, class: 'Freak' do
     first_name { 'john' }
@@ -9,8 +7,8 @@ FactoryBot.define do
     description { 'a simple freak' }
     email { 'freak@gmail.com' }
 
-    trait :with_photo do
-      association :photo
+    after(:build) do |freak|
+      freak.photo = build(:photo, imageable: freak)
     end
   end
 end

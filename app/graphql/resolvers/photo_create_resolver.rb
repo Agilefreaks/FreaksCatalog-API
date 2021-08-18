@@ -2,7 +2,7 @@
 
 module Resolvers
   class PhotoCreateResolver < Resolvers::Base
-    argument :imageable_id, Integer, required: true
+    argument :imageable_id, GraphQL::Types::ID, required: true
     argument :imageable_type, String, required: true
     argument :uri, Types::Url, required: true
 

@@ -14,7 +14,7 @@ module Types
     field :role, RoleType, null: false
     field :level, LevelType, null: false
     field :norm, NormType, null: false
-    field :specialities, [SpecialityType], null: false
+    field :specialties, [SpecialtyType], null: false
     field :technologies, [TechnologyType], null: false
   end
 end

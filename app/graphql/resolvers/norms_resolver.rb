@@ -4,7 +4,7 @@ require 'json'
 
 module Resolvers
   class NormsResolver < Resolvers::Base
-    type Types::FreakType.connection_type, null: false
+    type Types::NormType.connection_type, null: false
 
     # :reek:UtilityFunction
     def resolve

@@ -37,7 +37,7 @@ end
 
 Seeds.run unless Rails.env.test?
 
-if Norm.count == 0
+if Norm.count.zero?
   Norm.create(name: 'full_time')
   Norm.create(name: 'part_time')
 end

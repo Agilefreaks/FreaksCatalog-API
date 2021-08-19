@@ -43,5 +43,4 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-Guardfile
 schema.graphql

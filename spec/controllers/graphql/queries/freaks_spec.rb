@@ -13,8 +13,7 @@ module Graphql
     end
 
     before do
-      role = create(:role, name: 'Software developer')
-      create(:freak, role_id: role.id)
+      create(:freak)
     end
 
     it 'return a freak role' do

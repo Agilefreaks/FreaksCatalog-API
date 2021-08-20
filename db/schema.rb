@@ -20,10 +20,16 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.string 'description'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
-    t.bigint 'norm_id'
     t.string 'first_name'
     t.string 'last_name'
     t.string 'email'
+    t.bigint 'norm_id'
+  end
+
+  create_table 'norms', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
   create_table 'freaks_projects', force: :cascade do |t|
@@ -81,7 +87,7 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
   add_foreign_key 'projects_technologies', 'projects'
   add_foreign_key 'projects_technologies', 'technologies'
 
-  create_table 'norms', force: :cascade do |t|
+  create_table 'specialties', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false

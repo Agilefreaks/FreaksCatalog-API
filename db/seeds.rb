@@ -8,6 +8,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+['Full time', 'Part time'].each do |norm_name|
+  Norm.find_or_create_by(name: norm_name)
+
 class Seeds
   class << self
     def run
@@ -36,6 +39,3 @@ end
 
 Seeds.run unless Rails.env.test?
 
-def add_norm_seeds_data
-  %w[full_time ,part_time].each { |norm| Norm.create(norm) }
-end

@@ -2,7 +2,8 @@
 
 class Freak < ApplicationRecord
   has_one :photo, as: :imageable, dependent: nil
-  has_many :technologies, dependent: nil
+  has_many :freak_technologies, dependent: nil
+  has_many :technologies, through: :freak_technologies
 
   has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'
   has_many :projects, through: :freaks_projects, dependent: nil

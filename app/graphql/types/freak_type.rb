@@ -8,7 +8,7 @@ module Types
     field :last_name, String, null: false
     field :description, String, null: false
     field :email, String, null: false
-    field :photo, PhotoType, null: false
+    field :photo, PhotoType, null: true
     field :skills, [SkillType], null: false
     field :projects, [ProjectType], null: false
     field :role, RoleType, null: false

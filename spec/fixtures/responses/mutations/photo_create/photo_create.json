@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "photoCreate": {
+        "imageableType": "Freak",
+        "imageableId": "1",
+        "uri": "https://www.gravatar.com/avatar/00000000000000000000000000000000"
+      }
+    }
+  }
+}

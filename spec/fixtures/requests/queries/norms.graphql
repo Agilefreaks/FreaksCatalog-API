@@ -1,0 +1,8 @@
+query{
+    norms{
+        nodes{
+            id
+            name
+        }
+    }
+}

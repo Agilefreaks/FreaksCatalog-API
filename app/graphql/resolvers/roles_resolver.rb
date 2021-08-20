@@ -4,7 +4,7 @@ require 'json'
 
 module Resolvers
   class RolesResolver < Resolvers::Base
-    type Types::RoleType, null: false
+    type Types::RoleType.connection_type, null: false
 
     def resolve
       Role.all

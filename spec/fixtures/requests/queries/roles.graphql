@@ -1,0 +1,8 @@
+query{
+    roles{
+        nodes{
+            id
+            name
+        }
+    }
+}

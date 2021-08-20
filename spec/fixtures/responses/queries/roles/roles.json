@@ -1,0 +1,24 @@
+{
+  "data": {
+    "roles": {
+      "nodes": [
+        {
+          "id": "1",
+          "name": "Founder"
+        },
+        {
+          "id": "2",
+          "name": "IT Sibiu"
+        },
+        {
+          "id": "3",
+          "name": "IT Cluj"
+        },
+        {
+          "id": "4",
+          "name": "Team Assistant"
+        }
+      ]
+    }
+  }
+}

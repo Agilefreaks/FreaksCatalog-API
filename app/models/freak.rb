@@ -2,7 +2,8 @@
 
 class Freak < ApplicationRecord
   has_one :photo, as: :imageable, dependent: nil
-  has_many :technologies, dependent: nil
+  has_many :freak_technologies, dependent: nil
+  has_many :technologies, through: :freak_technologies
 
   validates :first_name, presence: true
   validates :last_name, presence: true

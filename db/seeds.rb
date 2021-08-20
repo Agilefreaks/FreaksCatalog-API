@@ -7,3 +7,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+Technology.create(name: 'Java', description: 'Java is a popular language')
+technology = Technology.create(name: 'Ruby', description: 'Ruby is a popular language')
+
+Freak.create(
+  first_name: 'John',
+  last_name: 'Doe',
+  email: 'freak@gmail.com',
+  description: 'A freak',
+  technologies: [technology]
+)

@@ -35,13 +35,6 @@ class Freak < ApplicationRecord
     ]
   end
 
-  def level
-    {
-      id: '3',
-      name: 'Advanced'
-    }
-  end
-
   def specialties
     [
       {

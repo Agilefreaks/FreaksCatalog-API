@@ -15,6 +15,7 @@ class Freak < ApplicationRecord
   validates :role_id, presence: true
   validates :norm_id, presence: true
 
+  belongs_to :level
   belongs_to :role
   belongs_to :norm
 

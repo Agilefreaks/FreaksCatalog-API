@@ -12,11 +12,13 @@ module Graphql
         query: File.read('spec/fixtures/requests/mutations/freak_create.graphql'),
         variables: {
           norm_id: norm.id,
-          role_id: role.id
+          role_id: role.id,
+        level_id: level.id
         }
       }
     end
     let(:role) { create(:role) }
+    let(:level){create(:level)}
 
     it { is_expected.to match_response_for(mutation: :freak_create, sample: :freak_create) }
   end

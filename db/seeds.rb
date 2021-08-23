@@ -12,16 +12,17 @@
 class Seeds
   class << self
     def run
-      Technology.create(name: 'Java', description: 'Java is a popular language')
-      technology = Technology.create(name: 'Ruby', description: 'Ruby is a popular language')
+      Technology.find_or_create_by!(name: 'Java', description: 'Java is a popular language')
+      ruby = Technology.find_or_create_by!(name: 'Ruby', description: 'Ruby is a popular language')
 
-      Freak.create(
+      Freak.find_or_create_by!(
         first_name: 'John',
         last_name: 'Doe',
         email: 'freak@gmail.com',
-        description: 'A freak',
-        technologies: [technology]
-      )
+        description: 'A freak'
+      ) do |freak|
+        freak.technologies << ruby
+      end
     end
   end
 end

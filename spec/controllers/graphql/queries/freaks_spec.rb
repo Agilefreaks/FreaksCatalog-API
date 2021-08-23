@@ -16,6 +16,12 @@ module Graphql
       create(:freak)
     end
 
+    context 'with software developer' do
+      it 'return a freak role' do
+        query_freak
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+        expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Software developer'
+      end
     it 'return a freak role' do
       query_freak
       parsed_response = JSON.parse(response.body, symbolize_names: true)
@@ -42,5 +48,16 @@ module Graphql
       parsed_response = JSON.parse(response.body, symbolize_names: true)
       expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Software developer'
     end
+
+    context 'with pagination params' do
+      before do
+        params[:variables] = {
+          before: 'Mg',
+          last: 1
+        }
+      end
+
+      it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
     end
+  end
 end

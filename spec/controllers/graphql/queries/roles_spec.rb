@@ -11,6 +11,9 @@ module Graphql
         query: File.read('spec/fixtures/requests/queries/roles.graphql')
       }
     end
+    before do
+      create(:role, id: 1, name: 'Founder')
+    end
 
     it { is_expected.to match_response_for(query: :roles, sample: :default) }
   end

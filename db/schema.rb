@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,34 +12,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_820_054_103) do
+ActiveRecord::Schema.define(version: 2021_08_20_054103) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "freaks", force: :cascade do |t|
-    t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.bigint "norm_id"
-    t.bigint "role_id"
-  end
-
-  create_table "norms", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.string "uri"
-    t.string "imageable_type"
-    t.bigint "imageable_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable"
+  create_table 'freaks', force: :cascade do |t|
+    t.string 'description'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'role_id'
+    t.string 'first_name'
+    t.string 'last_name'
+    t.string 'email'
   end
 
   create_table 'freaks_projects', force: :cascade do |t|
@@ -65,10 +52,13 @@ ActiveRecord::Schema.define(version: 20_210_820_054_103) do
     t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'photos', force: :cascade do |t|
+    t.string 'uri'
+    t.string 'imageable_type'
+    t.bigint 'imageable_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index %w[imageable_type imageable_id], name: 'index_photos_on_imageable'
   end
 
   create_table 'projects', force: :cascade do |t|
@@ -94,17 +84,16 @@ ActiveRecord::Schema.define(version: 20_210_820_054_103) do
     t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "specialties", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'roles', force: :cascade do |t|
+    t.string 'name'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
   add_foreign_key 'freaks_technologies', 'freaks'
   add_foreign_key 'freaks_technologies', 'technologies'
   add_foreign_key 'projects_technologies', 'projects'
   add_foreign_key 'projects_technologies', 'technologies'
+  add_foreign_key 'freaks', 'norms'
   add_foreign_key 'freaks', 'roles'
-  add_foreign_key "freaks", "norms"
-  add_foreign_key "freaks", "roles"
 end

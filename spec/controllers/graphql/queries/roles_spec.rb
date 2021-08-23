@@ -11,6 +11,7 @@ module Graphql
         query: File.read('spec/fixtures/requests/queries/roles.graphql')
       }
     end
+
     before do
       create(:role, id: 1, name: 'Founder')
     end

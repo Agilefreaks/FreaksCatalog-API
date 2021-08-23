@@ -16,11 +16,11 @@ module Graphql
       create(:freak)
     end
 
-    context 'with software developer' do
+    context 'with freak role' do
       it 'return a freak role' do
         query_freak
         parsed_response = JSON.parse(response.body, symbolize_names: true)
-        expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Software developer'
+        expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Founder'
       end
     it 'return a freak role' do
       query_freak

@@ -12,8 +12,8 @@
         "edges": [
           {
             "node": {
-              "name": "Ion doe",
-              "firstName": "Ion",
+              "name": "john doe",
+              "firstName": "john",
               "lastName": "doe",
               "description": "a simple freak",
               "email": "freak@gmail.com",
@@ -63,8 +63,8 @@
                 "name": "Advanced"
               },
               "norm": {
-                "id": "1",
-                "name": "full-time"
+                "id": "3",
+                "name": "full_time"
               },
               "specialties": [
                 {

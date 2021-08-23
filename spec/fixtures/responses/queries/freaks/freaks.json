@@ -12,8 +12,8 @@
         "edges": [
           {
             "node": {
-              "name": "Ion doe",
-              "firstName": "Ion",
+              "name": "john doe",
+              "firstName": "john",
               "lastName": "doe",
               "description": "a simple freak",
               "email": "freak@gmail.com",
@@ -197,13 +197,6 @@
               ],
               "role": {
                 "id": "1",
-                "name": "Founder"
-              },
-              "level": {
-                "id": "3",
-                "name": "Advanced"
-              },
-              "norm": {
                 "name": "full_time"
               },
               "specialties": [

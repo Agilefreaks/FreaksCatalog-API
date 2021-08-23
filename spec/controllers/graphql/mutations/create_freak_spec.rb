@@ -17,7 +17,7 @@ module Graphql
         create(:norm, id: 1, name: 'full_time')
       end
 
-      it { is_expected.to match_response_for(mutation: :freak_create, sample: :default) }
+      it { is_expected.to match_response_for(mutation: :freak_create, sample: :freak_create) }
     end
   end
 end

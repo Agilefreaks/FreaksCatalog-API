@@ -4,8 +4,8 @@
     "data": {
       "freaks": {
         "pageInfo": {
-          "endCursor": "MQ",
-          "startCursor": "MQ",
+          "endCursor": null,
+          "startCursor": null,
           "hasPreviousPage": false,
           "hasNextPage": true
         },

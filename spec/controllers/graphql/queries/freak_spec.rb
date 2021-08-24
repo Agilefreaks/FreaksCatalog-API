@@ -8,10 +8,16 @@ module Graphql
 
     let(:params) do
       {
-        query: File.read('spec/controllers/graphql/queries/freak_spec.rb')
+        query: File.read('spec/fixtures/requests/queries/freak.graphql')
       }
     end
 
-    it { is_expected.to match_response_for(query: :freak, sample: :default) }
+    context 'when freak create' do
+      before do
+        create(:freak, id: 1, first_name: 'Ion', description: 'the best')
+      end
+
+      it { is_expected.to match_response_for(query: :freak, sample: :default) }
+    end
   end
 end

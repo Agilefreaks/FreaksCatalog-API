@@ -1,0 +1,17 @@
+query {
+    projects {
+        name
+        description
+        logoUrl {
+            uri
+        }
+        freaks {
+            id
+            firstName
+        }
+        technologies {
+            name
+            description
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "projects": [
+        {
+          "name": "EPIX",
+          "description": "An American premium cable and satellite TV network.",
+          "logoUrl": {
+            "uri": "http://www.something.ro"
+          },
+          "freaks": [
+
+          ],
+          "technologies": [
+            {
+              "name": "Ruby",
+              "description": "A popular back-end language"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

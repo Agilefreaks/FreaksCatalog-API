@@ -13,7 +13,6 @@ class AddNorm < ActiveRecord::Migration[6.1]
   end
 
   def down
-    remove_foreign_key :freaks, :norms
     remove_column :freaks, :norm_id
     drop_table :norms
   end

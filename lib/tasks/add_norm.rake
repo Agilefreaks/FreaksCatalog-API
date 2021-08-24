@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-namespace :add_freak_with_a_norm do
+namespace :freaks do
   desc 'Add a freak with a norm'
-  ENV['development'] = 'true'
-  task add_db: :environment do
-    Freak.create(description: 'the best', first_name: 'Petrache', last_name: 'Flavius',
-                 email: 'petrache.flavius@gmail.com', norm_id: '1')
+  task add_default_norm_for_freaks_without_norm: :environment do
+    Freak
+      .where(norm_id: nil)
+      .update(norm_id: 1)
   end
 end

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20_210_820_054_103) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
   create_table 'freaks', force: :cascade do |t|
     t.string 'description'
@@ -26,14 +24,14 @@ ActiveRecord::Schema.define(version: 20_210_820_054_103) do
     t.bigint 'norm_id'
   end
 
-  create_table 'freaks', force: :cascade do |t|
-    t.string 'description'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.bigint 'norm_id'
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'email'
+  create_table "freaks", force: :cascade do |t|
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "norm_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
   end
 
   create_table 'freaks_projects', force: :cascade do |t|
@@ -54,10 +52,10 @@ ActiveRecord::Schema.define(version: 20_210_820_054_103) do
     t.index ['technology_id'], name: 'index_freaks_technologies_on_technology_id'
   end
 
-  create_table 'norms', force: :cascade do |t|
-    t.string 'name'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "norms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table 'projects', force: :cascade do |t|
@@ -88,14 +86,14 @@ ActiveRecord::Schema.define(version: 20_210_820_054_103) do
   add_foreign_key 'projects_technologies', 'projects'
   add_foreign_key 'projects_technologies', 'technologies'
 
-  create_table 'photos', force: :cascade do |t|
-    t.string 'uri'
-    t.string 'imageable_type'
-    t.bigint 'imageable_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index %w[imageable_type imageable_id], name: 'index_photos_on_imageable'
+  create_table "photos", force: :cascade do |t|
+    t.string "uri"
+    t.string "imageable_type"
+    t.bigint "imageable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable"
   end
 
-  add_foreign_key 'freaks', 'norms'
+  add_foreign_key "freaks", "norms"
 end

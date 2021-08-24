@@ -15,6 +15,11 @@ class Seeds
       Technology.find_or_create_by!(name: 'Java', description: 'Java is a popular language')
       ruby = Technology.find_or_create_by!(name: 'Ruby', description: 'Ruby is a popular language')
 
+      rails = Project.find_or_create_by!(name: 'EPIX',
+                                         description: 'An American premium cable and satellite TV network.') do |project|
+        project.technologies << ruby
+      end
+
       Freak.find_or_create_by!(
         first_name: 'John',
         last_name: 'Doe',
@@ -22,6 +27,7 @@ class Seeds
         description: 'A freak'
       ) do |freak|
         freak.technologies << ruby
+        freak.projects << rails
       end
     end
   end

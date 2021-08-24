@@ -12,9 +12,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_823_122_623) do
+ActiveRecord::Schema.define(version: 20_210_820_104_802) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
   create_table 'freak_technologies', force: :cascade do |t|
     t.bigint 'freak_id'
@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.bigint "level_id"
   end
 
-  create_table "freaks_projects", force: :cascade do |t|
-    t.bigint "freak_id"
-    t.bigint "project_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["freak_id"], name: "index_freaks_projects_on_freak_id"
-    t.index ["project_id"], name: "index_freaks_projects_on_project_id"
+  create_table 'freaks_projects', force: :cascade do |t|
+    t.bigint 'freak_id'
+    t.bigint 'project_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['freak_id'], name: 'index_freaks_projects_on_freak_id'
+    t.index ['project_id'], name: 'index_freaks_projects_on_project_id'
   end
 
   create_table "levels", force: :cascade do |t|
@@ -65,13 +65,13 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "projects_technologies", force: :cascade do |t|
-    t.bigint "project_id"
-    t.bigint "technology_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["project_id"], name: "index_projects_technologies_on_project_id"
-    t.index ["technology_id"], name: "index_projects_technologies_on_technology_id"
+  create_table 'projects_technologies', force: :cascade do |t|
+    t.bigint 'project_id'
+    t.bigint 'technology_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['project_id'], name: 'index_projects_technologies_on_project_id'
+    t.index ['technology_id'], name: 'index_projects_technologies_on_technology_id'
   end
 
   create_table "roles", force: :cascade do |t|
@@ -90,8 +90,8 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
   add_foreign_key "freaks", "levels"
   add_foreign_key "freaks", "norms"
   add_foreign_key "freaks", "roles"
-  add_foreign_key "freaks_technologies", "freaks"
-  add_foreign_key "freaks_technologies", "technologies"
-  add_foreign_key "projects_technologies", "projects"
-  add_foreign_key "projects_technologies", "technologies"
+  add_foreign_key 'freaks_technologies', 'freaks'
+  add_foreign_key 'freaks_technologies', 'technologies'
+  add_foreign_key 'projects_technologies', 'projects'
+  add_foreign_key 'projects_technologies', 'technologies'
 end

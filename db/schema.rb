@@ -12,18 +12,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_210_820_105_512) do
+ActiveRecord::Schema.define(version: 20_210_820_104_802) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
-
-  create_table 'freak_technologies', force: :cascade do |t|
-    t.bigint 'freak_id'
-    t.bigint 'technology_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['freak_id'], name: 'index_freak_technologies_on_freak_id'
-    t.index ['technology_id'], name: 'index_freak_technologies_on_technology_id'
-  end
 
   create_table 'freaks', force: :cascade do |t|
     t.string 'description'
@@ -32,6 +23,15 @@ ActiveRecord::Schema.define(version: 20_210_820_105_512) do
     t.string 'first_name'
     t.string 'last_name'
     t.string 'email'
+  end
+
+  create_table 'freaks_technologies', force: :cascade do |t|
+    t.bigint 'freak_id'
+    t.bigint 'technology_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['freak_id'], name: 'index_freaks_technologies_on_freak_id'
+    t.index ['technology_id'], name: 'index_freaks_technologies_on_technology_id'
   end
 
   create_table 'photos', force: :cascade do |t|
@@ -50,6 +50,6 @@ ActiveRecord::Schema.define(version: 20_210_820_105_512) do
     t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key 'freak_technologies', 'freaks'
-  add_foreign_key 'freak_technologies', 'technologies'
+  add_foreign_key 'freaks_technologies', 'freaks'
+  add_foreign_key 'freaks_technologies', 'technologies'
 end

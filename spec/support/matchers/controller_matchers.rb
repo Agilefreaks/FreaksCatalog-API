@@ -46,7 +46,10 @@ RSpec::Matchers.define :match_response_for do
   end
 
   def write_new_fixture(path)
-    File.write(path, serialized_response) if !File.exist?(path) && !File.exist?("#{path}.erb")
+    return if File.exist?(path) || File.exist?("#{path}.erb")
+    return if ENV['DISABLE_FIXTURE_CAPTURE']
+
+    File.write(path, serialized_response)
   end
 
   def read_fixture(path, options)
@@ -63,10 +66,6 @@ RSpec::Matchers.define :match_response_for do
 
   def adapter
     JsonAdapter.new
-  end
-
-  def render_erb(template, context)
-    render html: evaluate_erb(Rails.root.join("#{template}.html.erb"), context)
   end
 
   def evaluate_erb(path, context)

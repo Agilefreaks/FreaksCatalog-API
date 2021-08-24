@@ -11,7 +11,8 @@ AllCops:
     - vendor/**/*
     - app/controllers/graphql_controller.rb
     - config/database.yml
-    - spec/system/seeds_spec.rb
+    - spec/tasks/seeds_spec.rb
+
 
   NewCops: enable
 

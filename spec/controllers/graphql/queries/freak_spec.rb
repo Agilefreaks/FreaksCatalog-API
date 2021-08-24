@@ -12,12 +12,10 @@ module Graphql
       }
     end
 
-    context 'when freak create' do
-      before do
-        create(:freak, id: 1, first_name: 'Ion', description: 'the best')
-      end
-
-      it { is_expected.to match_response_for(query: :freak, sample: :default) }
+    before do
+      create(:freak, id: 1, first_name: 'Ion', description: 'the best')
     end
+
+    it { is_expected.to match_response_for(query: :freak, sample: :default) }
   end
 end

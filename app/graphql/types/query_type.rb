@@ -7,5 +7,6 @@ module Types
     include GraphQL::Types::Relay::HasNodesField
 
     field :freaks, resolver: Resolvers::FreaksResolver
+    field :technologies, resolver: Resolvers::TechnologiesResolver
   end
 end

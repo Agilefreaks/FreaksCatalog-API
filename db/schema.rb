@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 20_210_820_104_802) do
     t.index ['technology_id'], name: 'index_projects_technologies_on_technology_id'
   end
 
-
   add_foreign_key 'freaks_technologies', 'freaks'
   add_foreign_key 'freaks_technologies', 'technologies'
   add_foreign_key 'projects_technologies', 'projects'

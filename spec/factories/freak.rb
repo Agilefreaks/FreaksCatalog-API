@@ -9,8 +9,8 @@ FactoryBot.define do
 
     after(:build) do |freak|
       freak.photo = create(:photo, imageable: freak)
-
       freak.technologies = create_list(:technology, 1, :ruby)
+      freak.projects = create_list(:project, 1)
     end
   end
 end

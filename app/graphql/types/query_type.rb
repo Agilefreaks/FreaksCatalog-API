@@ -8,5 +8,6 @@ module Types
 
     field :freaks, resolver: Resolvers::FreaksResolver
     field :technologies, resolver: Resolvers::TechnologiesResolver
+    field :projects, resolver: Resolvers::ProjectsResolver
   end
 end

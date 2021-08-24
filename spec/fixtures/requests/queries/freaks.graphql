@@ -30,7 +30,6 @@ query Freaks($last: Int, $before: String) {
                         uri
                     }
                     freaks {
-                        id
                         firstName
                     }
                     technologies {

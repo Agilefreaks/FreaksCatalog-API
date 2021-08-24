@@ -4,7 +4,7 @@ require 'rails_helper'
 
 module Graphql
   RSpec.describe GraphqlController, type: :controller do
-    subject(:query_freak) { post :execute, params: params, as: :json }
+    subject { post :execute, params: params, as: :json }
 
     let(:params) do
       {

@@ -4,9 +4,9 @@ require 'rails_helper'
 require './db/seeds'
 
 RSpec.describe Seeds do
-  let(:action) { -> { described_class.run } }
-
   subject { action.call }
+
+  let(:action) { -> { described_class.run } }
 
   it 'populates the entities when called multiple times without polluting' do
     def counts

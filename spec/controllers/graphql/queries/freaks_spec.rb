@@ -13,7 +13,8 @@ module Graphql
     end
 
     before do
-      create(:freak)
+      create(:role, id: 1, name: 'Founder')
+      create(:freak, role_id: 1)
     end
 
     context 'with freak role' do

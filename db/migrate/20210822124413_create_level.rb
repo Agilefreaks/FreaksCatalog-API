@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateLevel < ActiveRecord::Migration[6.1]
   def up
     create_table :levels do |t|
@@ -9,7 +11,7 @@ class CreateLevel < ActiveRecord::Migration[6.1]
   end
 
   def down
-    remove_column :freaks,:level_id
+    remove_column :freaks, :level_id
     drop_table :levels
   end
 end

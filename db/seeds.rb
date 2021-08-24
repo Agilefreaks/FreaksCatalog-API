@@ -31,8 +31,6 @@ class Seeds
         Level.find_or_create_by(name: level_name)
       end
 
-      rails.logoUrl = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
-
       rails.logoUrl = Photo.find_or_create_by(uri: 'www.url.ro', imageable: rails)
 
       Freak.find_or_create_by(

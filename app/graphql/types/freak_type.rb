@@ -13,6 +13,7 @@ module Types
     field :projects, [ProjectType], null: false
     field :role, RoleType, null: false
     field :level, LevelType, null: false
+    field :level_id, GraphQL::Types::ID, null: true
     field :norm, NormType, null: false
     field :specialties, [SpecialtyType], null: false
     field :technologies, [TechnologyType], null: false

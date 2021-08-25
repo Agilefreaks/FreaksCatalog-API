@@ -10,7 +10,9 @@
             "uri": "http://www.something.ro"
           },
           "freaks": [
-
+            {
+              "firstName": "john"
+            }
           ],
           "technologies": [
             {

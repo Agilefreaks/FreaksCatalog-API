@@ -8,6 +8,7 @@ FactoryBot.define do
     after(:build) do |project|
       project.logoUrl = create(:photo, imageable: project)
       project.technologies = create_list(:technology, 1, :ruby)
+      project.freaks = create_list(:freak, 1)
     end
   end
 end

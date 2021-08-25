@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+#TODO Test if norm_id is not nil
 module Resolvers
   class FreakCreateResolver < Resolvers::Base
     argument :first_name, String, required: true

@@ -1,0 +1,6 @@
+query {
+    technologies{
+        name
+        description
+    }
+}

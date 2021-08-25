@@ -47,6 +47,7 @@ RSpec::Matchers.define :match_response_for do
 
   def write_new_fixture(path)
     return if File.exist?(path) || File.exist?("#{path}.erb") && ENV['DISABLE_FIXTURE_CAPTURE']
+
     File.write(path, serialized_response)
   end
 

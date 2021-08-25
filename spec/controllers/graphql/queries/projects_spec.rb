@@ -12,9 +12,7 @@ module Graphql
       }
     end
 
-    before do
-      create_list(:project, 1)
-    end
+    before { create(:project) }
 
     it { is_expected.to match_response_for(query: :projects, sample: :projects) }
   end

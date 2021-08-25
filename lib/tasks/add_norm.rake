@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 namespace :freaks do
-  desc 'Add a freak with a norm'
+  desc 'Association a default norm to a freak if a freak have a null norm'
   task add_default_norm_for_freaks_without_norm: :environment do
     Freak
       .where(norm_id: nil)

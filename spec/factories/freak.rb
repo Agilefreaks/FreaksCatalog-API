@@ -8,7 +8,9 @@ FactoryBot.define do
     email { 'freak@gmail.com' }
 
     after(:build) do |freak|
-      freak.photo = build(:photo, imageable: freak)
+      freak.photo = create(:photo, imageable: freak)
+
+      freak.technologies = create_list(:technology, 1, :ruby)
     end
   end
 end

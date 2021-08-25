@@ -58,6 +58,7 @@ query Freaks($last: Int, $before: String) {
                 technologies {
                     id
                     name
+                    description
                 }
             }
         }

@@ -80,11 +80,8 @@
               "technologies": [
                 {
                   "id": "1",
-                  "name": "GraphQl"
-                },
-                {
-                  "id": "2",
-                  "name": "Ruby"
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
                 }
               ]
             }
@@ -158,12 +155,9 @@
               ],
               "technologies": [
                 {
-                  "id": "1",
-                  "name": "GraphQl"
-                },
-                {
                   "id": "2",
-                  "name": "Ruby"
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
                 }
               ]
             }

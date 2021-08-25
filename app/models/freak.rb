@@ -2,6 +2,8 @@
 
 class Freak < ApplicationRecord
   has_one :photo, as: :imageable, dependent: nil
+  has_many :freaks_technologies, dependent: nil, class_name: 'FreakTechnology'
+  has_many :technologies, through: :freaks_technologies
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -57,9 +59,5 @@ class Freak < ApplicationRecord
         name: 'Backend'
       }
     ]
-  end
-
-  def technologies
-    JSON.parse(File.read('app/models/technologies.json'))
   end
 end

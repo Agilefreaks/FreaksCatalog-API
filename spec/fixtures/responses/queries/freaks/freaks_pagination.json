@@ -18,7 +18,7 @@
               "description": "a simple freak",
               "email": "freak@gmail.com",
               "photo": {
-                "id": "3",
+                "id": "5",
                 "uri": "http://www.something.ro"
               },
               "skills": [
@@ -33,28 +33,24 @@
               ],
               "projects": [
                 {
-                  "id": "1",
+                  "id": "3",
                   "name": "EPIX",
                   "description": "An American premium cable and satellite TV network.",
                   "logoUrl": {
-                    "id": "1",
-                    "uri": "https://bit.ly/3rB9Yu9"
+                    "id": "6",
+                    "uri": "http://www.something.ro"
                   },
                   "freaks": [
                     {
-                      "id": "1",
+                      "id": "4",
                       "firstName": "Ion"
-                    },
-                    {
-                      "id": "1",
-                      "firstName": "Gheorghe"
                     }
                   ],
                   "technologies": [
                     {
-                      "id": "2",
+                      "id": "6",
                       "name": "Ruby",
-                      "description": "A popular backend language."
+                      "description": "A popular back-end language"
                     }
                   ]
                 }
@@ -79,7 +75,7 @@
               ],
               "technologies": [
                 {
-                  "id": "3",
+                  "id": "5",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }

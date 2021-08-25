@@ -12,6 +12,7 @@ AllCops:
     - app/controllers/graphql_controller.rb
     - config/database.yml
     - spec/tasks/seeds_spec.rb
+    - db/seeds.rb
   NewCops: enable
 
 Metrics/BlockLength:
@@ -21,3 +22,4 @@ Metrics/BlockLength:
   Exclude:
     - 'config/routes.rb'
     - 'spec/**/*.rb'
+    - 'db/schema.rb'

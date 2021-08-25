@@ -37,24 +37,20 @@
                   "name": "EPIX",
                   "description": "An American premium cable and satellite TV network.",
                   "logoUrl": {
-                    "id": "1",
-                    "uri": "https://bit.ly/3rB9Yu9"
+                    "id": "2",
+                    "uri": "http://www.something.ro"
                   },
                   "freaks": [
                     {
-                      "id": "1",
+                      "id": "2",
                       "firstName": "Ion"
-                    },
-                    {
-                      "id": "1",
-                      "firstName": "Gheorghe"
                     }
                   ],
                   "technologies": [
                     {
                       "id": "2",
                       "name": "Ruby",
-                      "description": "A popular backend language."
+                      "description": "A popular back-end language"
                     }
                   ]
                 }
@@ -94,7 +90,7 @@
               "description": "a simple freak",
               "email": "freak@gmail.com",
               "photo": {
-                "id": "2",
+                "id": "3",
                 "uri": "http://www.something.ro"
               },
               "skills": [
@@ -109,28 +105,24 @@
               ],
               "projects": [
                 {
-                  "id": "1",
+                  "id": "2",
                   "name": "EPIX",
                   "description": "An American premium cable and satellite TV network.",
                   "logoUrl": {
-                    "id": "1",
-                    "uri": "https://bit.ly/3rB9Yu9"
+                    "id": "4",
+                    "uri": "http://www.something.ro"
                   },
                   "freaks": [
                     {
-                      "id": "1",
-                      "firstName": "Ion"
-                    },
-                    {
-                      "id": "1",
+                      "id": "3",
                       "firstName": "Gheorghe"
                     }
                   ],
                   "technologies": [
                     {
-                      "id": "2",
+                      "id": "4",
                       "name": "Ruby",
-                      "description": "A popular backend language."
+                      "description": "A popular back-end language"
                     }
                   ]
                 }
@@ -155,7 +147,7 @@
               ],
               "technologies": [
                 {
-                  "id": "2",
+                  "id": "3",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }

@@ -12,7 +12,8 @@ RSpec.describe Seeds do
     def counts
       seeded_types = [
         Freak,
-        Technology
+        Technology,
+        Project
       ]
 
       seeded_types.each_with_object({}) do |type, result|

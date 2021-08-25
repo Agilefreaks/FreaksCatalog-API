@@ -31,28 +31,7 @@
                 }
               ],
               "projects": [
-                {
-                  "name": "EPIX",
-                  "description": "An American premium cable and satellite TV network.",
-                  "logoUrl": {
-                    "uri": "http://www.something.ro"
-                  },
-                  "freaks": [
-                    {
-                      "firstName": "Ion"
-                    },
-                    {
-                      "firstName": "john"
-                    }
-                  ],
-                  "technologies": [
-                    {
-                      "id": "8",
-                      "name": "Ruby",
-                      "description": "A popular back-end language"
-                    }
-                  ]
-                }
+
               ],
               "role": {
                 "id": "1",
@@ -63,7 +42,6 @@
                 "name": "Advanced"
               },
               "norm": {
-                "id": "1",
                 "name": "full_time"
               },
               "specialties": [
@@ -74,7 +52,7 @@
               ],
               "technologies": [
                 {
-                  "id": "7",
+                  "id": "4",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }

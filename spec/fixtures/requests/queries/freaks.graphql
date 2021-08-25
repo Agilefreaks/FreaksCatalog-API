@@ -14,7 +14,6 @@ query Freaks($last: Int, $before: String) {
                 description
                 email
                 photo {
-                    id
                     uri
                 }
                 skills {
@@ -22,11 +21,9 @@ query Freaks($last: Int, $before: String) {
                     name
                 }
                 projects {
-                    id
                     name
                     description
                     logoUrl {
-                        id
                         uri
                     }
                     freaks {

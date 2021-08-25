@@ -6,7 +6,6 @@ query {
             uri
         }
         freaks {
-            id
             firstName
         }
         technologies {

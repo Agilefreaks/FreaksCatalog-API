@@ -25,7 +25,9 @@ class Seeds
 
       rails.logoUrl = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
 
-      Freak.find_or_create_by!(
+      rails.logoUrl = Photo.find_or_create_by(uri: 'www.url.ro', imageable: rails)
+
+      Freak.find_or_create_by(
         first_name: 'John',
         last_name: 'Doe',
         email: 'freak@gmail.com',

@@ -13,8 +13,7 @@ module Graphql
     end
 
     before do
-      create(:role, id: 1, name: 'Founder')
-      create(:freak, role_id: 1)
+      create(:freak)
     end
 
     context 'with freak role' do
@@ -50,15 +49,16 @@ module Graphql
       expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Software developer'
     end
 
-    context 'with pagination params' do
-      before do
-        params[:variables] = {
-          before: 'Mg',
-          last: 1
-        }
-      end
+      context 'with pagination params' do
+        before do
+          params[:variables] = {
+            before: 'Mg',
+            last: 1
+          }
+        end
 
-      it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
+        it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
+      end
     end
   end
 end

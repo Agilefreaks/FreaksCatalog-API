@@ -13,7 +13,7 @@ module Graphql
     end
 
     before do
-      create(:role, id: 1, name: 'Founder')
+      create(:role)
     end
 
     it { is_expected.to match_response_for(query: :roles, sample: :default) }

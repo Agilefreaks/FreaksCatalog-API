@@ -27,6 +27,7 @@ class Seeds
         Role.find_or_create_by!(name: roles)
       end
 
+      level=Level.find_or_create_by(name: "Intern")
       %w[Intern Novice Advanced Competent Proficient Expert Master].each do |level_name|
         Level.find_or_create_by(name: level_name)
       end
@@ -41,6 +42,7 @@ class Seeds
       ) do |freak|
         freak.technologies << ruby
         freak.projects << rails
+        freak.level = level
         freak.norm = full_time
         freak.role = founder
       end

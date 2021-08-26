@@ -46,16 +46,6 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.index ["technology_id"], name: "index_freaks_technologies_on_technology_id"
   end
 
-  create_table 'freaks', force: :cascade do |t|
-    t.string 'description'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'first_name'
-    t.string 'last_name'
-    t.string 'email'
-    t.bigint 'level_id'
-  end
-
   create_table 'levels', force: :cascade do |t|
     t.string 'name'
     t.datetime 'created_at', precision: 6, null: false
@@ -78,6 +68,12 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.index %w[imageable_type imageable_id], name: 'index_photos_on_imageable'
   end
 
+  create_table "specialties", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "projects_technologies", force: :cascade do |t|
     t.bigint "project_id"
     t.bigint "technology_id"
@@ -85,15 +81,6 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["project_id"], name: "index_projects_technologies_on_project_id"
     t.index ["technology_id"], name: "index_projects_technologies_on_technology_id"
-  end
-
-  create_table 'photos', force: :cascade do |t|
-    t.string 'uri'
-    t.string 'imageable_type'
-    t.bigint 'imageable_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index %w[imageable_type imageable_id], name: 'index_photos_on_imageable'
   end
 
   create_table "technologies", force: :cascade do |t|

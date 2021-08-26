@@ -28,6 +28,5 @@ module Graphql
 
       it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
     end
-      end
-    end
-
+  end
+end

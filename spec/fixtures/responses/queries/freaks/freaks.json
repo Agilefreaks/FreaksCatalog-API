@@ -4,7 +4,7 @@
     "data": {
       "freaks": {
         "pageInfo": {
-          "endCursor": "NA",
+          "endCursor": "Mg",
           "startCursor": "MQ",
           "hasPreviousPage": false,
           "hasNextPage": false
@@ -110,7 +110,7 @@
                   },
                   "freaks": [
                     {
-                      "firstName": "Ion"
+                      "firstName": "john"
                     },
                     {
                       "firstName": "john"
@@ -216,7 +216,7 @@
               ],
               "technologies": [
                 {
-                  "id": "4",
+                  "id": "1",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }
@@ -252,7 +252,7 @@
                   },
                   "freaks": [
                     {
-                      "firstName": "Gheorghe"
+                      "firstName": "john"
                     },
                     {
                       "firstName": "john"
@@ -260,7 +260,7 @@
                   ],
                   "technologies": [
                     {
-                      "id": "5",
+                      "id": "2",
                       "name": "Ruby",
                       "description": "A popular back-end language"
                     }
@@ -272,7 +272,6 @@
                 "name": "Founder"
               },
               "level": {
-                "id": "3",
                 "name": "Advanced"
               },
               "norm": {
@@ -287,7 +286,7 @@
               ],
               "technologies": [
                 {
-                  "id": "6",
+                  "id": "3",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }

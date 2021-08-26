@@ -11,7 +11,7 @@ module Types
     field :photo, PhotoType, null: true
     field :skills, [SkillType], null: false
     field :projects, [ProjectType], null: false
-    field :role, RoleType, null: true
+    field :role, RoleType, null: false
     field :level, LevelType, null: false
     field :norm, NormType, null: false
     field :specialties, [SpecialtyType], null: false

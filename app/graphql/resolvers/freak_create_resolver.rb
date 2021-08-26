@@ -11,6 +11,7 @@ module Resolvers
     type [Types::FreakType], null: false
 
     # TODO: Test if norm_id exist
+    # TODO: Test if role_id exist
     def resolve(params)
       norm = Norm.find(params[:norm_id])
       Freak.create(params.merge(norm: norm))

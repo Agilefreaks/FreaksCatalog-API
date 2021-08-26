@@ -36,10 +36,6 @@ class Freak < ApplicationRecord
     ]
   end
 
-  # def projects
-  #   JSON.parse(File.read('app/models/project_freak.json'))
-  # end
-
   def level
     {
       id: '3',

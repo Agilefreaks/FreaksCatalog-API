@@ -13,24 +13,10 @@ module Graphql
     end
 
     before do
-      create(:freak)
-    end
-
-    context 'with freak role' do
-      it 'return a freak role' do
-        query_freak
-        parsed_response = JSON.parse(response.body, symbolize_names: true)
-        expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Founder'
-      end
-    it 'return a freak role' do
-      query_freak
-      parsed_response = JSON.parse(response.body, symbolize_names: true)
-
-    before do
       create(:freak, :with_project)
     end
 
-    it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
+    it { is_expected.to match_response_for(query: :freaks, sample: :default) }
 
     context 'with pagination params' do
       before do
@@ -41,24 +27,6 @@ module Graphql
       end
 
       it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
-    end
-    end
-    it 'return a freak role' do
-      query_freak
-      parsed_response = JSON.parse(response.body, symbolize_names: true)
-      expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :role, :name)).to eq 'Software developer'
-    end
-
-      context 'with pagination params' do
-        before do
-          params[:variables] = {
-            before: 'Mg',
-            last: 1
-          }
-        end
-
-        it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
-      end
     end
   end
 end

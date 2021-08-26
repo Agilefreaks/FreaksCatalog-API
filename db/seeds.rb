@@ -8,36 +8,35 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+class Seeds
+  class << self
+    def run
+      Technology.find_or_create_by!(name: 'Java', description: 'Java is a popular language')
+      ruby = Technology.find_or_create_by!(name: 'Ruby', description: 'Ruby is a popular language')
 
-  class Seeds
-    class << self
-      def run
-        Technology.find_or_create_by!(name: 'Java', description: 'Java is a popular language')
-        ruby = Technology.find_or_create_by!(name: 'Ruby', description: 'Ruby is a popular language')
+      rails = Project.find_or_create_by!(name: 'EPIX',
+                                         description: 'An American premium cable and satellite TV network.') do |project|
+        project.technologies << ruby
+      end
 
-        rails = Project.find_or_create_by!(name: 'EPIX',
-                                           description: 'An American premium cable and satellite TV network.') do |project|
-          project.technologies << ruby
-        end
+      full_time = Norm.find_or_create_by!(name: "Full time")
+      part_time = Norm.find_or_create_by!(name: "Part time")
 
-        Seeds.run unless Rails.env.test?
-        ['Full time', 'Part time'].each do |norm_name|
-          Norm.find_or_create_by!(name: norm_name)
-        end
+      rails.logoUrl = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
 
-        rails.logoUrl = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
-
-        Freak.find_or_create_by(
-          first_name: 'John',
-          last_name: 'Doe',
-          email: 'freak@gmail.com',
-          description: 'A freak'
-        ) do |freak|
-          freak.technologies << ruby
-          freak.projects << rails
-        end
+      Freak.find_or_create_by!(
+        first_name: 'John',
+        last_name: 'Doe',
+        email: 'freak@gmail.com',
+        description: 'A freak'
+      ) do |freak|
+        freak.technologies << ruby
+        freak.projects << rails
+        freak.norm = full_time
       end
     end
   end
+end
 
+Seeds.run unless Rails.env.test?
 

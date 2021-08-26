@@ -16,21 +16,7 @@ module Graphql
       create(:freak, :with_project)
     end
 
-    context 'with a full_time freak' do
-      it 'adef' do
-        subject
-        # byebug
-        # response.body
-      end
-      it 'returns a full_time freak' do
-
-        parsed_response = JSON.parse(response.body, symbolize_names: true)
-
-        expect(parsed_response.dig(:data, :freaks, :edges, 0, :node, :norm, :name)).to eq 'full_time'
-      end
-    end
-
-      it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
+    it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
 
     context 'with pagination params' do
       before do

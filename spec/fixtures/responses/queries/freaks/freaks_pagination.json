@@ -22,23 +22,39 @@
               },
               "skills": [
                 {
-                  "id": "1",
                   "name": "Project management"
                 },
                 {
-                  "id": "2",
                   "name": "AWS Architect"
                 }
               ],
               "projects": [
-
+                {
+                  "name": "EPIX",
+                  "description": "An American premium cable and satellite TV network.",
+                  "logoUrl": {
+                    "uri": "http://www.something.ro"
+                  },
+                  "freaks": [
+                    {
+                      "firstName": "john"
+                    },
+                    {
+                      "firstName": "john"
+                    }
+                  ],
+                  "technologies": [
+                    {
+                      "name": "Ruby",
+                      "description": "A popular back-end language"
+                    }
+                  ]
+                }
               ],
               "role": {
-                "id": "1",
                 "name": "Founder"
               },
               "level": {
-                "id": "3",
                 "name": "Advanced"
               },
               "norm": {
@@ -46,13 +62,11 @@
               },
               "specialties": [
                 {
-                  "id": "2",
                   "name": "Backend"
                 }
               ],
               "technologies": [
                 {
-                  "id": "4",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }

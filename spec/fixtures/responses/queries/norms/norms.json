@@ -1,0 +1,15 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "norms": {
+        "nodes": [
+          {
+            "id": "1",
+            "name": "full_time"
+          }
+        ]
+      }
+    }
+  }
+}

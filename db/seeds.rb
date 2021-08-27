@@ -7,7 +7,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-#
 
 class Seeds
   class << self
@@ -20,6 +19,9 @@ class Seeds
         project.technologies << ruby
       end
 
+      full_time = Norm.find_or_create_by!(name: "Full time")
+      part_time = Norm.find_or_create_by!(name: "Part time")
+
       rails.logoUrl = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
 
       Freak.find_or_create_by!(
@@ -30,9 +32,11 @@ class Seeds
       ) do |freak|
         freak.technologies << ruby
         freak.projects << rails
+        freak.norm = full_time
       end
     end
   end
 end
 
 Seeds.run unless Rails.env.test?
+

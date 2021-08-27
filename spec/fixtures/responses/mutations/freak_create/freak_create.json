@@ -6,7 +6,10 @@
         "firstName": "john",
         "lastName": "doe",
         "description": "ceva",
-        "email": "freak@gmail.com"
+        "email": "freak@gmail.com",
+        "norm": {
+          "name": "full_time"
+        }
       }
     }
   }

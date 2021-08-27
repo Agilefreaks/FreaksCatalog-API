@@ -1,8 +1,18 @@
 mutation {
-	freakCreate(firstName: "john", lastName: "doe", description: "ceva", email: "freak@gmail.com") {
+	freakCreate(
+        firstName: "john",
+        lastName: "doe",
+        description: "ceva",
+        email: "freak@gmail.com",
+        normId: 1
+    ) {
 		firstName
 		lastName
 		description
 		email
+        norm {
+            name
+        }
 	}
 }
+

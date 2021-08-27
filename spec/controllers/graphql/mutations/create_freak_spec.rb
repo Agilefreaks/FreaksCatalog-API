@@ -12,6 +12,12 @@ module Graphql
       }
     end
 
-    it { is_expected.to match_response_for(mutation: :freak_create, sample: :freakCreate) }
+    context 'when norm exists' do
+      before do
+        create(:freak, :with_project)
+      end
+
+      it { is_expected.to match_response_for(mutation: :freak_create, sample: :freak_create) }
+    end
   end
 end

@@ -14,10 +14,8 @@ module Resolvers
     # TODO: Test if role_id exist
     def resolve(params)
       norm = Norm.find(params[:norm_id])
-      Freak.create(params.merge(norm: norm))
-
-      role= Role.find_by(name:params[:role])
-      Freak.create(params.merge(role:role))
+      role = Role.find_by(name: params[:role])
+      Freak.create(params.merge(norm: norm, role: role))
     end
   end
 end

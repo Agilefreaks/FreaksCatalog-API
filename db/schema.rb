@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.string 'description'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
+    t.bigint 'norm_id'
     t.bigint 'role_id'
     t.string 'first_name'
     t.string 'last_name'
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20_210_823_122_623) do
     t.datetime 'updated_at', precision: 6, null: false
   end
 
+  add_foreign_key 'freaks', 'norms'
   add_foreign_key 'freaks', 'roles'
   add_foreign_key 'freaks_technologies', 'freaks'
   add_foreign_key 'freaks_technologies', 'technologies'

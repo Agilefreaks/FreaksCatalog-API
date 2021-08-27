@@ -58,7 +58,7 @@
                 "name": "Advanced"
               },
               "norm": {
-                "name": "full-time"
+                "name": "full_time"
               },
               "specialties": [
                 {
@@ -121,7 +121,7 @@
                 "name": "Advanced"
               },
               "norm": {
-                "name": "full-time"
+                "name": "full_time"
               },
               "specialties": [
                 {

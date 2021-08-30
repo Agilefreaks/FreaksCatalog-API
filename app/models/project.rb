@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Project < ApplicationRecord
-  has_one :logoUrl, as: :imageable, dependent: :destroy, class_name: 'Photo'
+  has_one :logo_url, as: :imageable, dependent: :destroy, class_name: 'Photo'
 
   has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'
   has_many :freaks, through: :freaks_projects, dependent: nil

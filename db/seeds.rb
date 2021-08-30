@@ -20,8 +20,12 @@ class Seeds
       end
 
       full_time = Norm.find_or_create_by!(name: "Full time")
-      part_time = Norm.find_or_create_by!(name: "Part time")
-      founder= Role.create(name: 'Founder')
+      Norm.find_or_create_by!(name: "Part time")
+      founder = Role.find_or_create_by!(name: "Founder")
+
+      ['Founder', 'IT Sibiu', 'IT Cluj', 'Team assistant'].each do |roles|
+        Role.find_or_create_by!(name: roles)
+      end
 
       rails.logoUrl = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
 
@@ -36,7 +40,7 @@ class Seeds
         freak.technologies << ruby
         freak.projects << rails
         freak.norm = full_time
-        freak.role =founder
+        freak.role = founder
       end
     end
   end

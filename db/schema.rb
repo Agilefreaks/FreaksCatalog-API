@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 2021_08_23_122623) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "norm_id"
+    t.bigint "role_id"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.bigint "norm_id"
-    t.bigint "role_id"
   end
 
   create_table "freaks_projects", force: :cascade do |t|

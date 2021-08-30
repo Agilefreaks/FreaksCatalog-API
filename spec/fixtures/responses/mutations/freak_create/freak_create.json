@@ -1,10 +1,44 @@
 {
   "status": 200,
   "body": {
-    "data": null,
     "errors": [
       {
-        "message": "Cannot return null for non-nullable field Freak.role"
+        "message": "Argument 'normId' on Field 'freakCreate' has an invalid value (role_id). Expected type 'ID!'.",
+        "locations": [
+          {
+            "line": 2,
+            "column": 2
+          }
+        ],
+        "path": [
+          "mutation",
+          "freakCreate",
+          "normId"
+        ],
+        "extensions": {
+          "code": "argumentLiteralsIncompatible",
+          "typeName": "Field",
+          "argumentName": "normId"
+        }
+      },
+      {
+        "message": "Argument 'roleId' on Field 'freakCreate' has an invalid value (norm_id). Expected type 'ID!'.",
+        "locations": [
+          {
+            "line": 2,
+            "column": 2
+          }
+        ],
+        "path": [
+          "mutation",
+          "freakCreate",
+          "roleId"
+        ],
+        "extensions": {
+          "code": "argumentLiteralsIncompatible",
+          "typeName": "Field",
+          "argumentName": "roleId"
+        }
       }
     ]
   }

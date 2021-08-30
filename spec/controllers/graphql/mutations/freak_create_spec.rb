@@ -17,6 +17,12 @@ module Graphql
         create(:freak, :with_project)
       end
 
+      it 'sgeqge' do
+         subject
+         # byebug
+        # response.body
+      end
+
       it { is_expected.to match_response_for(mutation: :freak_create, sample: :freak_create) }
     end
   end

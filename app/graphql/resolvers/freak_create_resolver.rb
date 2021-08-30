@@ -8,14 +8,16 @@ module Resolvers
     argument :email, String, required: true
     argument :norm_id, GraphQL::Types::ID, required: true
     argument :role_id, GraphQL::Types::ID, required: true
+
     type [Types::FreakType], null: false
 
     # TODO: Test if norm_id exist
     # TODO: Test if role_id exist
+
     def resolve(params)
       norm = Norm.find(params[:norm_id])
-      role = Role.find_by(name: params[:role])
-      Freak.create(params.merge(norm: norm, role: role))
+      role = Role.find(params[:role_id])
+      Freak.create(params.merge(norm: norm, role: role)) if !norm.nil? && !role.nil?
     end
   end
 end

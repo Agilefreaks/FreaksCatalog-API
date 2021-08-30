@@ -17,7 +17,7 @@ module Resolvers
     def resolve(params)
       norm = Norm.find(params[:norm_id])
       role = Role.find(params[:role_id])
-      Freak.create(params.merge(norm: norm, role: role)) if !norm.nil? && !role.nil?
+      Freak.create(params.merge(norm: norm, role: role))
     end
   end
 end

@@ -6,6 +6,7 @@ FactoryBot.define do
     last_name { 'doe' }
     description { 'a simple freak' }
     email { 'freak@gmail.com' }
+    association(:role)
     association(:norm)
 
     trait :with_project do

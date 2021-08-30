@@ -8,14 +8,14 @@ module Graphql
 
     let(:params) do
       {
-        query: File.read('spec/fixtures/requests/queries/norms.graphql')
+        query: File.read('spec/fixtures/requests/queries/roles.graphql')
       }
     end
 
     before do
-      create(:norm)
+      create(:role)
     end
 
-    it { is_expected.to match_response_for(query: :norms, sample: :norms) }
+    it { is_expected.to match_response_for(query: :roles, sample: :default) }
   end
 end

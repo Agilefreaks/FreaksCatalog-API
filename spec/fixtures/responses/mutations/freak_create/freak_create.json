@@ -9,6 +9,9 @@
         "email": "freak@gmail.com",
         "norm": {
           "name": "full_time"
+        },
+        "role": {
+          "name": "Founder"
         }
       }
     }

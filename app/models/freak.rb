@@ -5,17 +5,18 @@ class Freak < ApplicationRecord
 
   has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'
   has_many :projects, through: :freaks_projects, dependent: nil
-
   has_many :freaks_technologies, dependent: nil, class_name: 'FreakTechnology'
   has_many :technologies, through: :freaks_technologies
-
-  belongs_to :norm
 
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :description, presence: true
   validates :email, presence: true
+  validates :role_id, presence: true
   validates :norm_id, presence: true
+
+  belongs_to :role
+  belongs_to :norm
 
   def name
     "#{first_name} #{last_name}"
@@ -32,13 +33,6 @@ class Freak < ApplicationRecord
         name: 'AWS Architect'
       }
     ]
-  end
-
-  def role
-    {
-      id: '1',
-      name: 'Founder'
-    }
   end
 
   def level

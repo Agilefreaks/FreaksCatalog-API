@@ -13,6 +13,7 @@ AllCops:
     - config/database.yml
     - spec/tasks/seeds_spec.rb
     - db/seeds.rb
+    - db/schema.rb
   NewCops: enable
 
 Metrics/BlockLength:

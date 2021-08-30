@@ -2,10 +2,10 @@
   "status": 200,
   "body": {
     "data": {
-      "norms": {
+      "roles": {
         "nodes": [
           {
-            "name": "full_time"
+            "name": "Founder"
           }
         ]
       }

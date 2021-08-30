@@ -4,6 +4,8 @@ require 'rails_helper'
 
 module Graphql
   RSpec.describe GraphqlController, type: :controller do
+    subject { post :execute, params: params, as: :json }
+
     let(:norm) { create(:norm) }
     let(:params) do
       {
@@ -15,8 +17,6 @@ module Graphql
       }
     end
     let(:role) { create(:role) }
-
-    subject { post :execute, params: params, as: :json }
 
     it { is_expected.to match_response_for(mutation: :freak_create, sample: :freak_create) }
   end

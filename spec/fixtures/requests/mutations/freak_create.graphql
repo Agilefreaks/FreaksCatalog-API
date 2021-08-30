@@ -1,11 +1,11 @@
-mutation {
+mutation($norm_id: ID!, $role_id: ID!) {
 	freakCreate(
 		firstName: "john",
 		lastName: "doe",
 		description: "ceva",
 		email: "freak@gmail.com",
-		normId: 1,
-		roleId: 1
+		normId: $norm_id,
+		roleId: $role_id
 	) {
 		firstName
 		lastName

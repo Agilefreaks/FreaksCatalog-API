@@ -1,45 +1,19 @@
 {
   "status": 200,
   "body": {
-    "errors": [
-      {
-        "message": "Argument 'normId' on Field 'freakCreate' has an invalid value (role_id). Expected type 'ID!'.",
-        "locations": [
-          {
-            "line": 2,
-            "column": 2
-          }
-        ],
-        "path": [
-          "mutation",
-          "freakCreate",
-          "normId"
-        ],
-        "extensions": {
-          "code": "argumentLiteralsIncompatible",
-          "typeName": "Field",
-          "argumentName": "normId"
-        }
-      },
-      {
-        "message": "Argument 'roleId' on Field 'freakCreate' has an invalid value (norm_id). Expected type 'ID!'.",
-        "locations": [
-          {
-            "line": 2,
-            "column": 2
-          }
-        ],
-        "path": [
-          "mutation",
-          "freakCreate",
-          "roleId"
-        ],
-        "extensions": {
-          "code": "argumentLiteralsIncompatible",
-          "typeName": "Field",
-          "argumentName": "roleId"
+    "data": {
+      "freakCreate": {
+        "firstName": "john",
+        "lastName": "doe",
+        "description": "ceva",
+        "email": "freak@gmail.com",
+        "norm": {
+          "name": "full_time"
+        },
+        "role": {
+          "name": "Founder"
         }
       }
-    ]
+    }
   }
 }

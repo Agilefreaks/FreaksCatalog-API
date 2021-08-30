@@ -13,12 +13,13 @@ module Graphql
         variables: {
           norm_id: norm.id,
           role_id: role.id,
-        level_id: level.id
+          level_id: level.id
         }
       }
     end
+
     let(:role) { create(:role) }
-    let(:level){create(:level)}
+    let(:level) { create(:level) }
 
     it { is_expected.to match_response_for(mutation: :freak_create, sample: :freak_create) }
   end

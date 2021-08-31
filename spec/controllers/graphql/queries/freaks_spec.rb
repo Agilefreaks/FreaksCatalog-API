@@ -45,7 +45,7 @@ module Graphql
         }
       end
 
-      it { is_expected.to match_response_for(query: :all_projects, sample: :all_projects_filtered) }
+      it { is_expected.to match_response_for(query: :freaks, sample: :all_projects_filtered) }
     end
   end
 end

@@ -27,12 +27,13 @@ class Seeds
         Role.find_or_create_by!(name: roles)
       end
 
+      rails.logo_url = Photo.find_or_create_by!(uri: 'www.url.ro', imageable: rails)
+      rails.logo_url = Photo.find_or_create_by(uri: 'www.url.ro', imageable: rails)
+
       level=Level.find_or_create_by(name: "Intern")
       %w[Intern Novice Advanced Competent Proficient Expert Master].each do |level_name|
         Level.find_or_create_by(name: level_name)
       end
-
-      rails.logoUrl = Photo.find_or_create_by(uri: 'www.url.ro', imageable: rails)
 
       Freak.find_or_create_by(
         first_name: 'John',

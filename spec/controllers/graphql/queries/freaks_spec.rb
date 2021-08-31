@@ -6,6 +6,9 @@ module Graphql
   RSpec.describe GraphqlController, type: :controller do
     subject { post :execute, params: params, as: :json }
 
+    let(:first_project) { create(:project, name: 'Project 1') }
+    let(:second_project) { create(:project, name: 'Project 2') }
+
     let(:params) do
       {
         query: File.read('spec/fixtures/requests/queries/freaks.graphql')
@@ -13,10 +16,12 @@ module Graphql
     end
 
     before do
-      create(:freak, :with_project)
+      create(:freak, projects: [first_project], first_name: 'Ion')
+      create(:freak, projects: [first_project], first_name: 'Vasile')
+      create(:freak, projects: [second_project], first_name: 'Gheorghe')
     end
 
-    it { is_expected.to match_response_for(query: :freaks, sample: :default) }
+    it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
 
     context 'with pagination params' do
       before do
@@ -27,6 +32,20 @@ module Graphql
       end
 
       it { is_expected.to match_response_for(query: :freaks, sample: :freaks_pagination) }
+    end
+
+    context 'with all_of projects params' do
+      before do
+        params[:variables] = {
+          filter: {
+            projectIds: {
+              allOf: [first_project.id]
+            }
+          }
+        }
+      end
+
+      it { is_expected.to match_response_for(query: :all_projects, sample: :all_projects_filtered) }
     end
   end
 end

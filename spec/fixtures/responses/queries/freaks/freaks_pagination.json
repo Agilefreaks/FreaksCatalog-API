@@ -32,7 +32,7 @@
               ],
               "projects": [
                 {
-                  "name": "EPIX",
+                  "name": "Project 1",
                   "description": "An American premium cable and satellite TV network.",
                   "logoUrl": {
                     "uri": "http://www.something.ro"
@@ -40,6 +40,9 @@
                   "freaks": [
                     {
                       "firstName": "Ion"
+                    },
+                    {
+                      "firstName": "Vasile"
                     }
                   ],
                   "technologies": [
@@ -71,7 +74,7 @@
               ],
               "technologies": [
                 {
-                  "id": "5",
+                  "id": "7",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }

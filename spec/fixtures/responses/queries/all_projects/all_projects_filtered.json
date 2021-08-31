@@ -3,10 +3,153 @@
   "body": {
     "data": {
       "freaks": {
+        "pageInfo": {
+          "endCursor": "Mg",
+          "startCursor": "MQ",
+          "hasPreviousPage": false,
+          "hasNextPage": false
+        },
         "edges": [
           {
             "node": {
-              "firstName": "john"
+              "name": "Ion doe",
+              "firstName": "Ion",
+              "lastName": "doe",
+              "description": "a simple freak",
+              "email": "freak@gmail.com",
+              "photo": {
+                "uri": "http://www.something.ro"
+              },
+              "skills": [
+                {
+                  "id": "1",
+                  "name": "Project management"
+                },
+                {
+                  "id": "2",
+                  "name": "AWS Architect"
+                }
+              ],
+              "projects": [
+                {
+                  "name": "Project 1",
+                  "description": "An American premium cable and satellite TV network.",
+                  "logoUrl": {
+                    "uri": "http://www.something.ro"
+                  },
+                  "freaks": [
+                    {
+                      "firstName": "Ion"
+                    },
+                    {
+                      "firstName": "Vasile"
+                    }
+                  ],
+                  "technologies": [
+                    {
+                      "id": "11",
+                      "name": "Ruby",
+                      "description": "A popular back-end language"
+                    }
+                  ]
+                }
+              ],
+              "role": {
+                "id": "1",
+                "name": "Founder"
+              },
+              "level": {
+                "id": "3",
+                "name": "Advanced"
+              },
+              "norm": {
+                "id": "1",
+                "name": "full-time"
+              },
+              "specialties": [
+                {
+                  "id": "2",
+                  "name": "Backend"
+                }
+              ],
+              "technologies": [
+                {
+                  "id": "12",
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Vasile doe",
+              "firstName": "Vasile",
+              "lastName": "doe",
+              "description": "a simple freak",
+              "email": "freak@gmail.com",
+              "photo": {
+                "uri": "http://www.something.ro"
+              },
+              "skills": [
+                {
+                  "id": "1",
+                  "name": "Project management"
+                },
+                {
+                  "id": "2",
+                  "name": "AWS Architect"
+                }
+              ],
+              "projects": [
+                {
+                  "name": "Project 1",
+                  "description": "An American premium cable and satellite TV network.",
+                  "logoUrl": {
+                    "uri": "http://www.something.ro"
+                  },
+                  "freaks": [
+                    {
+                      "firstName": "Ion"
+                    },
+                    {
+                      "firstName": "Vasile"
+                    }
+                  ],
+                  "technologies": [
+                    {
+                      "id": "11",
+                      "name": "Ruby",
+                      "description": "A popular back-end language"
+                    }
+                  ]
+                }
+              ],
+              "role": {
+                "id": "1",
+                "name": "Founder"
+              },
+              "level": {
+                "id": "3",
+                "name": "Advanced"
+              },
+              "norm": {
+                "id": "1",
+                "name": "full-time"
+              },
+              "specialties": [
+                {
+                  "id": "2",
+                  "name": "Backend"
+                }
+              ],
+              "technologies": [
+                {
+                  "id": "13",
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
+                }
+              ]
             }
           }
         ]

@@ -2,13 +2,11 @@
   "status": 200,
   "body": {
     "data": {
-      "norms": {
-        "nodes": [
-          {
-            "name": "full_time"
-          }
-        ]
-      }
+      "norms": [
+        {
+          "name": "full_time"
+        }
+      ]
     }
   }
 }

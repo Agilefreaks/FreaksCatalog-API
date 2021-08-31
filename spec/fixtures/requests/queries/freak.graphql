@@ -1,0 +1,5 @@
+query{
+    freak(id: "1"){
+        description
+    }
+}

@@ -1,5 +1,5 @@
-query Freaks($last: Int, $before: String) {
-    freaks(last: $last, before: $before) {
+query Freaks($allOf: [ID!], $anyOf:[ID!], $last: Int, $before: String) {
+    freaks(filter: {projectIds: {allOf: $allOf, anyOf: $anyOf}, technologyIds: {allOf: $allOf, anyOf: $anyOf}}, last: $last, before: $before) {
         pageInfo {
             endCursor
             startCursor

@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_122623) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.bigint "level_id"
   end
 
   create_table "freaks_projects", force: :cascade do |t|
@@ -42,6 +43,12 @@ ActiveRecord::Schema.define(version: 2021_08_23_122623) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["freak_id"], name: "index_freaks_technologies_on_freak_id"
     t.index ["technology_id"], name: "index_freaks_technologies_on_technology_id"
+  end
+
+  create_table "levels", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "norms", force: :cascade do |t|
@@ -88,6 +95,7 @@ ActiveRecord::Schema.define(version: 2021_08_23_122623) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "freaks", "levels"
   add_foreign_key "freaks", "norms"
   add_foreign_key "freaks", "roles"
   add_foreign_key "freaks_technologies", "freaks"

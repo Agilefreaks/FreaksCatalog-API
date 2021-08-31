@@ -12,6 +12,9 @@
         },
         "role": {
           "name": "Founder"
+        },
+        "level": {
+          "name": "Advanced"
         }
       }
     }

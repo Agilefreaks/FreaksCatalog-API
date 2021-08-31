@@ -8,6 +8,7 @@ FactoryBot.define do
     email { 'freak@gmail.com' }
     association(:role)
     association(:norm)
+    association :level
 
     trait :with_project do
       after(:build) do |freak|

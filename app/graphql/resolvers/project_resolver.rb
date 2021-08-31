@@ -2,7 +2,7 @@
 
 module Resolvers
   class ProjectResolver < Resolvers::Base
-    type [Types::ProjectType], null: false
+    type Types::ProjectType, null: false
     argument :id, GraphQL::Types::ID, required: true
 
     # :reek:UtilityFunction

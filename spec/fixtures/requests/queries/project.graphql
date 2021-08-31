@@ -1,0 +1,6 @@
+query{
+    project(id: "1"){
+        description
+        name
+    }
+}

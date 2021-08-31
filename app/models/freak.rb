@@ -9,11 +9,6 @@ class Freak < ApplicationRecord
   has_many :freaks_technologies, dependent: nil, class_name: 'FreakTechnology'
   has_many :technologies, through: :freaks_technologies
 
-  has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'
-  has_many :projects, through: :freaks_projects, dependent: nil
-  has_many :freaks_technologies, dependent: nil, class_name: 'FreakTechnology'
-  has_many :technologies, through: :freaks_technologies
-
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :description, presence: true

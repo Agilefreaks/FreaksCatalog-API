@@ -1,0 +1,16 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "freaks": {
+        "edges": [
+          {
+            "node": {
+              "firstName": "john"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

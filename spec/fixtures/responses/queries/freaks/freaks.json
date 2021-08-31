@@ -4,10 +4,10 @@
     "data": {
       "freaks": {
         "pageInfo": {
-          "endCursor": "MQ",
+          "endCursor": "Mg",
           "startCursor": "MQ",
           "hasPreviousPage": false,
-          "hasNextPage": true
+          "hasNextPage": false
         },
         "edges": [
           {
@@ -44,7 +44,7 @@
                   ],
                   "technologies": [
                     {
-                      "id": "6",
+                      "id": "2",
                       "name": "Ruby",
                       "description": "A popular back-end language"
                     }
@@ -71,7 +71,75 @@
               ],
               "technologies": [
                 {
-                  "id": "5",
+                  "id": "1",
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Gheorghe doe",
+              "firstName": "Gheorghe",
+              "lastName": "doe",
+              "description": "a simple freak",
+              "email": "freak@gmail.com",
+              "photo": {
+                "uri": "http://www.something.ro"
+              },
+              "skills": [
+                {
+                  "id": "1",
+                  "name": "Project management"
+                },
+                {
+                  "id": "2",
+                  "name": "AWS Architect"
+                }
+              ],
+              "projects": [
+                {
+                  "name": "EPIX",
+                  "description": "An American premium cable and satellite TV network.",
+                  "logoUrl": {
+                    "uri": "http://www.something.ro"
+                  },
+                  "freaks": [
+                    {
+                      "firstName": "Gheorghe"
+                    }
+                  ],
+                  "technologies": [
+                    {
+                      "id": "4",
+                      "name": "Ruby",
+                      "description": "A popular back-end language"
+                    }
+                  ]
+                }
+              ],
+              "role": {
+                "id": "1",
+                "name": "Founder"
+              },
+              "level": {
+                "id": "3",
+                "name": "Advanced"
+              },
+              "norm": {
+                "id": "1",
+                "name": "full-time"
+              },
+              "specialties": [
+                {
+                  "id": "2",
+                  "name": "Backend"
+                }
+              ],
+              "technologies": [
+                {
+                  "id": "3",
                   "name": "Ruby",
                   "description": "A popular back-end language"
                 }

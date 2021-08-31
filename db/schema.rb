@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -15,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_08_23_122623) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
   create_table "freaks", force: :cascade do |t|
     t.string "description"
@@ -29,13 +27,13 @@ ActiveRecord::Schema.define(version: 2021_08_23_122623) do
     t.bigint "level_id"
   end
 
-  create_table 'freaks_projects', force: :cascade do |t|
-    t.bigint 'freak_id'
-    t.bigint 'project_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['freak_id'], name: 'index_freaks_projects_on_freak_id'
-    t.index ['project_id'], name: 'index_freaks_projects_on_project_id'
+  create_table "freaks_projects", force: :cascade do |t|
+    t.bigint "freak_id"
+    t.bigint "project_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["freak_id"], name: "index_freaks_projects_on_freak_id"
+    t.index ["project_id"], name: "index_freaks_projects_on_project_id"
   end
 
   create_table "levels", force: :cascade do |t|
@@ -63,23 +61,39 @@ ActiveRecord::Schema.define(version: 2021_08_23_122623) do
     t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table 'freaks_technologies', force: :cascade do |t|
-    t.bigint 'freak_id'
-    t.bigint 'technology_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['freak_id'], name: 'index_freaks_technologies_on_freak_id'
-    t.index ['technology_id'], name: 'index_freaks_technologies_on_technology_id'
+  create_table "freaks_technologies", force: :cascade do |t|
+    t.bigint "freak_id"
+    t.bigint "technology_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["freak_id"], name: "index_freaks_technologies_on_freak_id"
+    t.index ["technology_id"], name: "index_freaks_technologies_on_technology_id"
   end
 
 
-  create_table 'photos', force: :cascade do |t|
-    t.string 'uri'
-    t.string 'imageable_type'
-    t.bigint 'imageable_id'
+  create_table "photos", force: :cascade do |t|
+    t.string "uri"
+    t.string "imageable_type"
+    t.bigint "imageable_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["imageable_type", "imageable_id"], name: "index_photos_on_imageable"
+  end
+
+  create_table 'projects', force: :cascade do |t|
+    t.string 'name'
+    t.string 'description'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
-    t.index %w[imageable_type imageable_id], name: 'index_photos_on_imageable'
+  end
+
+  create_table "projects_technologies", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "technology_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["project_id"], name: "index_projects_technologies_on_project_id"
+    t.index ["technology_id"], name: "index_projects_technologies_on_technology_id"
   end
 
   create_table 'technologies', force: :cascade do |t|
@@ -87,15 +101,6 @@ ActiveRecord::Schema.define(version: 2021_08_23_122623) do
     t.string 'description'
     t.datetime 'created_at', precision: 6, null: false
     t.datetime 'updated_at', precision: 6, null: false
-  end
-
-  create_table 'projects_technologies', force: :cascade do |t|
-    t.bigint 'project_id'
-    t.bigint 'technology_id'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.index ['project_id'], name: 'index_projects_technologies_on_project_id'
-    t.index ['technology_id'], name: 'index_projects_technologies_on_technology_id'
   end
 
   add_foreign_key "freaks", "levels"

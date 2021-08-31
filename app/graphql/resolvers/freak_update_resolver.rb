@@ -15,14 +15,20 @@ module Resolvers
 
     # TODO: Test if norm_id exist
     # TODO: Test if role_id exist
+    #TODO: Test if level_id exist
+    def resolve(id:, **attrs)
+      norm = Norm.find(attrs[:norm_id])
+      role = Role.find(attrs[:role_id])
+      level = Level.find(attrs[:level_id])
 
-    def resolve(params)
+      freak = Freak.find(id)
 
-      norm = Norm.find(params[:norm_id])
-      role = Role.find(params[:role_id])
-      level = Level.find(params[:level_id])
+      if freak
+        freak.update(attrs.merge(norm: norm, role: role, level: level))
+        freak
+      else
 
-      Freak.where(id: params[:id]).update(params.merge(norm: norm, role: role, level: level))
+      end
     end
   end
 end

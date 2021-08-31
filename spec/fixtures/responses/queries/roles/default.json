@@ -2,13 +2,11 @@
   "status": 200,
   "body": {
     "data": {
-      "roles": {
-        "nodes": [
-          {
-            "name": "Founder"
-          }
-        ]
-      }
+      "roles": [
+        {
+          "name": "Founder"
+        }
+      ]
     }
   }
 }

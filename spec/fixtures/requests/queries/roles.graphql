@@ -1,7 +1,5 @@
 query{
     roles{
-        nodes{
-            name
-        }
+        name
     }
 }

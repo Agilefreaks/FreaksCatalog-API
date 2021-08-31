@@ -2,7 +2,7 @@
 
 module Resolvers
   class RolesResolver < Resolvers::Base
-    type Types::RoleType.connection_type, null: false
+    type [Types::RoleType], null: false
 
     def resolve
       Role.all

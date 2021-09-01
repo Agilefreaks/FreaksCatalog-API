@@ -106,5 +106,20 @@ module Graphql
 
       it { is_expected.to match_response_for(query: :freaks, sample: :any_technologies_filtered) }
     end
+
+    context 'with all_of and any_off technologies params' do
+      before do
+        params[:variables] = {
+          filter: {
+            technologyIds: {
+              allOf: [first_technology.id],
+              anyOf: [first_technology.id, second_technology.id]
+            }
+          }
+        }
+      end
+
+      it { is_expected.to match_response_for(query: :freaks, sample: :all_and_any_technologies_filtered) }
+    end
   end
 end

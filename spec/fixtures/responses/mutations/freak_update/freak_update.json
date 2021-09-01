@@ -1,22 +1,91 @@
 {
   "status": 200,
   "body": {
-    "data": {
-      "freakCreate": {
-        "firstName": "john",
-        "lastName": "doe",
-        "description": "ceva",
-        "email": "freak@gmail.com",
-        "norm": {
-          "name": "full_time"
-        },
-        "role": {
-          "name": "Founder"
-        },
-        "level": {
-          "name": "Advanced"
+    "errors": [
+      {
+        "message": "Nullability mismatch on variable $firstName and argument firstName (String / String!)",
+        "locations": [
+          {
+            "line": 13,
+            "column": 9
+          }
+        ],
+        "path": [
+          "mutation",
+          "freakUpdate",
+          "firstName"
+        ],
+        "extensions": {
+          "code": "variableMismatch",
+          "variableName": "firstName",
+          "typeName": "String",
+          "argumentName": "firstName",
+          "errorMessage": "Nullability mismatch"
+        }
+      },
+      {
+        "message": "Nullability mismatch on variable $lastName and argument lastName (String / String!)",
+        "locations": [
+          {
+            "line": 14,
+            "column": 9
+          }
+        ],
+        "path": [
+          "mutation",
+          "freakUpdate",
+          "lastName"
+        ],
+        "extensions": {
+          "code": "variableMismatch",
+          "variableName": "lastName",
+          "typeName": "String",
+          "argumentName": "lastName",
+          "errorMessage": "Nullability mismatch"
+        }
+      },
+      {
+        "message": "Nullability mismatch on variable $description and argument description (String / String!)",
+        "locations": [
+          {
+            "line": 15,
+            "column": 9
+          }
+        ],
+        "path": [
+          "mutation",
+          "freakUpdate",
+          "description"
+        ],
+        "extensions": {
+          "code": "variableMismatch",
+          "variableName": "description",
+          "typeName": "String",
+          "argumentName": "description",
+          "errorMessage": "Nullability mismatch"
+        }
+      },
+      {
+        "message": "Nullability mismatch on variable $email and argument email (String / String!)",
+        "locations": [
+          {
+            "line": 16,
+            "column": 9
+          }
+        ],
+        "path": [
+          "mutation",
+          "freakUpdate",
+          "email"
+        ],
+        "extensions": {
+          "code": "variableMismatch",
+          "variableName": "email",
+          "typeName": "String",
+          "argumentName": "email",
+          "errorMessage": "Nullability mismatch"
         }
       }
-    }
+    ]
   }
 }

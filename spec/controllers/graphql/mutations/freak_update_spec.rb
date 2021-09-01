@@ -7,14 +7,22 @@ module Graphql
     subject { post :execute, params: params, as: :json }
 
     let(:norm) { create(:norm) }
+    let(:freak){create(:freak)}
     let(:params) do
       {
-        query: File.read('spec/fixtures/requests/mutations/freak_create.graphql'),
-        variables: {
-          norm_id: norm.id,
-          role_id: role.id,
-          level_id: level.id
-        }
+        query: File.read('spec/fixtures/requests/mutations/freak_update.graphql')
+
+      }
+    end
+    before do
+      # create(:freak)
+      params[:variables]={
+        id: freak.id,
+        firstName: "matheo",
+        lastName: "ion",
+        norm_id: norm.id,
+        role_id: role.id,
+        level_id: level.id
       }
     end
 

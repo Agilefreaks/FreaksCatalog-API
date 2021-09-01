@@ -36,3 +36,7 @@ Layout/LineLength:
 Metrics/AbcSize:
   Exclude:
     - 'app/graphql/resolvers/freaks_resolver.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'spec/controllers/graphql/queries/freaks_spec.rb'

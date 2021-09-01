@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "freakCreate": {
+        "firstName": "john",
+        "lastName": "doe",
+        "description": "ceva",
+        "email": "freak@gmail.com",
+        "norm": {
+          "name": "full_time"
+        },
+        "role": {
+          "name": "Founder"
+        },
+        "level": {
+          "name": "Advanced"
+        }
+      }
+    }
+  }
+}

@@ -13,38 +13,31 @@ module Resolvers
       all_of_technology_ids = filter&.dig(:technology_ids, :all_of)
       any_of_technology_ids = filter&.dig(:technology_ids, :any_of)
 
-      query = Freak.all if filter.nil?
+      query = Freak.all.group(:id).order(:id)
 
       if all_of_project_ids.present?
-        query = Freak
+        query = query
                 .joins(:freaks_projects)
                 .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: all_of_project_ids)
-                .group(:id)
-                .order(:id)
+
       end
 
       if any_of_project_ids.present?
-        query = Freak
+        query = query
                 .joins(:freaks_projects)
-                .where('freaks_projects.project_id = ANY(ARRAY[:ids]::bigint[])', ids: any_of_project_ids)
-                .group(:id)
-                .order(:id)
+                .where(freaks_projects: { project_id: any_of_project_ids })
       end
 
       if all_of_technology_ids.present?
-        query = Freak
+        query = query
                 .joins(:freaks_technologies)
                 .having('array_agg(freaks_technologies.technology_id) @> ARRAY[:ids]::bigint[]', ids: all_of_technology_ids)
-                .group(:id)
-                .order(:id)
       end
 
       if any_of_technology_ids.present?
-        query = Freak
+        query = query
                 .joins(:freaks_technologies)
-                .where('freaks_technologies.technology_id = ANY(ARRAY[:ids]::bigint[])', ids: any_of_technology_ids)
-                .group(:id)
-                .order(:id)
+                .where(freaks_technologies: { technology_id: any_of_technology_ids })
       end
 
       query

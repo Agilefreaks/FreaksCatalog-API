@@ -19,7 +19,6 @@ module Resolvers
         query = query
                 .joins(:freaks_projects)
                 .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: all_of_project_ids)
-
       end
 
       if any_of_project_ids.present?

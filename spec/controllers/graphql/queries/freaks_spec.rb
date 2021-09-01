@@ -11,11 +11,7 @@ module Graphql
     let(:first_technology) { create(:technology, :ruby) }
     let(:second_technology) { create(:technology, :java) }
 
-    let(:params) do
-      {
-        query: File.read('spec/fixtures/requests/queries/freaks.graphql')
-      }
-    end
+    let(:params) { { query: File.read('spec/fixtures/requests/queries/freaks.graphql') } }
 
     before do
       create(:freak, projects: [first_project], technologies: [first_technology], first_name: 'Ion')

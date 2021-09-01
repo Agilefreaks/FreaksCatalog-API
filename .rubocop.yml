@@ -28,3 +28,11 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Exclude:
     - 'app/graphql/resolvers/freaks_resolver.rb'
+
+Layout/LineLength:
+  Exclude:
+    - 'app/graphql/resolvers/freaks_resolver.rb'
+
+Metrics/AbcSize:
+  Exclude:
+    - 'app/graphql/resolvers/freaks_resolver.rb'

@@ -1,0 +1,203 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "freaks": {
+        "pageInfo": {
+          "endCursor": "Mw",
+          "startCursor": "MQ",
+          "hasPreviousPage": false,
+          "hasNextPage": false
+        },
+        "edges": [
+          {
+            "node": {
+              "name": "Ion doe",
+              "firstName": "Ion",
+              "lastName": "doe",
+              "description": "a simple freak",
+              "email": "freak@gmail.com",
+              "photo": {
+                "uri": "http://www.something.ro"
+              },
+              "skills": [
+                {
+                  "name": "Project management"
+                },
+                {
+                  "name": "AWS Architect"
+                }
+              ],
+              "projects": [
+                {
+                  "name": "Project 1",
+                  "description": "An American premium cable and satellite TV network.",
+                  "logoUrl": {
+                    "uri": "http://www.something.ro"
+                  },
+                  "freaks": [
+                    {
+                      "firstName": "Ion"
+                    },
+                    {
+                      "firstName": "Vasile"
+                    }
+                  ],
+                  "technologies": [
+                    {
+                      "name": "Ruby",
+                      "description": "A popular back-end language"
+                    }
+                  ]
+                }
+              ],
+              "role": {
+                "name": "Founder"
+              },
+              "level": {
+                "name": "Advanced"
+              },
+              "norm": {
+                "name": "full_time"
+              },
+              "specialties": [
+                {
+                  "name": "Backend"
+                }
+              ],
+              "technologies": [
+                {
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Vasile doe",
+              "firstName": "Vasile",
+              "lastName": "doe",
+              "description": "a simple freak",
+              "email": "freak@gmail.com",
+              "photo": {
+                "uri": "http://www.something.ro"
+              },
+              "skills": [
+                {
+                  "name": "Project management"
+                },
+                {
+                  "name": "AWS Architect"
+                }
+              ],
+              "projects": [
+                {
+                  "name": "Project 1",
+                  "description": "An American premium cable and satellite TV network.",
+                  "logoUrl": {
+                    "uri": "http://www.something.ro"
+                  },
+                  "freaks": [
+                    {
+                      "firstName": "Ion"
+                    },
+                    {
+                      "firstName": "Vasile"
+                    }
+                  ],
+                  "technologies": [
+                    {
+                      "name": "Ruby",
+                      "description": "A popular back-end language"
+                    }
+                  ]
+                }
+              ],
+              "role": {
+                "name": "Founder"
+              },
+              "level": {
+                "name": "Advanced"
+              },
+              "norm": {
+                "name": "full_time"
+              },
+              "specialties": [
+                {
+                  "name": "Backend"
+                }
+              ],
+              "technologies": [
+                {
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "name": "Gheorghe doe",
+              "firstName": "Gheorghe",
+              "lastName": "doe",
+              "description": "a simple freak",
+              "email": "freak@gmail.com",
+              "photo": {
+                "uri": "http://www.something.ro"
+              },
+              "skills": [
+                {
+                  "name": "Project management"
+                },
+                {
+                  "name": "AWS Architect"
+                }
+              ],
+              "projects": [
+                {
+                  "name": "Project 2",
+                  "description": "An American premium cable and satellite TV network.",
+                  "logoUrl": {
+                    "uri": "http://www.something.ro"
+                  },
+                  "freaks": [
+                    {
+                      "firstName": "Gheorghe"
+                    }
+                  ],
+                  "technologies": [
+                    {
+                      "name": "Ruby",
+                      "description": "A popular back-end language"
+                    }
+                  ]
+                }
+              ],
+              "role": {
+                "name": "Founder"
+              },
+              "level": {
+                "name": "Advanced"
+              },
+              "norm": {
+                "name": "full_time"
+              },
+              "specialties": [
+                {
+                  "name": "Backend"
+                }
+              ],
+              "technologies": [
+                {
+                  "name": "Ruby",
+                  "description": "A popular back-end language"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

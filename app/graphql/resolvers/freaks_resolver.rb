@@ -10,6 +10,7 @@ module Resolvers
     def resolve(filter: nil)
       all_of_project_ids = filter&.dig(:project_ids, :all_of)
       any_of_project_ids = filter&.dig(:project_ids, :any_of)
+      all_of_technology_ids = filter&.dig(:technology_ids, :all_of)
 
       query = Freak.all if filter.nil?
 
@@ -25,6 +26,14 @@ module Resolvers
         query = Freak
                 .joins(:freaks_projects)
                 .where('freaks_projects.project_id = ANY(ARRAY[:ids]::bigint[])', ids: any_of_project_ids)
+                .group(:id)
+                .order(:id)
+      end
+
+      if all_of_technology_ids.present?
+        query = Freak
+                .joins(:freaks_technologies)
+                .having('array_agg(freaks_technologies.technology_id) @> ARRAY[:ids]::bigint[]', ids: all_of_technology_ids)
                 .group(:id)
                 .order(:id)
       end

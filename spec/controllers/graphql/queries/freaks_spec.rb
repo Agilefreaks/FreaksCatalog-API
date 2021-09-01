@@ -8,6 +8,8 @@ module Graphql
 
     let(:first_project) { create(:project, name: 'Project 1') }
     let(:second_project) { create(:project, name: 'Project 2') }
+    let(:first_technology) { create(:technology, :ruby) }
+    let(:second_technology) { create(:technology, :java) }
 
     let(:params) do
       {
@@ -16,9 +18,9 @@ module Graphql
     end
 
     before do
-      create(:freak, projects: [first_project], first_name: 'Ion')
-      create(:freak, projects: [first_project], first_name: 'Vasile')
-      create(:freak, projects: [second_project], first_name: 'Gheorghe')
+      create(:freak, projects: [first_project], technologies: [first_technology], first_name: 'Ion')
+      create(:freak, projects: [first_project], technologies: [first_technology], first_name: 'Vasile')
+      create(:freak, projects: [second_project], technologies: [second_technology], first_name: 'Gheorghe')
     end
 
     it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
@@ -75,6 +77,20 @@ module Graphql
       end
 
       it { is_expected.to match_response_for(query: :freaks, sample: :all_and_any_filtered) }
+    end
+
+    context 'with all_of technology params' do
+      before do
+        params[:variables] = {
+          filter: {
+            technologyIds: {
+              allOf: [first_technology.id]
+            }
+          }
+        }
+      end
+
+      it { is_expected.to match_response_for(query: :freaks, sample: :all_technologies_filtered) }
     end
   end
 end

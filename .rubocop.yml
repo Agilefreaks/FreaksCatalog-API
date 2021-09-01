@@ -24,3 +24,7 @@ Metrics/BlockLength:
     - 'config/routes.rb'
     - 'spec/**/*.rb'
     - 'db/schema.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'app/graphql/resolvers/freaks_resolver.rb'

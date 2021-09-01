@@ -61,5 +61,20 @@ module Graphql
 
       it { is_expected.to match_response_for(query: :freaks, sample: :any_projects_filtered) }
     end
+
+    context 'with all_of and any_off projects params' do
+      before do
+        params[:variables] = {
+          filter: {
+            projectIds: {
+              allOf: [first_project.id],
+              anyOf: [first_project.id, second_project.id]
+            }
+          }
+        }
+      end
+
+      it { is_expected.to match_response_for(query: :freaks, sample: :all_and_any_filtered) }
+    end
   end
 end

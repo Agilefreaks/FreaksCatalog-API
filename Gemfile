@@ -34,6 +34,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'graphiql-rails'
 gem 'graphql', '~> 1.12'
 
+gem 'rack-cors'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -59,7 +61,6 @@ group :development do
   gem 'guard-reek', '~> 1.2'
   gem 'guard-rspec', '~> 4.7.3', require: false
   gem 'guard-rubocop', '~> 1.4'
-  gem 'rack-cors'
   gem 'rexml', '~> 3.2.5'
   gem 'spring'
 end

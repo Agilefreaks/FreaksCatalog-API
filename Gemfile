@@ -59,6 +59,7 @@ group :development do
   gem 'guard-reek', '~> 1.2'
   gem 'guard-rspec', '~> 4.7.3', require: false
   gem 'guard-rubocop', '~> 1.4'
+  gem 'rack-cors'
   gem 'rexml', '~> 3.2.5'
   gem 'spring'
 end

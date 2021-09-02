@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "levels": [
+        {
+          "name": "Beginner"
+        }
+      ]
+    }
+  }
+}

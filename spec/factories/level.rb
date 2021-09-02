@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :level, class: 'Level' do
     name { 'Advanced' }
-    trait :Beginner do
+    trait :beginner do
       name { 'Beginner' }
     end
   end

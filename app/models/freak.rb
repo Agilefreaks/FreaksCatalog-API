@@ -5,6 +5,7 @@ class Freak < ApplicationRecord
 
   has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'
   has_many :projects, through: :freaks_projects, dependent: nil
+
   has_many :freaks_technologies, dependent: nil, class_name: 'FreakTechnology'
   has_many :technologies, through: :freaks_technologies
 

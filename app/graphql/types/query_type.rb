@@ -13,5 +13,6 @@ module Types
     field :projects, resolver: Resolvers::ProjectsResolver
     field :roles, resolver: Resolvers::RolesResolver
     field :levels, resolver: Resolvers::LevelsResolver
+    field :project, resolver: Resolvers::ProjectResolver
   end
 end

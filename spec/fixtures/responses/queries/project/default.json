@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "project": {
+        "description": "An American premium cable and satellite TV network.",
+        "name": "EPIX"
+      }
+    }
+  }
+}

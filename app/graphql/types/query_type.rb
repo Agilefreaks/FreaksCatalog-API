@@ -12,5 +12,6 @@ module Types
     field :technologies, resolver: Resolvers::TechnologiesResolver
     field :projects, resolver: Resolvers::ProjectsResolver
     field :roles, resolver: Resolvers::RolesResolver
+    field :levels, resolver: Resolvers::LevelsResolver
   end
 end

@@ -1,12 +1,12 @@
 mutation(
     $id: ID!,
-    $firstName: String!,
-    $lastName: String!,
-    $description: String!,
-    $email: String!,
-    $norm_id: ID!,
-    $role_id: ID!,
-    $level_id: ID!
+    $firstName: String,
+    $lastName: String,
+    $description: String,
+    $email: String,
+    $norm_id: ID,
+    $role_id: ID,
+    $level_id: ID
 ) {
     freakUpdate(
         id: $id,

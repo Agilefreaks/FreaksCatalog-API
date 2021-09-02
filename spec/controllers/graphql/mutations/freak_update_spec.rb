@@ -12,22 +12,18 @@ module Graphql
     let(:freak) { create(:freak) }
     let(:params) do
       {
-        query: File.read('spec/fixtures/requests/mutations/freak_update.graphql')
+        query: File.read('spec/fixtures/requests/mutations/freak_update.graphql'),
+        variables: {
+          id: freak.id,
+          firstName: 'Dorel',
+          lastName: 'zidarul',
+          description: 'priceput la tot prin casa',
+          email: 'dorel.zidarul@gmail.com',
+          norm_id: norm.id,
+          role_id: role.id,
+          level_id: level.id
+        }
 
-      }
-    end
-
-    before do
-      # create(:freak)
-      params[:variables] = {
-        id: freak.id,
-        firstName: freak.first_name,
-        lastName: freak.last_name,
-        description: freak.description,
-        email: freak.email,
-        norm_id: norm.id,
-        role_id: role.id,
-        level_id: level.id
       }
     end
 

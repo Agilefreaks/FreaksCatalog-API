@@ -18,6 +18,7 @@ module Resolvers
       freak = Freak.find(id)
 
       return unless freak
+
       freak.update(attrs)
       freak
     end

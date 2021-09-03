@@ -33,6 +33,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'graphiql-rails'
 gem 'graphql', '~> 1.12'
+gem 'dry-schema', '~> 1.7.1'
+gem 'dry-auto_inject', '~> 0.8.0'
+gem 'dry-validation', '~> 1.6'
 
 gem 'rack-cors'
 
@@ -42,6 +45,7 @@ group :development, :test do
   gem 'factory_bot_rails', '~>6.2.0'
   gem 'faker'
   gem 'rspec-rails', '~> 5.0.0'
+
 end
 
 group :development do

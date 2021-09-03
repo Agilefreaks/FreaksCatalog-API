@@ -8,11 +8,11 @@ module Resolvers
 
     # :reek:UtilityFunction
     def resolve(filter: nil)
-      query = Freak.all
-                   .on_all_projects(filter&.dig(:project_ids, :all_of))
-                   .on_all_technologies(filter&.dig(:technology_ids, :all_of))
-                   .on_any_project(filter&.dig(:project_ids, :any_of))
-      GetQuery.new.any_technology(filter, query)
+      Freak.all
+           .on_all_projects(filter&.dig(:project_ids, :all_of))
+           .on_all_technologies(filter&.dig(:technology_ids, :all_of))
+           .on_any_project(filter&.dig(:project_ids, :any_of))
+           .on_any_technology(filter&.dig(:technology_ids, :any_of))
     end
   end
 end

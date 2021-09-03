@@ -37,8 +37,13 @@ class Freak < ApplicationRecord
   }
 
   scope :on_any_technology, lambda { |ids|
-    joins(:freaks_technologies)
-      .where(freaks_technologies: { technology_id: ids }) }
+    if ids.present?
+      joins(:freaks_technologies)
+        .where(freaks_technologies: { technology_id: ids })
+    else
+      all
+    end
+  }
 
   has_one :photo, as: :imageable, dependent: nil
 

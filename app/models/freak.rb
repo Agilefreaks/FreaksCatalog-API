@@ -2,20 +2,30 @@
 
 class Freak < ApplicationRecord
   scope :on_all_projects, lambda { |ids|
-                                 if ids.present?
-                                   joins(:freaks_projects)
-                                             .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids)
-                                 else
-                                   all
-                                 end
-                               }
-  scope :on_any_project, lambda {|ids|
-                                joins(:freaks_projects)
-                                .where(freaks_projects: { project_id: ids})}
+    if ids.present?
+      matching_freak_ids = group(:id).order(:id)
+                                     .joins(:freaks_projects)
+                                     .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+                                     .select(:id)
+      where(id: matching_freak_ids)
+    else
+      all
+    end
+  }
+
+  scope :on_any_project, lambda { |ids|
+    joins(:freaks_projects)
+      .where(freaks_projects: { project_id: ids }) }
+
   scope :on_all_technologies, lambda { |ids|
     if ids.present?
-      joins(:freaks_technologies)
-        .having('array_agg(freaks_technologies.technology_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+
+      matching_freak_ids = group(:id).order(:id)
+                                     .joins(:freaks_technologies)
+                                     .having('array_agg(freaks_technologies.technology_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+                                     .select(:id)
+      where(id: matching_freak_ids)
+
     else
       all
     end

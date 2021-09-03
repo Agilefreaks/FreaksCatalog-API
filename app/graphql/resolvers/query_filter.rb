@@ -2,14 +2,6 @@
 
 module Resolvers
   class QueryFilter
-
-
-    def any_of_project_id_sql(query, id)
-      query
-        .joins(:freaks_projects)
-        .where(freaks_projects: { project_id: id })
-    end
-
     def all_of_technology_id_sql(query, id)
       query
         .joins(:freaks_technologies)

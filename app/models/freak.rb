@@ -4,6 +4,9 @@ class Freak < ApplicationRecord
   scope :on_all_projects, lambda { |ids|
                                joins(:freaks_projects)
                                          .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids) }
+  scope :on_any_project, lambda {|ids|
+                                joins(:freaks_projects)
+                                .where(freaks_projects: { project_id: ids})}
 
   has_one :photo, as: :imageable, dependent: nil
 

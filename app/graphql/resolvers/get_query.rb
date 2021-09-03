@@ -10,7 +10,7 @@ module Resolvers
 
     def any_project(filter, query)
       any_of_project_ids = filter&.dig(:project_ids, :any_of)
-      query = QueryFilter.new.any_of_project_id_sql(query, any_of_project_ids) if any_of_project_ids.present?
+      query = query.on_any_project(any_of_project_ids) if any_of_project_ids.present?
       query
     end
 

@@ -11,7 +11,7 @@ module Resolvers
       query = Freak.all
                    .on_all_projects(filter&.dig(:project_ids, :all_of))
                    .on_all_technologies(filter&.dig(:technology_ids, :all_of))
-      query = GetQuery.new.any_project(filter, query)
+                   .on_any_project(filter&.dig(:project_ids, :any_of))
       GetQuery.new.any_technology(filter, query)
     end
   end

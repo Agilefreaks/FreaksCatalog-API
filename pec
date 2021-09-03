@@ -1,0 +1,11 @@
+[33m803b053[m[33m ([m[1;36mHEAD -> [m[1;32m143-add-filter-support-to-the-freaks-query-node[m[33m)[m [143] Add scope for any_technology
+[33me92f1ee[m [143] Refactor code
+[33mffbbc50[m [143] Drop all_technologies method from GetQuery
+[33mbbdaa57[m [143] Drop all_projects method from GetQuery
+[33m4543665[m [143] Add scopes for any_project
+[33m9d16e08[m [143] Add scopes for all_projects
+[33m1599fd4[m[33m ([m[1;31morigin/143-add-filter-support-to-the-freaks-query-node[m[33m)[m [143] Code refactoring
+[33ma461c6b[m [143] Remove blank space from specs response
+[33m51b15e5[m [143] Remove temporary changes from .rubocop.yml
+[33m4c50868[m [143] Remove blank spaces from validation messages.
+[33m4b74f72[m [143] Remove blank line

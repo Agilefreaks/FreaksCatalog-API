@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class Freak < ApplicationRecord
+  scope :on_all_projects, lambda { |ids|
+                               joins(:freaks_projects)
+                                         .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids) }
+
   has_one :photo, as: :imageable, dependent: nil
 
   has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'

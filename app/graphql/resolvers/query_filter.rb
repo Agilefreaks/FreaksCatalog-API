@@ -2,11 +2,7 @@
 
 module Resolvers
   class QueryFilter
-    def all_of_project_id_sql(query, id)
-      query
-        .joins(:freaks_projects)
-        .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: id)
-    end
+
 
     def any_of_project_id_sql(query, id)
       query

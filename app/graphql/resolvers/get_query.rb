@@ -4,7 +4,7 @@ module Resolvers
   class GetQuery
     def all_projects(filter, query)
       all_of_project_ids = filter&.dig(:project_ids, :all_of)
-      query = QueryFilter.new.all_of_project_id_sql(query, all_of_project_ids) if all_of_project_ids.present?
+      query = query.on_all_projects(all_of_project_ids) if all_of_project_ids.present?
       query
     end
 

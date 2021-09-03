@@ -3,10 +3,11 @@
 class Freak < ApplicationRecord
   scope :on_all_projects, lambda { |ids|
     if ids.present?
-      matching_freak_ids = group(:id).order(:id)
-                                     .joins(:freaks_projects)
-                                     .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids)
-                                     .select(:id)
+      matching_freak_ids = group(:id)
+                           .order(:id)
+                           .joins(:freaks_projects)
+                           .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+                           .select(:id)
       where(id: matching_freak_ids)
     else
       all
@@ -24,13 +25,12 @@ class Freak < ApplicationRecord
 
   scope :on_all_technologies, lambda { |ids|
     if ids.present?
-
-      matching_freak_ids = group(:id).order(:id)
-                                     .joins(:freaks_technologies)
-                                     .having('array_agg(freaks_technologies.technology_id) @> ARRAY[:ids]::bigint[]', ids: ids)
-                                     .select(:id)
+      matching_freak_ids = group(:id)
+                           .order(:id)
+                           .joins(:freaks_technologies)
+                           .having('array_agg(freaks_technologies.technology_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+                           .select(:id)
       where(id: matching_freak_ids)
-
     else
       all
     end

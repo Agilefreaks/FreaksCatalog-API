@@ -10,7 +10,7 @@ module Resolvers
 
     def any_technology(filter, query)
       any_of_technology_ids = filter&.dig(:technology_ids, :any_of)
-      query = QueryFilter.new.any_of_technology_id_sql(query, any_of_technology_ids) if any_of_technology_ids.present?
+      query = Freak.on_any_technology(any_of_technology_ids) if any_of_technology_ids.present?
       query
     end
   end

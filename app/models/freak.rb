@@ -31,6 +31,10 @@ class Freak < ApplicationRecord
     end
   }
 
+  scope :on_any_technology, lambda { |ids|
+    joins(:freaks_technologies)
+       .where(freaks_technologies: { technology_id: ids }) }
+
   has_one :photo, as: :imageable, dependent: nil
 
   has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'

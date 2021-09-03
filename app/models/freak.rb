@@ -2,8 +2,13 @@
 
 class Freak < ApplicationRecord
   scope :on_all_projects, lambda { |ids|
-                               joins(:freaks_projects)
-                                         .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids) }
+                                 if ids.present?
+                                   joins(:freaks_projects)
+                                             .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+                                 else
+                                   all
+                                 end
+                               }
   scope :on_any_project, lambda {|ids|
                                 joins(:freaks_projects)
                                 .where(freaks_projects: { project_id: ids})}

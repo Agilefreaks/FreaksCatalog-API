@@ -9,7 +9,7 @@ module Resolvers
     # :reek:UtilityFunction
     def resolve(filter: nil)
       query = Freak.all.group(:id).order(:id)
-      query = GetQuery.new.all_projects(filter, query)
+                   .on_all_projects(filter&.dig(:project_ids, :all_of))
       query = GetQuery.new.any_project(filter, query)
       query = GetQuery.new.all_technologies(filter, query)
       GetQuery.new.any_technology(filter, query)

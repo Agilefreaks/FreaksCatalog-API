@@ -36,7 +36,7 @@ module Graphql
     end
 
     context 'when level does not exist' do
-      let(:level_id) { 232323 }
+      let(:level_id) { 232_323 }
 
       it { is_expected.to match_response_for(mutation: :freak_create, sample: :missing_level) }
     end

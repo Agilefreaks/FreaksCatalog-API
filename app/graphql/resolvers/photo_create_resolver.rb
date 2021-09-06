@@ -7,7 +7,7 @@ module Resolvers
              required: true
     argument :uri, Types::Url, required: true
 
-    type [Types::PhotoType], null: false
+    type Types::PhotoType, null: false
 
     # :reek:UtilityFunction
     def resolve(params)

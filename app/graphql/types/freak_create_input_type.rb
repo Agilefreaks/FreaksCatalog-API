@@ -10,6 +10,7 @@ module Types
                                            validates: { in_db: { type: Norm } }
     argument :role_id, GraphQL::Types::ID, required: true,
                                            validates: { in_db: { type: Role } }
-    argument :level_id, GraphQL::Types::ID, required: true
+    argument :level_id, GraphQL::Types::ID, required: true,
+                                           validates: { in_db: { type: Level } }
   end
 end

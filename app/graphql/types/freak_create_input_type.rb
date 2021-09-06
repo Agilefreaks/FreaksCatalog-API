@@ -8,7 +8,8 @@ module Types
     argument :email, String, required: true
     argument :norm_id, GraphQL::Types::ID, required: true,
                                            validates: { in_db: { type: Norm } }
-    argument :role_id, GraphQL::Types::ID, required: true
+    argument :role_id, GraphQL::Types::ID, required: true,
+                                           validates: { in_db: { type: Role } }
     argument :level_id, GraphQL::Types::ID, required: true
   end
 end

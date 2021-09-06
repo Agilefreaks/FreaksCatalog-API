@@ -8,15 +8,15 @@ module Graphql
 
     let(:first_project) { create(:project, name: 'Project 1') }
     let(:second_project) { create(:project, name: 'Project 2') }
-    let(:first_technology) { create(:technology, :ruby) }
-    let(:second_technology) { create(:technology, :java) }
+    let(:ruby) { create(:technology, :ruby) }
+    let(:java) { create(:technology, :java) }
 
     let(:params) { { query: File.read('spec/fixtures/requests/queries/freaks.graphql') } }
 
     before do
-      create(:freak, projects: [first_project], technologies: [first_technology], first_name: 'Ion')
-      create(:freak, projects: [first_project], technologies: [first_technology], first_name: 'Vasile')
-      create(:freak, projects: [second_project], technologies: [second_technology], first_name: 'Gheorghe')
+      create(:freak, projects: [first_project], technologies: [ruby], first_name: 'Ion')
+      create(:freak, projects: [first_project], technologies: [ruby], first_name: 'Vasile')
+      create(:freak, projects: [second_project], technologies: [java], first_name: 'Gheorghe')
     end
 
     it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
@@ -80,7 +80,7 @@ module Graphql
         params[:variables] = {
           filter: {
             technologyIds: {
-              allOf: [first_technology.id]
+              allOf: [ruby.id]
             }
           }
         }
@@ -94,7 +94,7 @@ module Graphql
         params[:variables] = {
           filter: {
             technologyIds: {
-              anyOf: [first_technology.id, second_technology.id]
+              anyOf: [ruby.id, java.id]
             }
           }
         }
@@ -108,8 +108,8 @@ module Graphql
         params[:variables] = {
           filter: {
             technologyIds: {
-              allOf: [first_technology.id],
-              anyOf: [first_technology.id, second_technology.id]
+              allOf: [ruby.id],
+              anyOf: [ruby.id, java.id]
             }
           }
         }

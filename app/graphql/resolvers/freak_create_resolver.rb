@@ -11,21 +11,16 @@ module Resolvers
     argument :level_id, GraphQL::Types::ID, required: true
 
     type [Types::FreakType], null: false
+
     # TODO: Test if norm_id exist
     # TODO: Test if role_id exist
 
     def resolve(params)
-      contract = Contracts::FreakCreateContract.new
-
-      p contract.call( role_id: 1, level_id: 1, norm_id: 1)
       norm = Norm.find(params[:norm_id])
       role = Role.find(params[:role_id])
       level = Level.find(params[:level_id])
 
-      if Freak.create(params.merge(norm: norm, role: role, level: level))
-      else
-        raise GraphQL::ExecutionError.new("Something went wrong", extensions: { "code" => "BROKEN" })
-      end
+      Freak.create(params.merge(norm: norm, role: role, level: level))
     end
   end
 end

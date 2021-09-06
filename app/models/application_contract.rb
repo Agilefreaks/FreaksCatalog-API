@@ -3,7 +3,6 @@
 require 'dry/validation'
 module Validation
   class NewFreakContract < Dry::Validation::Contract
-    freakSchema = Dry::Validation.Schema
     params do
       required(:role_id).value(:integer)
       required(:norm_id).value(:integer)
@@ -23,6 +22,6 @@ module Validation
     end
 
     contract = NewFreakContract.new
-    contract.call( role_id: 1, level_id: 1, norm_id: 10)
+    contract.call(role_id: 1, level_id: 1, norm_id: 10)
   end
 end

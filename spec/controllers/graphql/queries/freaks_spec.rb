@@ -19,7 +19,7 @@ module Graphql
       create(:freak, projects: [second_project], technologies: [java], first_name: 'Gheorghe')
     end
 
-    it { is_expected.to match_response_for(query: :freaks, sample: :freaks) }
+    it { is_expected.to match_response_for(query: :freaks, sample: :default) }
 
     context 'with pagination params' do
       before do

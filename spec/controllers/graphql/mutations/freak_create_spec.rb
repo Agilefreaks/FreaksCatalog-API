@@ -28,5 +28,11 @@ module Graphql
 
       it { is_expected.to match_response_for(mutation: :freak_create, sample: :missing_norm) }
     end
+
+    context 'when role does not exist' do
+      let(:role_id) { 8551 }
+
+      it { is_expected.to match_response_for(mutation: :freak_create, sample: :missing_role) }
+    end
   end
 end

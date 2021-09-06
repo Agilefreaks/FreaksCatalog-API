@@ -1,0 +1,22 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "freakUpdate": {
+        "firstName": "Dorel",
+        "lastName": "zidarul",
+        "description": "priceput la tot prin casa",
+        "email": "dorel.zidarul@gmail.com",
+        "norm": {
+          "name": "full_time"
+        },
+        "role": {
+          "name": "Founder"
+        },
+        "level": {
+          "name": "Advanced"
+        }
+      }
+    }
+  }
+}

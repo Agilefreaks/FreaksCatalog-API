@@ -1,0 +1,35 @@
+mutation(
+    $id: ID!,
+    $firstName: String,
+    $lastName: String,
+    $description: String,
+    $email: String,
+    $norm_id: ID,
+    $role_id: ID,
+    $level_id: ID
+) {
+    freakUpdate(
+        id: $id,
+        firstName: $firstName,
+        lastName: $lastName,
+        description: $description,
+        email: $email,
+        normId: $norm_id,
+        roleId: $role_id,
+        levelId: $level_id
+    ) {
+        firstName
+        lastName
+        description
+        email
+        norm {
+            name
+        }
+        role {
+            name
+        }
+        level{
+            name
+        }
+    }
+}

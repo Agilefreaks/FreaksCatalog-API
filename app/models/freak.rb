@@ -1,6 +1,50 @@
 # frozen_string_literal: true
 
 class Freak < ApplicationRecord
+  scope :on_all_projects, lambda { |ids|
+    if ids.present?
+      matching_freak_ids = group(:id)
+                           .order(:id)
+                           .joins(:freaks_projects)
+                           .having('array_agg(freaks_projects.project_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+                           .select(:id)
+      where(id: matching_freak_ids)
+    else
+      all
+    end
+  }
+
+  scope :on_any_project, lambda { |ids|
+    if ids.present?
+      joins(:freaks_projects)
+        .where(freaks_projects: { project_id: ids })
+    else
+      all
+    end
+  }
+
+  scope :on_all_technologies, lambda { |ids|
+    if ids.present?
+      matching_freak_ids = group(:id)
+                           .order(:id)
+                           .joins(:freaks_technologies)
+                           .having('array_agg(freaks_technologies.technology_id) @> ARRAY[:ids]::bigint[]', ids: ids)
+                           .select(:id)
+      where(id: matching_freak_ids)
+    else
+      all
+    end
+  }
+
+  scope :on_any_technology, lambda { |ids|
+    if ids.present?
+      joins(:freaks_technologies)
+        .where(freaks_technologies: { technology_id: ids })
+    else
+      all
+    end
+  }
+
   has_one :photo, as: :imageable, dependent: nil
 
   has_many :freaks_projects, dependent: nil, class_name: 'FreakProject'

@@ -1,5 +1,5 @@
-query Freaks($last: Int, $before: String) {
-    freaks(last: $last, before: $before) {
+query Freaks($filter: FreakFilter, $last: Int, $before: String) {
+    freaks(filter: $filter, last: $last, before: $before) {
         pageInfo {
             endCursor
             startCursor

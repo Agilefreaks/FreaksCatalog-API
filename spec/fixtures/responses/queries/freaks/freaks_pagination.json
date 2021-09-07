@@ -12,8 +12,8 @@
         "edges": [
           {
             "node": {
-              "name": "john doe",
-              "firstName": "john",
+              "name": "Ion doe",
+              "firstName": "Ion",
               "lastName": "doe",
               "description": "a simple freak",
               "email": "freak@gmail.com",
@@ -30,17 +30,17 @@
               ],
               "projects": [
                 {
-                  "name": "EPIX",
+                  "name": "Project 1",
                   "description": "An American premium cable and satellite TV network.",
                   "logoUrl": {
                     "uri": "http://www.something.ro"
                   },
                   "freaks": [
                     {
-                      "firstName": "john"
+                      "firstName": "Ion"
                     },
                     {
-                      "firstName": "john"
+                      "firstName": "Vasile"
                     }
                   ],
                   "technologies": [

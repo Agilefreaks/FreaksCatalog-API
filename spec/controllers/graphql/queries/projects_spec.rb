@@ -12,7 +12,7 @@ module Graphql
       }
     end
 
-    before { create(:project) }
+    before { create(:project, :with_freak) }
 
     it { is_expected.to match_response_for(query: :projects, sample: :projects) }
   end

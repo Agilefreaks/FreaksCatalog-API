@@ -1,0 +1,20 @@
+{
+  "status": 200,
+  "body": {
+    "data": null,
+    "errors": [
+      {
+        "message": "May use either allOf or anyOf, but not both.",
+        "locations": [
+          {
+            "line": 2,
+            "column": 5
+          }
+        ],
+        "path": [
+          "freaks"
+        ]
+      }
+    ]
+  }
+}

@@ -9,7 +9,7 @@ module Resolvers
     type Types::FreakTechnology, null: true
 
     def resolve(freak_id:, name:)
-      technology_id = Technology.find(name).id
+      technology_id = Technology.find_by(name: name).id
       freak_technology = FreakTechnology.find(freak_id)
 
       return unless technology_id == freak_technology.technology_id

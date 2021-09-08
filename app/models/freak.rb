@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Freak < ApplicationRecord
+  include Discard::Model
+  # default_scope -> { kept }
+
   scope :on_all_projects, lambda { |ids|
     if ids.present?
       matching_freak_ids = group(:id)

@@ -5,6 +5,6 @@ module Types
     field :freak_create, resolver: Resolvers::FreakCreateResolver
     field :photo_create, resolver: Resolvers::PhotoCreateResolver
     field :freak_update, resolver: Resolvers::FreakUpdateResolver
-    field :remove_technology_from_freak, resolver: Resolvers:: RemoveTechnologyFromFreak
+    field :remove_technology_from_freak, resolver: Resolvers::RemoveTechnologyFromFreak
   end
 end

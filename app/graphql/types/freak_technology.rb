@@ -2,8 +2,8 @@
 
 module Types
   class FreakTechnology < Types::BaseObject
-    argument :id, GraphQL::Types::ID, required: false
-    argument :freak_id, GraphQL::Types::ID, required: false
-    argument :technology_id, GraphQL::Types::ID, required: false
+    field :id, GraphQL::Types::ID, null: true
+    field :freak_id, GraphQL::Types::ID, null: true
+    field :technology_id, GraphQL::Types::ID, null: true
   end
 end

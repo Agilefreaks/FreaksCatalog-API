@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'discard'
 module Resolvers
   class FreakDeactivateResolver < Resolvers::Base
     argument :id, GraphQL::Types::ID, required: true,

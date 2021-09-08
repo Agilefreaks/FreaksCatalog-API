@@ -2,16 +2,25 @@
 
 module Resolvers
   class FreakCreateResolver < Resolvers::Base
-    argument :input, Types::FreakCreateInputType, required: true
+    argument :first_name, String, required: true
+    argument :last_name, String, required: true
+    argument :description, String, required: true
+    argument :email, String, required: true
+    argument :norm_id, GraphQL::Types::ID, required: true,
+                                           validates: { in_db: { type: Norm } }
+    argument :role_id, GraphQL::Types::ID, required: true,
+                                           validates: { in_db: { type: Role } }
+    argument :level_id, GraphQL::Types::ID, required: true,
+                                            validates: { in_db: { type: Level } }
 
     type Types::FreakType, null: false
 
-    def resolve(input:)
-      norm = Norm.find(input[:norm_id])
-      role = Role.find(input[:role_id])
-      level = Level.find(input[:level_id])
+    def resolve(params)
+      norm = Norm.find(params[:norm_id])
+      role = Role.find(params[:role_id])
+      level = Level.find(params[:level_id])
 
-      Freak.create(input.to_h.merge(norm: norm, role: role, level: level))
+      Freak.create(params.merge(norm: norm, role: role, level: level))
     end
   end
 end

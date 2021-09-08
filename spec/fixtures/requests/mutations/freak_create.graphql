@@ -1,27 +1,25 @@
 mutation($norm_id: ID!, $role_id: ID!, $level_id: ID!) {
-	freakCreate(
-		input: {
-			firstName: "john",
-			lastName: "doe",
-			description: "ceva",
-			email: "freak@gmail.com",
-			normId: $norm_id,
-			roleId: $role_id,
-			levelId: $level_id
-		}
-	) {
-		firstName
-		lastName
-		description
-		email
+    freakCreate(
+        firstName: "john",
+        lastName: "doe",
+        description: "ceva",
+        email: "freak@gmail.com",
+        normId: $norm_id,
+        roleId: $role_id,
+        levelId: $level_id
+    ) {
+        firstName
+        lastName
+        description
+        email
         norm {
             name
         }
-		role {
-			name
-		}
-		level{
-			name
-		}
-	}
+        role {
+            name
+        }
+        level{
+            name
+        }
+    }
 }

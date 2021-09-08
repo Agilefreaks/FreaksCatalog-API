@@ -2,12 +2,15 @@
 require 'discard'
 module Resolvers
   class FreakDeactivateResolver < Resolvers::Base
-    argument :id, GraphQL::Types::ID, required: true
+    argument :id, GraphQL::Types::ID, required: true,
+             validates: { in_db: { type: Freak } }
 
-    type GraphQL::Types::ID, null: true
+    type Types::FreakType, null: true
 
     def resolve(id:)
-      Freak.find(id).discard
+      freak= Freak.find(id)
+      freak.discard
+      freak
     end
   end
 end

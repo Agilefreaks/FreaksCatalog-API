@@ -2,7 +2,7 @@
 
 class Freak < ApplicationRecord
   include Discard::Model
-  # default_scope -> { kept }
+  default_scope -> { kept }
 
   scope :on_all_projects, lambda { |ids|
     if ids.present?

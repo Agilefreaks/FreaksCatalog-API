@@ -1,0 +1,20 @@
+{
+  "status": 200,
+  "body": {
+    "data": null,
+    "errors": [
+      {
+        "message": "Norm with id = 8551 does not exist.",
+        "locations": [
+          {
+            "line": 11,
+            "column": 5
+          }
+        ],
+        "path": [
+          "freakUpdate"
+        ]
+      }
+    ]
+  }
+}

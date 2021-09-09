@@ -7,7 +7,7 @@ module Graphql
     subject { post :execute, params: params, as: :json }
 
     let(:freak_technology) { create(:freak_technology) }
-    let(:technology_name){create(:technology)}
+    let(:technology_name) { create(:technology) }
     let(:params) do
       {
         query: File.read('spec/fixtures/requests/mutations/remove_technology_from_freak.graphql'),
@@ -17,11 +17,16 @@ module Graphql
         }
       }
     end
+
     before do
       create(:freak)
       create(:technology)
     end
 
-    it { is_expected.to match_response_for(mutation: :remove_technology_freak, sample: :remove_technology_freak) }
+
+
+      it { is_expected.to match_response_for(mutation: :remove_technology_freak, sample: :remove_technology_freak) }
+
+
   end
 end

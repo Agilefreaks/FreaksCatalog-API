@@ -12,15 +12,6 @@ services:
        POSTGRES_DB: "${DB_NAME}"
     volumes:
       - db-data:/var/lib/postgresql/data
-  web:
-     build:
-       context: ../FreaksCatalog-Web
-       dockerfile: Dockerfile
-     container_name: freakscatalog-web
-     ports:
-       - "80:80"
-     depends_on:
-       - api
   api:
     build: .
     command: rails server -b 0.0.0.0

@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+  db:
+    container_name: freakscatalog-db
+    image: postgres:13.1-alpine
+    env_file:
+       - .env
+    environment:
+       POSTGRES_USER: "${DB_USER}"
+       POSTGRES_PASSWORD: "${DB_PASS}"
+       POSTGRES_DB: "${DB_NAME}"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  web:
+     build:
+       context: ../FreaksCatalog-Web
+       dockerfile: Dockerfile
+     container_name: freakscatalog-web
+     ports:
+       - "80:80"
+     depends_on:
+       - api
+  api:
+    build: .
+    command: rails server -b 0.0.0.0
+    container_name: freakscatalog-api
+    env_file:
+       - .env
+    environment:
+            RUBY_ENV: development
+            DATABASE_URL: postgres://${DB_USER}:${DB_PASS}@${DB_NAME}
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/home/app
+    depends_on:
+      - db
+
+volumes:
+  db-data:

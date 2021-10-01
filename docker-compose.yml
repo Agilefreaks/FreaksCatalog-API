@@ -4,12 +4,6 @@ services:
   db:
     container_name: freakscatalog-db
     image: postgres:13.1-alpine
-    env_file:
-       - .env
-    environment:
-       POSTGRES_USER: "${DB_USER}"
-       POSTGRES_PASSWORD: "${DB_PASS}"
-       POSTGRES_DB: "${DB_NAME}"
     volumes:
       - db-data:/var/lib/postgresql/data
   api:
@@ -17,10 +11,9 @@ services:
     command: rails server -b 0.0.0.0
     container_name: freakscatalog-api
     env_file:
-       - .env
+       - .env.dev
     environment:
-            RUBY_ENV: development
-            DATABASE_URL: postgres://${DB_USER}:${DB_PASS}@${DB_NAME}
+            DATABASE_URL: ${DATABASE_URL}
     ports:
       - "3000:3000"
     volumes:

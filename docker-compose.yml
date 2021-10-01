@@ -4,8 +4,12 @@ services:
   db:
     container_name: freakscatalog-db
     image: postgres:13.1-alpine
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
     volumes:
       - db-data:/var/lib/postgresql/data
+    networks:
+      - catalog_net
   api:
     build: .
     command: rails server -b 0.0.0.0
@@ -20,6 +24,13 @@ services:
       - ./:/home/app
     depends_on:
       - db
+    links:
+      - db:db
+    networks:
+      - catalog_net
+
+networks:
+  catalog_net:
 
 volumes:
   db-data:

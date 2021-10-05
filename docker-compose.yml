@@ -10,10 +10,8 @@ services:
     build: .
     command: rails server -b 0.0.0.0
     container_name: freakscatalog-api
-    env_file:
-       - .env.dev
     environment:
-            DATABASE_URL: ${DATABASE_URL}
+      - DATABASE_URL
     ports:
       - "3000:3000"
     volumes:

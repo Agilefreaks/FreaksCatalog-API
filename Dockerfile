@@ -16,4 +16,3 @@ RUN apk update \
     postgresql-dev
 RUN bundle install
 ONBUILD rails db:setup
-CMD ["rails", "server", "-b", "0.0.0.0"]

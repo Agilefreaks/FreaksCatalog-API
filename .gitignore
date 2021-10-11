@@ -7,8 +7,6 @@
 .env
 .env.test
 
-/vendor
-
 /.idea
 # Ignore bundler config.
 /.bundle

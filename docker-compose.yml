@@ -4,6 +4,8 @@ services:
   db:
     container_name: freakscatalog-db
     image: postgres:13.1-alpine
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - db-data:/var/lib/postgresql/data
   api:

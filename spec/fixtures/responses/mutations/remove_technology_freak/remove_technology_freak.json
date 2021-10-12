@@ -1,0 +1,12 @@
+{
+  "status": 200,
+  "body": {
+    "data": {
+      "removeTechnologyFromFreak": {
+        "freakId": "1",
+        "id": "1",
+        "technologyId": "1"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mutation($freak_id: ID!, $name: String!){
+    removeTechnologyFromFreak(
+        freakId:$freak_id,
+        name: $name
+    )
+    {
+        freakId
+        id
+        technologyId
+    }
+}

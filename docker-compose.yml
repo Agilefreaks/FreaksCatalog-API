@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  db:
+    container_name: freakscatalog-db
+    image: postgres:13.1-alpine
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  api:
+    build: .
+    command: rails server -b 0.0.0.0
+    container_name: freakscatalog-api
+    environment:
+      - DATABASE_URL
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/home/app
+    depends_on:
+      - db
+
+volumes:
+  db-data:

@@ -51,3 +51,15 @@ Otherwise it is enough to place the next order
 ```bash
 docker start freaks-pgsql
 ```
+# Setup Docker
+
+### Step 1. Create development variables file
+```
+$ cp .env.example .env
+```
+
+### Step 2. Build & Run the image using docker-compose
+```
+$ docker-compose up
+```
+Now you should be able to do requests on port `http://localhost:3000`

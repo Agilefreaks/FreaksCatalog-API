@@ -51,3 +51,34 @@ Otherwise it is enough to place the next order
 ```bash
 docker start freaks-pgsql
 ```
+
+## Setup Kubernetes & Helm Chart
+
+### Step 1. Add Helm repository for PostgreSQL
+```
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+$ helm repo update
+```
+
+### Step 2. Apply Persistent Storage Volume & Persistent Volume Claim
+
+```
+$ kubectl apply -f helm/postagresql/postgres-pv.yaml
+$ kubectl apply -f helm/postagresql/postgres-pvc.yaml
+```
+
+### Step 3. Install PostgreSQL Helm Chart
+```
+$ helm install freakscatalog-db\
+      	 --set global.postgresql.postgresqlDatabase=FreaksCatalog_API_development \
+         --set global.postgresql.postgresqlUsername=postgres \
+      	 --set global.postgresql.postgresqlPassword=postgres \
+         --set persistence.existingClaim=postgresql-pv-claim \
+         --set volumePermissions.enabled=true \
+      	bitnami/postgresql
+```
+
+### Step 4. Install project Helm Chart
+```
+$ helm install freakscatalog-api helm/freakscatalog-api/
+```

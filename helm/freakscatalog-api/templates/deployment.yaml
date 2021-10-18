@@ -43,8 +43,18 @@ spec:
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
-                        name: db-connect-info
-                        key: DATABASE_URL
+                  name: db-info-connect
+                  key: DATABASE_URL
+           - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-info-connect
+                  key: password
+            - name: POSTGRES_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: db-info-connect
+                  key: username
           livenessProbe:
             httpGet:
               path: /

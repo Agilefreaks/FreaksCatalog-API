@@ -74,7 +74,12 @@ $ kubectl create secret generic psql-password-secret --from-literal=postgresql-p
 ```
 Install PostgreSQL
 ```
-$ helm install freakscatalog-db --set existingSecret=psql-password-secret --set postgresqlDatabase=FreaksCatalog_API_development bitnami/postgresql
+$ helm install freakscatalog-db \
+  --set existingSecret=psql-password-secret \
+  --set postgresqlDatabase=FreaksCatalog_API_development \
+  --set persistence.existingClaim=postgresql-pv-claim \
+  --set volumePermissions.enabled=true \
+    bitnami/postgresql
 ```
 
 ### Step 4. Install project Helm Chart
@@ -90,4 +95,9 @@ $ kubectl get po | grep 'freakscatalog-api'
 Connect and execute command into pod:
 ``` 
 $ kubectl exec -it <FREAKSCATALOG-API-POD> -- bin/rails db:migrate RAILS_ENV=development
+```
+
+#### Note: Be sure to have running K8s proxy in a separate window
+```
+kubectl proxy
 ```

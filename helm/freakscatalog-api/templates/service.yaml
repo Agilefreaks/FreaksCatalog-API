@@ -10,7 +10,6 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: http
       port: 3000
-      nodePort: 30040
       protocol: TCP
       name: http
   selector:

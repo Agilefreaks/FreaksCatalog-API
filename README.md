@@ -87,7 +87,7 @@ $ helm install freakscatalog-db \
 $ helm install freakscatalog-api helm/freakscatalog-api/
 ```
 ### Step 5. Migrate DB
-Get Freakscatalog-API pod ID:
+Get Freakscatalog-API pod name:
 ```
 $ kubectl get po | grep 'freakscatalog-api'
 ```

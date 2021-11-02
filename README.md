@@ -52,6 +52,19 @@ Otherwise it is enough to place the next order
 docker start freaks-pgsql
 ```
 
+# Setup Docker
+
+### Step 1. Create development variables file
+```
+$ cp .env.example .env
+```
+
+### Step 2. Build & Run the image using docker-compose
+```
+$ docker-compose up
+```
+Now you should be able to do requests on port `http://localhost:3000`
+
 ## Setup Kubernetes & Helm Chart
 
 ### Step 1. Add Helm repository for PostgreSQL
@@ -61,7 +74,6 @@ $ helm repo update
 ```
 
 ### Step 2. Apply Persistent Storage Volume & Persistent Volume Claim
-
 ```
 $ kubectl apply -f helm/postagresql/postgres-pv.yaml
 $ kubectl apply -f helm/postagresql/postgres-pvc.yaml
@@ -86,13 +98,13 @@ $ helm install freakscatalog-db \
 ```
 $ helm install freakscatalog-api helm/freakscatalog-api/
 ```
+
 ### Step 5. Migrate DB
 Get Freakscatalog-API pod name:
 ```
 $ kubectl get po | grep 'freakscatalog-api'
 ```
-
-Connect and execute command into pod:
+Connect and execute the next command into the pod's shell:
 ``` 
 $ kubectl exec -it <FREAKSCATALOG-API-POD> -- bin/rails db:migrate RAILS_ENV=development
 ```

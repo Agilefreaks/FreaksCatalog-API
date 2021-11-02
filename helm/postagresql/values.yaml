@@ -1,0 +1,13 @@
+postgresql:
+  cpu: 1000m
+  memory: 1Gi
+  persistence:
+    enabled: true
+    existingClaim: postgres-pvc
+  volumePermissions:
+    enabled: true
+  replication:
+    enabled: false
+  initdbScripts:
+    psql.sql: |
+      CREATE USER freak WITH PASSWORD 'passw0rd';

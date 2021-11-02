@@ -51,6 +51,7 @@ Otherwise it is enough to place the next order
 ```bash
 docker start freaks-pgsql
 ```
+
 # Setup Docker
 
 ### Step 1. Create development variables file
@@ -63,3 +64,52 @@ $ cp .env.example .env
 $ docker-compose up
 ```
 Now you should be able to do requests on port `http://localhost:3000`
+
+## Setup Kubernetes & Helm Chart
+
+### Step 1. Add Helm repository for PostgreSQL
+```
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+$ helm repo update
+```
+
+### Step 2. Apply Persistent Storage Volume & Persistent Volume Claim
+```
+$ kubectl apply -f helm/postagresql/postgres-pv.yaml
+$ kubectl apply -f helm/postagresql/postgres-pvc.yaml
+```
+
+### Step 3. Install PostgreSQL
+Create secrets
+```
+$ kubectl create secret generic psql-password-secret --from-literal=postgresql-password=postgres --from-literal=postgresql-postgres-password=postgres
+```
+Install PostgreSQL
+```
+$ helm install freakscatalog-db \
+  --set existingSecret=psql-password-secret \
+  --set postgresqlDatabase=FreaksCatalog_API_development \
+  --set persistence.existingClaim=postgresql-pv-claim \
+  --set volumePermissions.enabled=true \
+    bitnami/postgresql
+```
+
+### Step 4. Install project Helm Chart
+```
+$ helm install freakscatalog-api helm/freakscatalog-api/
+```
+
+### Step 5. Migrate DB
+Get Freakscatalog-API pod name:
+```
+$ kubectl get po | grep 'freakscatalog-api'
+```
+Connect and execute the next command into the pod's shell:
+``` 
+$ kubectl exec -it <FREAKSCATALOG-API-POD> -- bin/rails db:migrate RAILS_ENV=development
+```
+
+#### Note: Be sure to have running K8s proxy in a separate window
+```
+kubectl proxy
+```

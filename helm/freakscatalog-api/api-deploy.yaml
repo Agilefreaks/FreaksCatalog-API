@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: load-balancer-api
+  name: freakscatalog-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: load-balancer-api
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: load-balancer-api
+    spec:
+      containers:
+        - image: viralnico/freakscatalog-api:latest
+          name: freakscatalog-api-balancer
+          ports:
+        - containerPort: 3000
